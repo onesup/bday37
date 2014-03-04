@@ -1,0 +1,165 @@
+namespace :load do
+  task :defaults do
+    set :nginx_server_name, "web"
+    set :nginx_use_ssl, false
+    set :nginx_ssl_certificate, -> { "#{fetch(:nginx_server_name)}.crt" }
+    set :nginx_ssl_certificate_key, -> { "#{fetch(:nginx_server_name)}.key" }
+    set :nginx_upload_local_certificate, true
+    set :nginx_ssl_certificate_local_path, -> { Capistrano::CLI.ui.ask "Local path to ssl certificate: " }
+    set :nginx_ssl_certificate_key_local_path, -> { Capistrano::CLI.ui.ask "Local path to ssl certificate key: " }
+    
+    set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
+    set :unicorn_config, -> { "#{shared_path}/config/unicorn.rb" }
+    set :unicorn_log, -> { "#{shared_path}/log/unicorn.log" }
+    set :unicorn_error_log, -> { "#{shared_path}/log/unicorn.err.log" }
+    set :unicorn_user, -> { fetch(:user) }
+    set :unicorn_workers, 3
+    set :unicorn_rack_env, -> { fetch(:rails_env) == 'development' ? 'development' : 'production' }
+  end
+end
+
+namespace :nginx do
+  desc "Setup nginx configuration for this application"
+  task :setup do
+    on roles :web do |host|
+      template "nginx_conf.erb", "/tmp/nginx.conf"
+      # execute :sudo, :cp, "/tmp/nginx.conf /etc/nginx/nginx.conf"
+      execute :rm, "/tmp/nginx.conf"
+      execute :touch, "/tmp/null.site"
+      capture(:ls, "/etc/nginx/sites-enabled/").lines.to_a.each do |s|
+        # execute :sudo, :cp, "/tmp/null.site /etc/nginx/sites-enabled/#{s.strip}"
+      end
+      
+      template "nginx_site.erb", "/tmp/nginx.#{fetch(:application)}"
+      execute :sudo, :cp, "/tmp/nginx.#{fetch(:application)} /etc/nginx/sites-available/#{fetch(:application)}"
+      execute :rm, "/tmp/nginx.#{fetch(:application)}"
+      execute :sudo, :ln, "-fs", "/etc/nginx/sites-available/#{fetch(:application)} /etc/nginx/sites-enabled/#{fetch(:application)}"
+      
+      if fetch(:nginx_use_ssl)
+        if fetch(:nginx_upload_local_certificate)
+          upload! File.read(fetch(:nginx_ssl_certificate_local_path)), "/tmp/#{fetch(:nginx_ssl_certificate)}"
+          upload! File.read(fetch(:nginx_ssl_certificate_key_local_path)), "/tmp/#{fetch(:nginx_ssl_certificate_key)}"
+          
+          execute :sudo, :cp, "/tmp/#{fetch(:nginx_ssl_certificate)} /etc/ssl/certs/#{fetch(:nginx_ssl_certificate)}"
+          execute :sudo, :cp, "/tmp/#{fetch(:nginx_ssl_certificate_key)} /etc/ssl/private/#{fetch(:nginx_ssl_certificate_key)}"
+          execute :rm, "/tmp/#{fetch(:nginx_ssl_certificate)}"
+          execute :rm, "/tmp/#{fetch(:nginx_ssl_certificate_key)}"
+        end
+      end
+    end
+  end
+  
+  desc "Reload nginx configuration"
+  task :reload do
+    on roles :web do |host|
+      execute :sudo, "/etc/init.d/nginx reload"
+    end
+  end
+  
+  desc "Stop nginx"
+  task :stop do
+    on roles :web do |host|
+      execute :sudo, "/etc/init.d/nginx stop"
+    end
+  end
+  
+  desc "Start nginx"
+  task :start do
+    on roles :web do |host|
+      execute :sudo, "/etc/init.d/nginx start"
+    end
+  end
+  
+  desc "Restart nginx"
+  task :restart do
+    on roles :web do |host|
+      execute :sudo, "/etc/init.d/nginx restart"
+    end
+  end
+  
+  after "deploy:finished", "nginx:setup"
+  after "deploy:finished", "nginx:reload"
+end
+
+namespace :unicorn do
+  desc "Setup Unicorn initializer and app configuration"
+  task :setup do
+    on roles :app do |host|
+      execute "mkdir -p #{shared_path}/config"
+      execute "mkdir -p #{shared_path}/tmp/pids"
+      execute "mkdir -p #{shared_path}/log"
+      template "unicorn.rb.erb", fetch(:unicorn_config)
+      template "unicorn_init.erb", "/tmp/unicorn_init"
+      execute "chmod +x /tmp/unicorn_init"
+      execute :sudo, :cp, "/tmp/unicorn_init /etc/init.d/unicorn_#{fetch(:application)}"
+      execute :rm, "/tmp/unicorn_init"
+    end
+    on roles :wep do
+      execute "mkdir -p #{shared_path}/config"
+      execute "mkdir -p #{shared_path}/tmp/pids"
+      execute "mkdir -p #{shared_path}/log"
+      template "unicorn.rb.erb", fetch(:unicorn_config)
+      template "unicorn_init.erb", "/tmp/unicorn_init"
+      execute "chmod +x /tmp/unicorn_init"
+      execute :sudo, :cp, "/tmp/unicorn_init /etc/init.d/unicorn_#{fetch(:application)}"
+      execute :rm, "/tmp/unicorn_init"
+    end
+  end
+  
+  %w[start stop restart].each do |command|
+    desc "#{command} unicorn"
+    task command do
+      on roles :app  do |host|
+        execute :sudo, "/etc/init.d/unicorn_#{fetch :application} #{command}"
+      end
+      on roles :wep  do |host|
+        execute :sudo, "/etc/init.d/unicorn_#{fetch :application} #{command}"
+      end
+    end
+  end
+  
+  before "deploy:finished", "unicorn:setup"
+  before "deploy:finished", "unicorn:start"
+end
+
+namespace :assets do
+  desc "Precompile assets on local machine and upload them to the server."
+  task :precompile do
+    on roles :web do |host|
+      run_locally do
+        execute "bundle exec rake assets:precompile"
+        execute "rsync -vr --exclude='.DS_Store' public/assets #{fetch :user}@#{host.hostname}:#{shared_path}/"
+        execute "bundle exec rake assets:clean"
+      end
+      execute :ln, "-fs", "#{shared_path}/assets #{current_path}/public/assets"
+    end
+  end
+  
+  after "deploy:finished", "assets:precompile"
+end
+
+namespace :db do
+  desc "Create and Migrate DB"
+  task :setup do
+    on roles :db do |host|
+      template "database_yml.erb", "#{release_path}/config/database.yml"
+      
+      within release_path do
+        with rails_env: :production do
+          execute :rake, "db:create"
+        end
+        with rails_env: :staging do
+          execute :rake, "db:create"
+        end
+      end
+    end
+  end
+  
+  before "deploy:updated", "db:setup"
+end
+
+
+def template(template_name, target)
+  config = File.read(File.join(File.dirname(__FILE__), "../templates", template_name))
+  upload! StringIO.new(ERB.new(config).result(binding)), target
+end

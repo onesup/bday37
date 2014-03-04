@@ -1,0 +1,6 @@
+desc "Check the uptime of all-servers"
+task :uptime do
+  on roles :all, in: :parallel do |host|
+    execute :uptime
+  end
+end
