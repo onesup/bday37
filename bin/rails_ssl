@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+# begin
+#   load File.expand_path("../spring", __FILE__)
+# rescue LoadError
+# end
+
+#!/usr/bin/env ruby
+require_relative '../config/boot'
+require 'rails/commands/server'
+require 'rack'
+require 'webrick'
+require 'webrick/https'
+
+module Rails
+  class Server < ::Rack::Server
+    def default_options
+      super.merge({
+        :Port => 3000,
+        :environment => (ENV['RAILS_ENV'] || "development").dup,
+        :daemonize => false,
+        :debugger => false,
+        :pid => File.expand_path("tmp/pids/server.pid"),
+        :config => File.expand_path("config.ru"),
+        :SSLEnable => true,
+        :SSLVerifyClient => OpenSSL::SSL::VERIFY_NONE,
+        :SSLPrivateKey => OpenSSL::PKey::RSA.new(
+             IO.read(File.expand_path("bin/development.cert.key"))),
+        :SSLCertificate => OpenSSL::X509::Certificate.new(
+             IO.read(File.expand_path("bin/development.cert.crt"))),
+        :SSLCertName => [["CN", WEBrick::Utils::getservername]]
+      })
+    end
+  end
+end
+
+APP_PATH = File.expand_path('../../config/application',  __FILE__)
+require 'rails/commands'
