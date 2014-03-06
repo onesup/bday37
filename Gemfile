@@ -8,10 +8,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem 'net-ssh', '2.8.0'
-# gem 'therubyracer',  platforms: :ruby
-# gem 'turbolinks'
-# gem 'sdoc', '~> 0.4.0',          group: :doc
-# gem 'execjs'
+gem 'turbolinks'
+gem 'therubyracer',  platforms: :ruby
+gem 'execjs'
 gem 'mysql2'
 gem 'bootstrap-sass', '~> 2.3.2.2'
 gem 'simple_form'
