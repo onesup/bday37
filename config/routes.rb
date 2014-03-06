@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'web_switch' => 'web_switch#index'
+  get 'fb_switch' => 'fb_switch#index'
+
+  root 'web_switch#index'
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
