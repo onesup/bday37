@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :pc do
     get 'index' => 'home#index'
+    resources :users
   end
 
   namespace :mobile do
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    resources :users
 
   # Example resource route with options:
   #   resources :products do
