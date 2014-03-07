@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :pc do
+    get 'index' => 'home#index'
+  end
+
+  namespace :mobile do
+    get 'index' => 'home#index'
+  end
+
   get 'web_switch' => 'web_switch#index'
   get 'fb_switch' => 'fb_switch#index'
 

@@ -1,0 +1,2 @@
+module Pc::HomeControllerHelper
+end
