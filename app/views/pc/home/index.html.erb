@@ -1,22 +1,35 @@
- 	<%= form_for([:pc, @user], remote: true) do |f| %>
-	<!-- 내 번호 -->	
-		<div>
-      <%= select_year(Date.today, {start_year: 1900, end_year: 2014}, {name:'user[birthday_year]'})%>
-      <%=select_tag "user[birthday_month]", options_for_select([ "3", "4" ], "3")%>
-      <%= select_day(Date.today, {start_day: 1, end_day: 31}, {name:'user[birthday_day]'})%>
-		</div>
-		<div>
-			<input type = 'text' id='popup_name' name='user[name]' class="popUp_2_Input" value="" maxlength="4" />
-		</div>
-		<div>
-			<input type = 'text' id='popup_phone_1' name='user[phone_1]' class="popUp_2_Input" value="" maxlength="4" />
-			-
-			<input type = 'text' id='popup_phone_2' name='user[phone_2]' class="popUp_2_Input" value="" maxlength="4" />
-			-
-			<input type = 'text' id='popup_phone_3' name='user[phone_3]' class="popUp_2_Input" value="" maxlength="4" /><br />
-		</div>
-		<div>
-			<input type = 'submit' id='popup_submit' name='submit' class="popUp_2_Input" value="save" />
-		</div>
-	<%end%>
-
+<!doctype html>
+<html>
+  <head>
+    <title>su:m</title>
+  </head>
+  <body class="body_class">
+    <div class="contain">
+      <div class="header"> <!-- Header -->
+        <%= image_tag("pc/logo.png", class: "header_logo") %>
+        <%= image_tag("pc/term.png", class: "header_term") %>
+      </div>
+      <div class="content"> <!-- Content -->
+        <%= image_tag("pc/title.png", class: "content_title") %><br />
+        <%= image_tag "pc/label_1.png" %><br /><br />
+        <%= image_tag "pc/button.png" %><br /><br />
+        <%= image_tag "pc/label_2.png" %>
+        <div class="share">
+          <%= image_tag "pc/share_label.png" %>
+          <%= image_tag("pc/share_facebook.png", class: "share_icon") %>
+          <%= image_tag("pc/share_twitter.png", class: "share_icon") %>
+        </div>
+        <%= image_tag("pc/product.png", class: "product") %><br />
+      </div>
+      <div class="video"> <!-- Video -->
+        <%= image_tag "pc/line.png" %><br /><br />
+        <%= image_tag("pc/vedio_label.png", class: "video_label") %>
+        <%= image_tag("pc/vedio_button.png", class: "video_button") %><br />
+        <%= image_tag "pc/vedio.png" %>
+      </div>
+      <div> <!-- Caution -->
+        <%= image_tag "pc/caution.png" %>
+      </div>
+    </div>
+  </body>
+</html>

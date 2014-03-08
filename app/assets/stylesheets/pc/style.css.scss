@@ -1,0 +1,64 @@
+.body_class{
+  background-color: #ECDFBF;
+  margin: 0;
+}
+
+.contain{
+  width: 810px;
+  position: absolute;
+  left: 50%;
+  margin-left: -405px;
+}
+
+.header{
+  margin-top: 32px;
+}
+
+.haeder_logo{
+  float: left;
+}
+
+.header_term{
+  float: right;
+}
+
+.content{
+  margin-top: 64px;
+  text-align: center;
+  background-image: asset-url("pc/backimg.png");
+  background-position: 0% 80%;
+}
+
+.content_title{
+  margin-bottom: -12px;
+}
+
+.share{
+  margin-top: 18px;
+  margin-bottom: 24px;
+}
+
+.share_icon{
+  margin-bottom: -8px;
+}
+
+.product{
+  margin-left: -65px;
+}
+
+.video{
+  width: 640px;
+  margin-left: 85px;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.video_label{
+  float: left;
+  margin-top: 8px;
+}
+
+.video_button{
+  float: right;
+  margin-bottom: 24px;
+}
