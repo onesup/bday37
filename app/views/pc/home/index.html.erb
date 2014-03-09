@@ -26,7 +26,9 @@
       <div class="video"> <!-- Video -->
         <%= image_tag "pc/line.png" %><br /><br />
         <%= image_tag("pc/vedio_label.png", class: "video_label") %>
-        <%= image_tag("pc/vedio_button.png", class: "video_button") %><br />
+        <%= link_to "#", id: "product_button" do %>
+          <%= image_tag("pc/vedio_button.png", class: "video_button") %>
+        <% end %><br />
         <iframe width="640" height="390" src="//www.youtube.com/embed/x1ZV_sq-0q0" frameborder="0" allowfullscreen></iframe>
       </div>
       <div> <!-- Caution -->
@@ -41,7 +43,7 @@
         <%= image_tag("pc/popup/info/label.png", class: "info_label") %><br />
         <div class="info_birth">
           <br />
-          <%= select_year(Date.today, {start_year: 1900, end_year: 2014}, {name:'user[birthday_year]'})%>
+          <%= select_year(Date.today, {start_year: 1900, end_year: 2014}, {name:'user[birthday_year]', class:'select_custom'})%>
           <%= image_tag("pc/popup/info/birth_label_1.png") %>
           <%=select_tag "user[birthday_month]", options_for_select([ "3", "4" ], "3")%>
           <%= image_tag("pc/popup/info/birth_label_2.png") %>
@@ -131,6 +133,13 @@
         <%= link_to "#", class: "b-close" do %>
           <%= image_tag("pc/popup/fin2/button.png") %>
         <% end %>
+      </div>
+      <div id="popup_product">
+        <%= link_to "#", class: "b-close" do %>
+          <%= image_tag("pc/popup/close.png", class: "close") %>
+        <% end %><br /><br /><br />
+        <%= image_tag("pc/popup/product/label.png") %><br /><br /><br />
+        <%= image_tag("pc/popup/product/product.png") %><br /><br />
       </div>
     </div>
   </body>

@@ -80,6 +80,33 @@
   text-align: center;
 }
 
+.customSelect {
+/* Styles For Your Select Box */
+
+}
+
+.customSelect.changed {
+/* You can use this if you want a different style after user has made a selection */
+}
+
+.customSelectFocus {
+/* You can use this if you want a different style after user has made a selection */
+}
+
+.customSelectOpen {
+/* You can use this if you want a different style after user has made a selection */
+}
+
+.customSelectInner {
+
+}
+
+.myOwnClassName{
+  width: 64px;
+  height: 24px;
+  border: 1px solid gray;
+}
+
 .info_title{
   margin-top: 8px;
 }
@@ -176,4 +203,12 @@
   width: 420px;
   height: 266px;
   background-image: asset-url("pc/popup/finT/bg.png");
+}
+
+#popup_product{
+  display: none;
+  width: 451px;
+  height: 521px;
+  background-image: asset-url("pc/popup/product/bg.png");
+  text-align: center;
 }

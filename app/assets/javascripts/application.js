@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require pc
 //= require jquery.bpopup.min
+//= require jquery.customSelect.min

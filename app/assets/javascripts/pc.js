@@ -9,6 +9,8 @@ $(document).ready(function(){
   */
 
   // by Kyoseung
+  $(".select_custom").customSelect({customClass:'myOwnClassName'});
+
   $("#gift_button").click(function(e){
     e.preventDefault();
     $("#popup_info").bPopup({
@@ -30,6 +32,14 @@ $(document).ready(function(){
       modalColor: '#000'
     });
   });
+
+  $("#product_button").click(function(e){
+    e.preventDefault();
+    $("#popup_product").bPopup({
+      modalColor: '#000'
+    });
+  });
+
 });
 
 
