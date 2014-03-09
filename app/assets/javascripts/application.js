@@ -17,3 +17,4 @@
 //= require jquery.bpopup.min
 //= require jquery.customSelect.min
 //= require icheck.min
+//= require jquery.selectBox

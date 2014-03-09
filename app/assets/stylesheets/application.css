@@ -14,4 +14,5 @@
  *= require_self
  *= require pc/style
  *= require pc/icheck/skins/all
+ *= require pc/jquery.selectBox
  */

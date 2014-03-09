@@ -8,9 +8,12 @@ $(document).ready(function(){
   });
   */
 
-  // by K
-  $(".select_custom").customSelect();
-  $(".select_custom2").customSelect({customClass:'customSelect2'});
+  // aa
+
+  //$(".select_custom").customSelect();
+  //$(".select_custom2").customSelect({customClass:'customSelect2'});
+  $(".select_custom_1").selectBox();
+  $(".select_custom_2").selectBox();
 
   $("#gift_button").click(function(e){
     e.preventDefault();
