@@ -12,8 +12,10 @@ $(document).ready(function(){
 
   //$(".select_custom").customSelect();
   //$(".select_custom2").customSelect({customClass:'customSelect2'});
-  $(".select_custom_1").selectBox();
-  $(".select_custom_2").selectBox();
+  // $(".select_custom_1").selectBox();
+  // $(".select_custom_2").selectBox();
+  $('.select_custom_1').selectric();
+  $('.select_custom_2').selectric();
 
   $("#gift_button").click(function(e){
     e.preventDefault();
