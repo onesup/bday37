@@ -1,6 +1,8 @@
 .body_class{
-  background-color: #ECDFBF;
+  background-color: #E4D6B2;
   margin: 0;
+  background-image: asset-url("pc/bg_repeat.png");
+  background-repeat: repeat-x;
 }
 
 .contain{
@@ -8,6 +10,7 @@
   position: absolute;
   left: 50%;
   margin-left: -405px;
+  background-image: asset-url("pc/bg.png");
 }
 
 .header{
@@ -27,6 +30,7 @@
   text-align: center;
   background-image: asset-url("pc/backimg.png");
   background-position: 0% 80%;
+  background-repeat: no-repeat;
 }
 
 .content_title{
