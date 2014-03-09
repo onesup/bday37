@@ -16,10 +16,17 @@ $(document).ready(function(){
     });
   });
 
-$("#popup_info_to_personal").click(function(e){
+  $("#popup_info_to_personal").click(function(e){
     e.preventDefault();
     $("#popup_personal").bPopup({
       closeClass: 'b-close-2',
+      modalColor: '#000'
+    });
+  });
+
+  $("#info_fin").click(function(e){
+    e.preventDefault();
+    $("#popup_fin1").bPopup({
       modalColor: '#000'
     });
   });

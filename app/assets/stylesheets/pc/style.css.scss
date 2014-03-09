@@ -77,10 +77,82 @@
   width: 450px;
   height: 522px;
   background-image: asset-url("pc/popup/info/bg.png");
+  text-align: center;
 }
 
-#popup_info_to_personal{
-  
+.info_title{
+  margin-top: 8px;
+}
+
+.info_label{
+  margin-top: 8px;
+}
+
+.info_birth{
+  width: 369px;
+  height: 103px;
+  margin-left: 41px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-image: asset-url("pc/popup/info/birth_bg.png");
+}
+
+.info_other{
+  width: 369px;
+  margin-left: 41px;
+  text-align: left;
+}
+
+.info_input_label_1{
+  margin-left: 109px;
+}
+
+.info_input_label_2{
+  margin-left: 78px;
+}
+
+.info_input_label_3{
+  margin-left: 48px;
+}
+
+.info_input_name{
+  width: 108px;
+  height: 24px;
+  border-weight: 4px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 24px;
+  margin-left: 12px;
+  margin-bottom: 4px;
+}
+
+.info_input_call{
+  width: 108px;
+  height: 24px;
+  border-weight: 4px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 24px;
+  margin-left: 12px;
+  margin-bottom: 4px;
+}
+
+.info_input_radio{
+  weight: 24px;
+  height: 24px;
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  -ms-appearance: checkbox;
+  -o-appearance: checkbox;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.personal_caution{
+  width: 400px;
+  margin-left: 25px;
+  height: 400px;
+  resize: none;
 }
 
 #popup_personal{
@@ -88,4 +160,20 @@
   width: 450px;
   height: 522px;
   background-image: asset-url("pc/popup/personal/bg.png");
+}
+
+#popup_fin1{
+  display: none;
+  width: 420px;
+  height: 266px;
+  background-image: asset-url("pc/popup/finT/bg.png");
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+#popup_fin2{
+  display: none;
+  width: 420px;
+  height: 266px;
+  background-image: asset-url("pc/popup/finT/bg.png");
 }
