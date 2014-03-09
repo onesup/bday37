@@ -66,3 +66,26 @@
   float: right;
   margin-bottom: 24px;
 }
+
+.close{
+  float: right;
+  margin: 4px;
+}
+
+#popup_info{
+  display: none;
+  width: 450px;
+  height: 522px;
+  background-image: asset-url("pc/popup/info/bg.png");
+}
+
+#popup_info_to_personal{
+  
+}
+
+#popup_personal{
+  display: none;
+  width: 450px;
+  height: 522px;
+  background-image: asset-url("pc/popup/personal/bg.png");
+}

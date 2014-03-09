@@ -12,7 +12,9 @@
       <div class="content"> <!-- Content -->
         <%= image_tag("pc/title.png", class: "content_title") %><br />
         <%= image_tag "pc/label_1.png" %><br /><br />
-        <%= image_tag "pc/button.png" %><br /><br />
+        <%= link_to "#", id: "gift_button" do %>
+          <%= image_tag "pc/button.png" %>
+        <% end %><br /><br />
         <%= image_tag "pc/label_2.png" %>
         <div class="share">
           <%= image_tag "pc/share_label.png" %>
@@ -29,6 +31,19 @@
       </div>
       <div> <!-- Caution -->
         <%= image_tag "pc/caution.png" %>
+      </div>
+      <!-- popup -->
+      <div id="popup_info">
+        <%= link_to "#", class: "b-close" do %>
+          <%= image_tag("pc/popup/close.png", class: "close") %>
+        <% end %>
+        개인정보 입력 <%= link_to "#", id: "popup_info_to_personal" do %>popup<% end %>
+      </div>
+      <div id="popup_personal">
+        <%= link_to "#", class: "b-close-2" do %>
+          <%= image_tag("pc/popup/close.png", class: "close") %>
+        <% end %>
+        이용약관 입력 popup
       </div>
     </div>
   </body>
