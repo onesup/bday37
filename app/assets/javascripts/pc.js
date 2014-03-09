@@ -8,8 +8,9 @@ $(document).ready(function(){
   });
   */
 
-  // by Kyoseung
-  $(".select_custom").customSelect({customClass:'myOwnClassName'});
+  // by K
+  $(".select_custom").customSelect();
+  $(".select_custom2").customSelect({customClass:'customSelect2'});
 
   $("#gift_button").click(function(e){
     e.preventDefault();
@@ -38,6 +39,12 @@ $(document).ready(function(){
     $("#popup_product").bPopup({
       modalColor: '#000'
     });
+  });
+
+  $("#info_input_radio").iCheck({
+    checkboxClass: 'icheckbox_minimal',
+    radioClass: 'iradio_minimal',
+    increaseArea: '20%' // optional
   });
 
 });

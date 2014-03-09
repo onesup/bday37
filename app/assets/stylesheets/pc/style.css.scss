@@ -1,3 +1,7 @@
+img{
+  border: 0;
+}
+
 .body_class{
   background-color: #E4D6B2;
   margin: 0;
@@ -80,27 +84,6 @@
   text-align: center;
 }
 
-.customSelect {
-/* Styles For Your Select Box */
-
-}
-
-.customSelect.changed {
-/* You can use this if you want a different style after user has made a selection */
-}
-
-.customSelectFocus {
-/* You can use this if you want a different style after user has made a selection */
-}
-
-.customSelectOpen {
-/* You can use this if you want a different style after user has made a selection */
-}
-
-.customSelectInner {
-
-}
-
 .myOwnClassName{
   width: 64px;
   height: 24px;
@@ -140,6 +123,11 @@
 
 .info_input_label_3{
   margin-left: 48px;
+  margin-right: 4px;
+}
+
+.info_caution_class{
+  margin-top: 6px;
 }
 
 .info_input_name{
@@ -164,15 +152,20 @@
   margin-bottom: 4px;
 }
 
-.info_input_radio{
+#info_input_radio{
   weight: 24px;
   height: 24px;
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
   -ms-appearance: checkbox;
   -o-appearance: checkbox;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.to_personal{
   margin-left: 8px;
-  margin-right: 8px;
+  margin-bottom: -7px;
 }
 
 .personal_caution{
@@ -187,6 +180,13 @@
   width: 450px;
   height: 522px;
   background-image: asset-url("pc/popup/personal/bg.png");
+}
+
+.select_style_1{
+  width: 64px;
+  height: 24px;
+  border: 1px solid gray;
+  text-align: left;
 }
 
 #popup_fin1{
@@ -211,4 +211,105 @@
   height: 521px;
   background-image: asset-url("pc/popup/product/bg.png");
   text-align: center;
+}
+
+.birth_label_class{
+  margin-bottom: -4px;
+}
+
+span.customSelect {
+    font:12px sans-serif;
+    background:#fff asset-url("pc/arrow.png") right center no-repeat;
+    background-size: 18px;
+    border:1px solid #ddd;
+    color:#555;
+    padding:4px 9px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px 2px;
+    width:64px;
+    text-align: left;
+}
+.customSelect.customSelectHover {
+    border-color:#c7c7c7;
+    background-color:#f5f5f5;
+}
+.customSelect.customSelectFocus {
+    border-color:Orange;
+}
+.customSelect.customSelectOpen {
+    border-color:OliveDrab;
+}
+
+span.customSelect2 {
+    font:12px sans-serif;
+    background:#fff asset-url("pc/arrow.png") right center no-repeat;
+    background-size: 18px;
+    border:1px solid #ddd;
+    color:#555;
+    padding:4px 9px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px 2px;
+    width:42px;
+    text-align: left;
+}
+.customSelect2.customSelectHover {
+    border-color:#c7c7c7;
+    background-color:#f5f5f5;
+}
+.customSelect2.customSelectFocus {
+    border-color:Orange;
+}
+.customSelect2.customSelectOpen {
+    border-color:OliveDrab;
+}
+
+
+.customSelect.customSelectChanged {
+	-webkit-animation: changed 0.5s;
+	-moz-animation: changed 0.5s;
+	-ms-animation: changed 0.5s;
+	animation: changed 0.5s;
+}
+
+@-webkit-keyframes changed {
+	0%, 100%{
+		-webkit-box-shadow: 0px 0px 14px 5px rgba(151, 67, 159, 0);
+		box-shadow: 0px 0px 14px 5px rgba(151, 67, 159, 0);
+	}
+	50%{
+		-webkit-box-shadow: 0px 0px 14px 5px rgba(151, 67, 159, 0.5);
+		box-shadow: 0px 0px 14px 5px rgba(151, 67, 159, 0.5);
+	}
+}
+
+@-moz-keyframes changed {
+	0%, 100%{
+		-moz-box-shadow: 0px 0px 14px 5px rgba(151, 67, 159, 0);
+		box-shadow: 0px 0px 14px 5px rgba(151, 67, 159, 0);
+	}
+	50%{
+		-moz-box-shadow: 0px 0px 14px 5px rgba(151, 67, 159, 0.5);
+		box-shadow: 0px 0px 14px 5px rgba(151, 67, 159, 0.5);
+	}
+}
+
+@keyframes changed {
+	0%, 100%{
+		box-shadow:0px 0px 14px 5px rgba(151, 67, 159, 0);
+	}
+	50% {
+		box-shadow:0px 0px 14px 5px rgba(151, 67, 159, 0.5);
+	}
+}
+@-ms-keyframes changed {
+	0%, 100%{
+		-ms-box-shadow:0px 0px 14px 5px rgba(151, 67, 159, 0);
+		box-shadow:0px 0px 14px 5px rgba(151, 67, 159, 0);
+	}
+	50% {
+		-ms-box-shadow: 0px 0px 14px 5px rgba(151, 67, 159, 0);
+		box-shadow: 0px 0px 14px 5px rgba(151, 67, 159, 0.5);
+	}
 }

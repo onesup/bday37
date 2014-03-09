@@ -16,3 +16,4 @@
 //= require pc
 //= require jquery.bpopup.min
 //= require jquery.customSelect.min
+//= require icheck.min

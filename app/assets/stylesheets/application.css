@@ -12,5 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= pc/style
+ *= require pc/style
+ *= require pc/icheck/skins/all
  */
