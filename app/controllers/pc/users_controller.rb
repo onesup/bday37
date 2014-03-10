@@ -8,7 +8,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     birthday = params[:user][:birthday_year]+"-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
     @user.birthday = DateTime.parse(birthday)
     respond_to do |format|
-      if @user.save!
+      if @user.save
         m=Message.send_to(@user)
         puts "@@@@@@@@@@@@@@@@@@@@@@"+m.id.to_s
         format.html { redirect_to pc_index_path, notice: 'User was successfully created.' }

@@ -26,9 +26,10 @@ $(document).ready(function(){
         closeClass: 'b-close',
         modalColor: '#000'
       });
-    }else{
-      alert("입력된 정보가 정확하지 않습니다. 입력 정보를 확인해주세요.");
     }
+    
+  }).bind('ajax:error',function(evt,status,error){
+    alert("dsdsds");
   });
   
   $("#product_button").click(function(e){
