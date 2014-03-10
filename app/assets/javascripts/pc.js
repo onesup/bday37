@@ -28,8 +28,10 @@ $(document).ready(function(){
       });
     }
     
-  }).bind('ajax:error',function(evt,status,error){
-    alert("dsdsds");
+  }).bind('ajax:error',function(evt,xhr,status,error){
+    var $form = $(this),errors,errorText;
+        errors = $.parseJSON(xhr.responseText);
+    validation(errors);
   });
   
   $("#product_button").click(function(e){
@@ -45,3 +47,16 @@ $(document).ready(function(){
     increaseArea: '20%' // optional
   });
 });
+
+function validation(errors){
+      for ( error in errors ) {
+      $('input[data-name ='+error+']').parent().find('span').remove();
+      $('input[data-name ='+error+']').after('<span class="star">*</span>');
+      // $('input[data-name ='+error+']').next().empty('span');
+      }
+}
+
+
+
+
+
