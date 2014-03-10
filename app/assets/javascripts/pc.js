@@ -31,14 +31,19 @@ $(document).ready(function(){
       modalColor: '#000'
     });
   });
-
-  $("#info_fin").click(function(e){
-    e.preventDefault();
-    $("#popup_fin1").bPopup({
-      modalColor: '#000'
-    });
-  });
-
+  $( "#info_fin" ).submit(function( event ) {
+    event.preventDefault();
+    alert( "Handler for .submit() called." );
+  });  
+  
+// $( document ).on( "submit", "#info_fin" function(e) {
+//     e.preventDefault();
+//     $.rails.handleRemote($(this));
+//     $("#popup_fin1").bPopup({
+//       modalColor: '#000'
+//     });
+//   }); 
+  
   $("#product_button").click(function(e){
     e.preventDefault();
     $("#popup_product").bPopup({
