@@ -47,11 +47,11 @@ class Message < ActiveRecord::Base
     call_status = String.new
     start = Time.new
     during_time = 0
-    while call_status.empty? or call_status == "result is null" or during_time < 3.minutes
-      sleep(10.seconds)
-      call_status = report(cmid, time)
-      during_time = Time.now - start
-    end
+    # while call_status.empty? or call_status == "result is null" or during_time < 3.minutes
+ #      sleep(10.seconds)
+ #      call_status = report(cmid, time)
+ #      during_time = Time.now - start
+ #    end
   end
   
   def waiting_for_result(interval_time, finish_time)

@@ -1,25 +1,12 @@
 $(document).ready(function(){
-    // _gaq.push(['_trackEvent', 'button', 'click', 'img down 1546']);
-    // loadJsFile('http://i42.icast-ad.com/track?ccd=1242&mcd=01040601&pcd=1546');
-    /*
-  $('#new_user').live('submit', function(e) {
-    $.rails.handleRemote( $(this) );
-    e.preventDefault();
-  });
-  */
-
-  // aa
-
-  //$(".select_custom").customSelect();
-  //$(".select_custom2").customSelect({customClass:'customSelect2'});
-  // $(".select_custom_1").selectBox();
-  // $(".select_custom_2").selectBox();
+  // _gaq.push(['_trackEvent', 'button', 'click', 'img down 1546']);
+  // loadJsFile('http://i42.icast-ad.com/track?ccd=1242&mcd=01040601&pcd=1546');
   $('.select_custom_1').selectric();
   $('.select_custom_2').selectric();
 
   $("#gift_button").click(function(e){
     e.preventDefault();
-    $("#popup_info").bPopup({
+    $("#popup_info").bPopup({ 
       modalColor: '#000'
     });
   });
@@ -31,18 +18,18 @@ $(document).ready(function(){
       modalColor: '#000'
     });
   });
-  $( "#info_fin" ).submit(function( event ) {
-    event.preventDefault();
-    alert( "Handler for .submit() called." );
-  });  
-  
-// $( document ).on( "submit", "#info_fin" function(e) {
-//     e.preventDefault();
-//     $.rails.handleRemote($(this));
-//     $("#popup_fin1").bPopup({
-//       modalColor: '#000'
-//     });
-//   }); 
+
+  $("#new_user").bind("ajax:success", function(evt,data,status,xhr){
+    response = JSON.parse(xhr.responseText);
+    if(response.status==="success"){
+      $("#popup_fin1").bPopup({
+        closeClass: 'b-close',
+        modalColor: '#000'
+      });
+    }else{
+      alert("입력된 정보가 정확하지 않습니다. 입력 정보를 확인해주세요.");
+    }
+  });
   
   $("#product_button").click(function(e){
     e.preventDefault();
@@ -56,17 +43,4 @@ $(document).ready(function(){
     radioClass: 'iradio_minimal',
     increaseArea: '20%' // optional
   });
-
 });
-
-
-$.rails.fire = function(obj, name, data) {
-  var event = $.Event(name);
-
-  // Custom code:
-  // e.g. "Fire ajax:before for my-form!"
-  console.log("Fire " + name + " for " + obj.attr('id') + "!");
-
-  obj.trigger(event, data);
-  return event.result !== false;
-};

@@ -37,7 +37,7 @@
       </div>
       <!-- popup -->
       <div id="popup_info">
-        <%= form_for([:pc, @user], remote: true) do |f| %>
+        <%= form_for([:pc, @user], remote: true, html: {'data-type'=>'json'}) do |f| %>
         <%= link_to "#", class: "b-close" do %>
           <%= image_tag("pc/popup/close.png", class: "close") %>
         <% end %><br /><br />
@@ -57,14 +57,14 @@
           <%= image_tag("pc/popup/info/info_label_1.png", class:"info_input_label_1") %>
           <input type='text' id='info_name' name='user[name]' class="info_input_name" value="" maxlength="4" /><br />
           <%= image_tag("pc/popup/info/info_label_2.png", class:"info_input_label_2") %>
-          <input type='text' id='info_phone' name='user[phone_3]' class="info_input_call" value="" maxlength="11" /><br />
+          <input type='text' id='info_phone' name='user[phone]' class="info_input_call" value="" maxlength="11" /><br />
           <%= image_tag("pc/popup/info/info_label_3.png", class:"info_input_label_3") %>
           <input type="checkbox" name="agree" id="info_input_radio" value="d" />
           <%= link_to "#", id: "popup_info_to_personal" do %>
             <%= image_tag("pc/popup/info/info_personal_button.png", class: "to_personal") %>
           <% end %><br /><br />
         </div>
-        <%= image_submit_tag("pc/popup/info/button.png",{id: "info_fin", class: "b-close"}) %>
+        <%= image_submit_tag("pc/popup/info/button.png",{id: "info_fin"}) %>
         <br /><br /><br />
         <%= image_tag("pc/popup/info/info_caution.png", class:"info_caution_class") %>
       <%end%>
