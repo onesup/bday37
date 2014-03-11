@@ -1,6 +1,7 @@
 class CouponsController < ApplicationController
   before_action :set_coupon, only: [:destroy, :update, :edit, :show]
   def update
+    @coupon.used_at=Time.now
     respond_to do |format|
       if @coupon.update(coupon_params)
         format.html { redirect_to coupon_path(@coupon.code), notice: 'Coupon was successfully updated.' }
