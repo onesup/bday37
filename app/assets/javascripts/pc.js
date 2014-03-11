@@ -18,7 +18,7 @@ $(document).ready(function(){
       modalColor: '#000'
     });
   });
-
+    
   $("#new_user").bind("ajax:success", function(evt,data,status,xhr){
     response = JSON.parse(xhr.responseText);
     if(response.status==="success"){
