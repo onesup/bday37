@@ -62,6 +62,7 @@ function validation(errors){
     }
   }else{
     //폰있다
+    console.log("111폰있다");
     if(errors.phone.indexOf("has already been taken") !=-1){
       //중복이다
       $("#popup_fin2").bPopup({
@@ -71,6 +72,7 @@ function validation(errors){
       });        
     }else{
       //중복 아니다
+      console.log("중복아니다");
       for ( error in errors ) {
         $('input[data-name ='+error+']').parent().find('span').remove();
         $('input[data-name ='+error+']').after('<span class="star">*</span>');
@@ -79,9 +81,6 @@ function validation(errors){
     }   
   }
 }
-
-
-
 
 
 
