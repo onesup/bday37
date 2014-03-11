@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20140311070554) do
 
   create_table "coupons", force: true do |t|
     t.integer  "user_id"
+    t.integer  "message_id"
     t.string   "code"
     t.string   "status",     default: "not_used"
     t.datetime "used_at"
@@ -22,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140311070554) do
     t.datetime "updated_at"
   end
 
+  add_index "coupons", ["message_id"], name: "index_coupons_on_message_id", using: :btree
   add_index "coupons", ["user_id"], name: "index_coupons_on_user_id", using: :btree
 
   create_table "messages", force: true do |t|

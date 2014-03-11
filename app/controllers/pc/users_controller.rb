@@ -13,7 +13,8 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
         c.code = c.random_code
         c.user = @user
         c.save
-        m = Message.send_to(@user)
+        m = Message.send_to(c)
+       
         puts "@@@@@@@@@@@@@@@@@@@@@@"+m.id.to_s
         format.html { redirect_to pc_index_path, notice: 'User was successfully created.' }
         format.json { render json: {status: "success"}, status: :created, location: @user }
