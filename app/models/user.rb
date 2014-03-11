@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :messages
   validates :name, presence: true
   validates :phone, presence: true
+  validates :phone, uniqueness: true
   validates :birthday, presence: true
   
   # Include default devise modules. Others available are:

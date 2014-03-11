@@ -27,11 +27,14 @@ $(document).ready(function(){
         modalColor: '#000',
         onClose: function(){$("#popup_info").bPopup().close();}  
       });
+    }else{
     }            
     
   }).bind('ajax:error',function(evt,xhr,status,error){
     var $form = $(this),errors,errorText;
-        errors = $.parseJSON(xhr.responseText);
+    errors = $.parseJSON(xhr.responseText);
+      
+
     validation(errors);
   });
   
@@ -50,12 +53,33 @@ $(document).ready(function(){
 });
 
 function validation(errors){
-      for ( error in errors ) {
+  if(Object.keys(errors).indexOf("phone") == -1){
+    //폰없다 
+    for ( error in errors ) {
       $('input[data-name ='+error+']').parent().find('span').remove();
       $('input[data-name ='+error+']').after('<span class="star">*</span>');
-      // $('input[data-name ='+error+']').next().empty('span');
-      }
+      // $('input[data-name ='+error+']').next().empty('span'); 
+    }
+  }else{
+    //폰있다
+    if(errors.phone.indexOf("has already been taken") !=-1){
+      //중복이다
+      $("#popup_fin2").bPopup({
+        closeClass: 'b-close',
+        modalColor: '#000',
+        onClose: function(){$("#popup_info").bPopup().close();}
+      });        
+    }else{
+      //중복 아니다
+      for ( error in errors ) {
+        $('input[data-name ='+error+']').parent().find('span').remove();
+        $('input[data-name ='+error+']').after('<span class="star">*</span>');
+        // $('input[data-name ='+error+']').next().empty('span');  
+      } 
+    }   
+  }
 }
+
 
 
 
