@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :messages
+  has_one :coupon
   validates :name, presence: true
   validates :phone, presence: true
   validates :phone, uniqueness: true
