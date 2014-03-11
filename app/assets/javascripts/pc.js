@@ -24,9 +24,10 @@ $(document).ready(function(){
     if(response.status==="success"){
       $("#popup_fin1").bPopup({
         closeClass: 'b-close',
-        modalColor: '#000'
+        modalColor: '#000',
+        onClose: function(){$("#popup_info").bPopup().close();}  
       });
-    }
+    }            
     
   }).bind('ajax:error',function(evt,xhr,status,error){
     var $form = $(this),errors,errorText;
