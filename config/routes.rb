@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   namespace :pc do
     get 'index' => 'home#index'
     resources :users
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
 
   namespace :mobile do
     get 'index' => 'home#index'
+    get 'thank_you' => 'home#thank_you'
+    resources :users
   end
 
   get 'web_switch' => 'web_switch#index'
@@ -29,9 +32,9 @@ Rails.application.routes.draw do
   get "/:code", to:"coupons#show", contraints:{code: /[a-z]{5}-\d{4}/}, as: "coupon"
   get "/:code/edit", to:"coupons#edit", contraints:{code: /[a-z]{5}-\d{4}/}, as: "edit_coupon"
   put "/:code", to:"coupons#update", contraints:{code: /[a-z]{5}-\d{4}/}, as: "update_coupon"
-    resources :users
-    resources :coupons, except: [:update, :edit, :show] do
-    end
+  resources :users
+  resources :coupons, except: [:update, :edit, :show] do
+  end
     
     
   # Example resource route with options:

@@ -457,3 +457,193 @@ body{background: #d4e5e9;}
 
 
 }
+
+
+/*-----------------------------------------------------
+* term.html.erb
+*----------------------------------------------------*/
+.container-close-edited {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+
+  .btn_close {
+    float: right;
+  }
+}
+#terms {
+  margin: 0;
+  padding: 0 30px;
+  color: #333;
+  font-family: 'Dotum';
+  font-size: 15px;
+  line-height: 2em;
+  word-break: break-all;
+  white-space: pre-line;
+}
+
+/*-----------------------------------------------------
+* coupon.html.erb
+*----------------------------------------------------*/
+#coupon {
+  width: 600px;
+  margin: 0 auto;
+}
+
+/*-----------------------------------------------------
+* thanks.html.erb
+*----------------------------------------------------*/
+#thanks {
+  width: 600px;
+  margin: 0 auto;
+
+  .text_thanks {
+    padding-left: 22%;
+    width: 55%;
+  }
+
+  .btn_finish {
+    margin-top: 5%;
+    padding-left: 30%;
+    width: 40%;
+  }
+}
+
+/*-----------------------------------------------------
+* duplication.html.erb
+*----------------------------------------------------*/
+#duplication {
+  width: 600px;
+  margin: 0 auto;
+
+  .text_duplicate {
+    width: 70%;
+    padding-left: 15%;
+  }
+
+  .btn_duplicate {
+    width: 40%;
+    margin-top: 6%;
+    padding-left: 30%;
+  }
+}
+
+/*-----------------------------------------------------
+* coupon.html.erb
+*----------------------------------------------------*/
+#coupon {
+
+  width: 600px;
+  margin: 0 auto;
+
+  .text_coupon {
+    width: 70%;
+    padding-left: 15%;
+  }
+
+  .container-buttons {
+
+    margin-top: 5%;
+    padding-left: 10%;
+
+    .btn_coupon_use {
+      width: 42%;
+      margin-right: 3%;
+    }
+
+    .btn_coupon_notuse {
+      width: 42%;
+    }
+
+  }
+}
+/*-----------------------------------------------------
+* coupon_success.html.erb
+*----------------------------------------------------*/
+#coupon_success {
+
+  width: 600px;
+  margin: 5% auto 0 auto;
+  padding: 0;
+
+  .container-logo {
+    margin-bottom: 15%;
+    float: left;
+
+    .logo {
+      width: 80%;
+      padding-left: 12%;
+
+      @media (max-width: 767px) {
+        width: 70%;
+        padding-left: 3%;
+        margin-left: 12%;
+      }
+    }
+  }
+
+  .name {
+    position: absolute;
+    left: 10%;
+    top: 8.3%;
+    font-size: 2em;
+    
+    @media (max-width: 767px) {
+      left: 10%;
+      top: 8.3%;
+      font-size: 1.8em;
+    }
+
+    @media (max-width: 480px) {
+      left: 9%;
+      top: 8.7%;
+      font-size: 1.5em;
+    }
+
+  }
+
+  .text_coupon_top {
+    margin-bottom: 10%;
+    margin-left: 3%;
+    padding-left: 2%;
+    width: 90%;
+  }
+
+  .container-product {
+    margin-bottom: 5%;
+    padding-left: 6%;
+
+    .product {
+      width: 95%;
+      margin-bottom: -10%;
+    }
+  }
+
+  .text_product_caution {
+    width: 80%;
+  }
+
+  .bottom {
+
+    padding: 10% 0 0 10%;
+    padding-bottom: 8%;
+    background: white;
+
+    .text_coupon_caution2 {
+      width: 70%;
+    }
+
+    .btn_coupon_use_before {
+      margin-top: 5%;
+      width: 90%;
+    }
+
+    .btn_coupon_use_after {
+      margin-top: 5%;
+      width: 90%;
+    }
+
+  }
+
+}
+
