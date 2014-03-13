@@ -33,8 +33,7 @@ img{
 .content{
   margin-top: 64px;
   text-align: center;
-  background: asset-url("pc/backimg.png") no-repeat 80px 220px;
-  height:800px;
+  background: asset-url("pc/backimg.png") no-repeat 100px 220px;
 }
 
 .c_title{
@@ -76,6 +75,7 @@ img{
   text-align: center;
   border-top:1px solid #97a7ad;
   padding-top:20px;
+  margin-top:40px;
 }
 
 .video_label{
@@ -117,11 +117,11 @@ img{
 
 .info_birth{
   width: 369px;
-  height: 103px;
+  height: 83px;
   margin-left: 41px;
-  margin-top: 16px;
   margin-bottom: 16px;
-  background-image: asset-url("pc/popup/info/birth_bg.png");
+  margin-top:140px;
+  padding-top:20px;
 }
 
 .info_other{
@@ -151,8 +151,7 @@ img{
   width: 108px;
   height: 24px;
   border-weight: 4px;
-  font-size: 20px;
-  text-align: center;
+  font-size: 13px;
   line-height: 24px;
   margin-left: 12px;
   margin-bottom: 4px;
@@ -162,8 +161,7 @@ img{
   width: 108px;
   height: 24px;
   border-weight: 4px;
-  font-size: 12px;
-  text-align: center;
+  font-size: 13px;
   line-height: 24px;
   margin-left: 12px;
   margin-bottom: 4px;
