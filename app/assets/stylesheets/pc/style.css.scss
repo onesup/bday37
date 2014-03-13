@@ -33,18 +33,32 @@ img{
 .content{
   margin-top: 64px;
   text-align: center;
-  background-image: asset-url("pc/backimg.png");
-  background-position: 0% 80%;
-  background-repeat: no-repeat;
+  background: asset-url("pc/backimg.png") no-repeat 80px 220px;
+  height:800px;
+}
+
+.c_title{
+	padding-bottom:20px;
+}
+
+.btn_event{
+	padding-bottom:456px;
 }
 
 .content_title{
   margin-bottom: -12px;
 }
 
+.label_2{
+	padding-bottom:20px;
+}
+
 .share{
-  margin-top: 18px;
-  margin-bottom: 24px;
+  margin:0 auto;	
+  background-image: asset-url("pc/share_btn_bg.png");
+  width:261px;
+  height:37px;
+  
 }
 
 .share_icon{
@@ -60,6 +74,8 @@ img{
   margin-left: 85px;
   margin-bottom: 36px;
   text-align: center;
+  border-top:1px solid #97a7ad;
+  padding-top:20px;
 }
 
 .video_label{
