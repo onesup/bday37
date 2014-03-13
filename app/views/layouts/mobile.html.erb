@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<!-- Facebook Open Graphic Protocol -->
+<html prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="모바일 메인페이지 상단">
+	<meta name = "viewport" content = "width=device-width, user-scalable=no" />
+	<meta property="og:url" content="http://sum37.com" />
+	<meta property="og:image" content="http://sum37.com/assets/fb_promotion_image.jpg" />
+	<meta property="og:title" content="숨37 온라인 이벤트" />
+	<meta property="og:description" content="숨37 온라인 이벤트입니다!"/>
+	<title>모바일 메인페이지</title>
+	<%= stylesheet_link_tag "mobile", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "mobile", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+<%= yield %>
+</body>
+</html>

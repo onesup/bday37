@@ -1,3 +1,459 @@
-// Place all the styles related to the mobile/home_controller controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*----------------------------------------------------
+* Author: Dongju Seo (geekerati@geekerati.me)
+* Date: March 10, 2014
+*----------------------------------------------------*/
+
+/*-----------------------------------------------------
+* Reset & Base
+*----------------------------------------------------*/
+body, div, ul, li {margin:0;padding:0;}
+a {text-decoration: none;}
+div {position:relative;}
+image {border:0}
+
+body{background: #d4e5e9;}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ".";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+.clickable-link {
+  display: block;
+  text-indent: -9999em;
+}
+* { -webkit-text-size-adjust:none; max-width:100%; }
+.container-close {
+  margin-bottom: 10%;
+  background: #fff;
+
+  .btn_close {
+    float: right;
+  }
+}
+
+.input-default {
+  margin: 0;
+  padding: 0 3%;
+  border: 1px solid #bebebe;
+  background: #fff;
+  font-size: 1.5em;
+}
+
+/*-----------------------------------------------------
+* index.html.erb
+*----------------------------------------------------*/
+#main {
+    width: 680px;
+    margin: 0 auto;
+    padding: 5% 0 0 0%;
+
+    .header {
+
+      .top {
+
+        .container-logo {
+          width: 30%;
+          float: left;
+
+          .logo {
+            width: 100%;
+            padding-left: 12%;
+
+            @media (max-width: 767px) {
+              width: 70%;
+              padding-left: 3%;
+              margin-left: 12%;
+            }
+          }
+        }
+
+        .event-date {
+          width: 40%;
+          float: right;
+          @media (max-width: 480px) { 
+            width: 50%;
+          }
+        }
+
+        .tagline {
+          margin: 10% 0 0 10%;
+          width: 84%;
+
+          @media (max-width: 767px) {
+            width: 82%;
+          }
+        }
+
+        .container-btn_gift {
+          margin-top: 5%;
+          padding-left: 23%;
+          width: 60%;
+
+          @media (max-width: 767px) {
+            width: 55%;
+          }
+
+          @media (max-width: 480px) {
+            width: 55%;
+          }
+        }
+
+        .container-product {
+          margin-top: 10%;
+          padding-left: 6%;
+          .product {
+            width: 90%;
+          }
+
+         // .text_product {
+//            margin-top: -45px;
+//            width: 85%;
+//            float: left;
+          //}
+
+        }
+
+        .divider_01 {
+          width: 77%;
+          margin-top: 4%;
+          margin-bottom: 5%;
+          padding-left: 10%;
+        }
+
+        .container-sns {
+          margin-bottom: 7%;
+
+          .text_sns {
+            width: 77%;
+            margin-bottom: 7%;
+            padding-left: 10%;
+          }
+
+          .btn_kakaotalk {
+            width: 77%;
+            margin-bottom: 2%;
+            padding-left: 10%;
+          }
+
+          .btn_kakaostory {
+            width: 77%;
+            margin-bottom: 2%;
+            padding-left: 10%;
+          }
+
+          .btn_facebook {
+            width: 77%;
+            padding-left: 10%;
+
+          }
+        }
+
+        .divider_02 {
+          width: 77%;
+          margin-top: 0;
+          margin-bottom: 7%;
+          padding-left: 10%;
+          padding-right: 10%;
+        }
+
+        .container-promotion {
+
+          padding-left: 10%;
+
+          .text_screte-programming-essence {
+            margin-right: 17%;
+            width: 44%;
+            float: left;
+          }
+
+          .btn_product-detail {
+            margin-top: -2%;
+            width: 25%;
+            float: left;
+          }
+
+          .video {
+            margin-top: 4%;
+            width: 86%;
+          }
+        }
+      }
+    }
+
+ 
+}
+    .footer {
+      width: 100%;
+      background: #fff;
+      margin-top: 3%;
+//      margin-top: 6%;
+//      padding-left: 3%;
+//      padding-right: 3%;
+
+      .wrapper-background {
+        padding-left: 5%;
+        background: #fff;
+
+        .text_notes {
+          margin-top: 5%;
+          width: 80%;
+          margin-left: 2%;
+        }
+
+        .divider_03 {
+          width: 94%;
+          margin-top: 7%;
+          margin-bottom: 4%;
+          padding-left: 0%;
+        }
+
+        .text_copyrights {
+          margin-bottom: 5%;
+          width: 94%;
+          background: #fff;
+        }
+      }
+    }
+/*-----------------------------------------------------
+* product.html.erb
+*----------------------------------------------------*/
+#product {
+  width: 600px;
+  margin: 0 auto;
+
+  .container-product {
+    width: 500px;
+    margin: 0 auto;
+
+
+    .text-top {
+      width: 70%;
+      margin-bottom: 6%;
+      padding-left: 14%;
+    }
+
+    .product {
+      width: 40%;
+      margin-bottom: -18%;
+      padding-left: 30%;
+    }
+
+    .text-bottom {
+      width: 75%;
+      padding-left: 13%;
+    }
+  }
+}
+/*-----------------------------------------------------
+* birthday.html.erb
+*----------------------------------------------------*/
+#birthday {
+  width: 600px;
+  margin: 0 auto;
+
+  .popup-birthday_text-top {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 70%;
+    padding-left: 15%;
+  }
+
+  .container-info {
+    width: 90%;
+    margin: 0 auto 5% auto;
+    padding: 5%;
+    background: #fff;
+
+    .container-year {
+      .select_year {
+        width: 157px;
+        height: 52px;
+        margin-right: 2%;
+        padding-left: 20px;
+        font-size: 1em;
+        font-weight: bold;
+        border: 0;
+        float: left;
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        -o-appearance: none;
+        background: asset-url("mobile/btn_selectYear100.png") no-repeat left top;
+      
+        @media (max-width: 767px) {
+          width: 102px;
+          height: 34px;
+          padding-left: 10px;
+          font-size: 10px;
+          background: asset-url("mobile/btn_selectYear65.png") no-repeat left top;
+        }
+/*
+        @media (max-width: 480px) {
+          width: 79px;
+          height: 26px;
+          padding-left: 10px;
+          font-size: 10px;
+          background: asset-url("mobile/btn_selectYear50.png") no-repeat left top;
+        }
+*/
+      }
+
+      .label-year {
+        float: left;
+        padding: 3% 4% 0 0;
+        width: 3%;
+      }
+    }
+
+
+  .container-month {
+    .select_month {
+      width: 108px;
+      height: 52px;
+      margin-right: 2%;
+      padding-left: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      border: 0;
+      float: left;
+      -webkit-appearance: none; 
+      -moz-appearance: none; 
+      -o-appearance: none;
+      background: asset-url("mobile/btn_selectMonthDay100.png") no-repeat left top;
+
+      @media (max-width: 767px) {
+        width: 70px;
+        height: 34px;
+        padding-left: 10px;
+        font-size: 10px;
+        background: asset-url("mobile/btn_selectMonthDay65.png") no-repeat left top;
+      }
+/*
+      @media (max-width: 480px) {
+        width: 54px;
+        height: 26px;
+        padding-left: 5px;
+        font-size: 10px;
+        background: asset-url("mobile/btn_selectMonthDay50.png") no-repeat left top;
+      }
+*/
+    }
+
+    .label-month {
+      float: left;
+      padding: 3% 4% 0 0;
+      width: 3%;
+    }
+  }
+
+  .container-day {
+
+
+    .select_day {
+      width: 108px;
+      height: 52px;
+      margin-right: 2%;
+      padding-left: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      border: 0;
+      float: left;
+      -webkit-appearance: none; 
+      -moz-appearance: none; 
+      -o-appearance: none;
+      background: asset-url("mobile/btn_selectMonthDay100.png") no-repeat left top;
+
+      @media (max-width: 767px) {
+        width: 70px;
+        height: 34px;
+        padding-left: 10px;
+        font-size: 10px;
+        background: asset-url("mobile/btn_selectMonthDay65.png") no-repeat left top;
+      }
+
+      /*
+      @media (max-width: 480px) {
+        width: 54px;
+        height: 26px;
+        padding-left: 5px;
+        font-size: 10px;
+        background: asset-url("mobile/btn_selectMonthDay50.png") no-repeat left top;
+      }
+      */
+
+    }
+
+    .label-day {
+      float: left;
+      padding: 3% 4% 0 0;
+      width: 3%;
+    }
+  }
+
+    .text-guide {
+      margin-top: 5%;
+      padding-left: 2%;
+    }
+  }
+
+  .container-name {
+    padding-left: 21%;
+    margin-bottom: 2%;
+
+    .text_name {
+      width: 10%;
+      margin-right: 3%;
+    }
+
+    .info_input_name {
+      width: 35%;
+      height: 45px;
+    }
+  }
+
+  .container-phone {
+    padding-left: 13%;
+
+    .text_phone {
+      width: 21%;
+    }
+
+    .info_input_call {
+      width: 31%;
+      height: 45px;
+    }
+  }
+
+  .divider_01 {
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .container-terms {
+    padding-left: 13%;
+
+    .text_terms {
+      width: 32%;
+      margin-right: 3%;
+    }
+
+    .info_input_agree {
+      margin-bottom: -1%;
+      width: 7%;
+      height: 37px; 
+      background: #fff;
+      border: 1px solid #bebebe;
+      -webkit-appearance: none; 
+      -moz-appearance: none; 
+      -o-appearance: none;
+    }
+  }
+
+
+}
