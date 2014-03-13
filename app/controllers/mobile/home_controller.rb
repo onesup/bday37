@@ -6,4 +6,8 @@ class Mobile::HomeController < ApplicationController
   def thank_you
   
   end
+  
+  def unique_error
+  
+  end
 end

@@ -19,14 +19,14 @@ class Mobile::UsersController < ApplicationController
         format.html { redirect_to mobile_thank_you_path, notice: 'User was successfully created.' }
         format.json { render json: {status: "success"}, status: :created, location: @user }
       else
-        format.html { render action: 'new' }
+        format.html { error_redirect(@user.errors) }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
   
   def new
-    @user = User.new  
+    @user = User.new
   end
   
   private
@@ -34,6 +34,16 @@ class Mobile::UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+
+  def error_redirect(errors)
+    unless errors.get(:phone).index("has already been taken") == nil
+      redirect_to mobile_unique_error_path
+    else
+      redirect_to action: "new"
+      
+    end
+  end
+
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params

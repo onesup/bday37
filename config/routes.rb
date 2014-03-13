@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :mobile do
     get 'index' => 'home#index'
     get 'thank_you' => 'home#thank_you'
+    get 'unique_error' => 'home#unique_error'
     resources :users
   end
 
