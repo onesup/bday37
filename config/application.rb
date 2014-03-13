@@ -19,5 +19,11 @@ module Bday
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.assets.precompile += [
+      'application.js', 'application.css', 
+      'admin.js', 'admin.css', 
+      'web.css', 'web.js',
+      'mobile.css', 'mobile.js'
+    ]
   end
 end
