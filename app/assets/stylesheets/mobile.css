@@ -11,8 +11,8 @@
  * file per style scope.
  *
  *= require_self
- *= require mobile/home_controller
  *= require pc/icheck/skins/all
+ *= require mobile/home_controller
  *= require pc/jquery.selectBox
  *= require pc/selectric
  */

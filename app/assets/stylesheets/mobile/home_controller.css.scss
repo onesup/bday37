@@ -648,9 +648,28 @@ body{background: #d4e5e9;}
 }
 
 .icheckbox_minimal{
-	padding-bottom: 2%;
 	-ms-transform: scale(1.5);
 	-moz-transform: scale(1.5);
 	-webkit-transform: scale(1.5);
 	-o-transform: scale(1.5);
 }
+
+.agree_checkbox{
+	padding-bottom: 2%;
+	float:left;
+}
+
+.text_terms{
+	float:left;
+}
+.container-terms{
+	float:left;
+}
+
+.container-detail_terms{
+	float:left;
+}
+
+.container-coupon{
+	clear:both;
+}	

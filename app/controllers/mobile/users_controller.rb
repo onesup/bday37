@@ -1,4 +1,5 @@
 class Mobile::UsersController < ApplicationController
+  layout "mobile"
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   
   def create
