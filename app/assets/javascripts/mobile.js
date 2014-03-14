@@ -19,4 +19,4 @@
 //= require icheck.min
 //= require jquery.selectBox
 //= require jquery.selectric
-
+//= require jquery.icheck

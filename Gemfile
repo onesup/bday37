@@ -30,6 +30,7 @@ gem 'kaminari'
 gem 'debugger', group: [:development, :test]
 gem 'dragonfly', "~>1.0.3"
 gem 'rqrcode_png'
+gem 'icheck-rails'
 
 group :development do
   gem 'guard-rails',        group: :development
