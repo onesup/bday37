@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require pc
+//= require phone
 //= require jquery.bpopup.min
 //= require jquery.customSelect.min
 //= require icheck.min
