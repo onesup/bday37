@@ -25,5 +25,9 @@ module Bday
       'web.css', 'web.js',
       'mobile.css', 'mobile.js'
     ]
+    config.middleware.use Rack::Facebook::SignedRequest, 
+      app_id: Rails.application.secrets.fb_app_id, 
+      secret: Rails.application.secrets.fb_app_secret, 
+      inject_facebook: false
   end
 end

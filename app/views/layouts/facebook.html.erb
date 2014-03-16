@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Bday</title>
+<html xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#">
+<head prefix="og: http://ogp.me/ns#">
+  <title>영웅 망토</title>
+  
+  <%= yield :mobile %>
+
   <%= stylesheet_link_tag    'facebook', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'facebook', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta property="fb:app_id" content="<%= Rails.application.secrets.fb_app_id %>" />
+  <meta property="og:type"   content="myapp:myobject" />
+  <meta property="og:url"  content="<%= Rails.application.secrets.url %>" />
+  <meta property="og:title"  content="숨" />
+  <meta property="og:image"  content="" />
+
 </head>
-<body>
+<body id="main" style="background:#feef43;">
+  <div id="fb-root"></div>
+<script type="text/javascript">
 
+
+$(document).ready(function() {
+  $.ajaxSetup({ cache: true });
+  $.getScript('//connect.facebook.net/ko_KR/all.js', function(){
+    FB.init({
+      appId      : '<%= Rails.application.secrets.fb_app_id %>',
+      channelUrl : '//<%= Rails.application.secrets.url %>/channel.html', // Channel file for x-domain comms
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+    FB.Canvas.setSize();
+    FB.Canvas.setAutoGrow();    
+  });
+});
+
+
+</script>
 <%= yield %>
-
-</body>
-</html>

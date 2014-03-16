@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   namespace :fb do
+    post 'create' => 'home#create'
     get 'index' => 'home#index'
     resources :users
   end
