@@ -14,6 +14,11 @@
  *= require pc/icheck/skins/all
  *= require pc/icheck/skins/minimal/_all
  *= require pc/icheck/skins/minimal/minimal
+ *= require pc/icheck/skins/square/_all
+ *= require pc/icheck/skins/flat/_all
+ *= require pc/icheck/skins/line/_all
+ *= require pc/icheck/skins/polaris/polaris
+ *= require pc/icheck/skins/futurico/futurico
  *= require mobile/home_controller
  *= require pc/jquery.selectBox
  *= require pc/selectric
