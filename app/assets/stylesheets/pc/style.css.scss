@@ -132,12 +132,13 @@ img{
   margin-left: 41px;
   margin-bottom: 16px;
   margin-top:140px;
-  padding-top:20px;
+  padding:20px 0 0 20px;
 }
 
 .info_other{
   width: 369px;
   margin-left: 41px;
+  margin-bottom: 12px;
   text-align: left;
 }
 
@@ -196,11 +197,19 @@ img{
 
 .personal_caution{
   width: 360px;
-  margin-left: 40px;
+  margin: 51px 0 0 46px;
   height: 424px;
   resize: none;
   border: 0;
 
+}
+
+.fin_title{
+  margin: 42px 0px 12px 36px;
+}
+
+.fin_label{
+  margin-bottom: 12px;
 }
 
 #popup_personal{
@@ -244,10 +253,13 @@ img{
 }
 
 .birth_label_class{
-  margin-top: 8px;
   float: left;
-  margin-left: 1px;
-  margin-right: 1px;
+  margin: 8px 6px 0 6px;
+}
+
+.birth_label_class2{
+  margin-top: 8px;
+  margin-left: -48px;
 }
 
 .info_birth{

@@ -43,29 +43,29 @@
             <%= select_tag "user[birthday_month]", options_for_select([ "3", "4" ], "3"), {class: 'select_custom_2'}%>
             <%= image_tag("pc/popup/info/birth_label_2.png", class:"birth_label_class") %>
             <%= select_day(Date.today, {start_day: 1, end_day: 31}, {name:'user[birthday_day]', class: 'select_custom_2'})%>
-            <%= image_tag("pc/popup/info/birth_label_3.png", class:"birth_label_class") %><br /><br />
-            <%= image_tag("pc/popup/info/birth_label_4.png") %>
+            <%= image_tag("pc/popup/info/birth_label_3.png", class:"birth_label_class") %>
+            <%= image_tag("pc/popup/info/birth_label_4.png", class:"birth_label_class2") %>
           </div>
           <div class="info_other">
             <div> <%= image_tag("pc/popup/info/info_label_1.png", class:"info_input_label_1") %>
               <input type='text' data-name='name' id='info_name' name='user[name]' class="info_input_name" value="" maxlength="4" /></div>
             <div> <%= image_tag("pc/popup/info/info_label_2.png", class:"info_input_label_2") %>
-              <input type='text' data-name='phone' id='info_phone' name='user[phone]' class="info_input_call" value="" maxlength="11" /></div>
+              <input type='text' data-name='phone' id='info_phone' name='user[phone]' class="info_input_call" value="" maxlength="13" /></div>
             <%= image_tag("pc/popup/info/info_label_3.png", class:"info_input_label_3") %>
             <%= f.check_box "agree", {"data-name" => "agree", id:"info_input_radio", checked:"checked"}%>
             <%= link_to "#", class:"popup_info_to_personal", id: "popup_info_to_personal" do %>
               <%= image_tag("pc/popup/info/info_personal_button.png", class: "to_personal") %>
-            <% end %><br /><br />
+            <% end %>
           </div>
-            <%= image_submit_tag("pc/popup/info/button.png",{id: "info_fin", onclick: "validateCheckbox();"}) %>
-            <br /><br /><br />
+            <%= image_submit_tag("pc/popup/info/button.png",{id: "info_fin"}) %>
+
 
           <%end%>
         </div>
       <div id="popup_personal">
         <%= link_to "#", class: "b-close-2" do %>
           <%= image_tag("pc/popup/close.png", class: "close") %>
-        <% end %><br /><br />
+        <% end %>
         <textarea class="personal_caution" disabled>
 이용약관 입력 popup이용약관 입력 popup이용약관 입력 popup이용약관 입력 popup이용약관 입력 popup
 이용약관 입력 popup이용약관 입력 popup이용약관 입력 popup이용약관 입력 popup이용약관 입력 popup
@@ -112,9 +112,9 @@
       <div id="popup_fin1">
         <%= link_to "#", class: "b-close" do %>
           <%= image_tag("pc/popup/close.png", class: "close") %>
-        <% end %><br /><br /><br />
-        <%= image_tag("pc/popup/fin1/title.png") %><br /><br />
-        <%= image_tag("pc/popup/fin1/label.png") %><br /><br />
+        <% end %>
+        <%= image_tag("pc/popup/fin1/title.png", class:"fin_title") %><br />
+        <%= image_tag("pc/popup/fin1/label.png", class:"fin_label") %><br />
         <%= link_to "#", class: "b-close" do %>
           <%= image_tag("pc/popup/fin1/button.png") %>
         <% end %>
@@ -122,9 +122,9 @@
       <div id="popup_fin2">
         <%= link_to "#", class: "b-close" do %>
           <%= image_tag("pc/popup/close.png", class: "close") %>
-        <% end %><br /><br /><br />
-        <%= image_tag("pc/popup/fin2/title.png") %><br /><br />
-        <%= image_tag("pc/popup/fin2/label.png") %><br /><br />
+        <% end %>
+        <%= image_tag("pc/popup/fin2/title.png", class:"fin_title") %><br />
+        <%= image_tag("pc/popup/fin2/label.png", class:"fin_label") %><br />
         <%= link_to "#", class: "b-close" do %>
           <%= image_tag("pc/popup/fin2/button.png") %>
         <% end %>
