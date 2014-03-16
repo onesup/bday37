@@ -1,4 +1,6 @@
-    <div class="contain">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bday.mnv.kr/pc/index" data-via="su_m37" data-related="su_m37">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <div class="contain">
       <div class="header"> <!-- Header -->
         <%= image_tag("pc/logo.png", class: "header_logo") %>
         <%= image_tag("pc/term.png", class: "header_term") %>
@@ -110,7 +112,7 @@
         </textarea>
       </div>
       <div id="popup_fin1">
-        <%= link_to "#", class: "b-close" do %>
+        <%= link_to "#", {class: "b-close", onclick:"ga('send', 'event', 'button', 'click', '이벤트 완료');"} do %>
           <%= image_tag("pc/popup/close.png", class: "close") %>
         <% end %>
         <%= image_tag("pc/popup/fin1/title.png", class:"fin_title") %><br />
