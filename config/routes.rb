@@ -6,11 +6,16 @@ Rails.application.routes.draw do
     resources :coupons
   end
 
+  namespace :fb do
+    get 'index' => 'home#index'
+    resources :users
+  end
+  
   namespace :pc do
     get 'index' => 'home#index'
     resources :users
   end
-
+  
   namespace :mobile do
     get 'index' => 'home#index'
     get 'thank_you' => 'home#thank_you'
