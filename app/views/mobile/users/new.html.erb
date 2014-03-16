@@ -38,12 +38,12 @@
     </div>
   </div>
   <div class="container-detail-terms">
-    <a href="/terms"><%= image_tag("mobile/btn_detail_terms.png", class:"detail_terms") %></a>
+    <a href="/terms" onclick="ga('send', 'event', 'button', 'click', 'm 개인정보동의 활용');"><%= image_tag("mobile/btn_detail_terms.png", class:"detail_terms") %></a>
   </div>
   </div>
   <div class="container-coupon">
     <!-- if it is not duplicate -->
-    <%= image_submit_tag("mobile/btn_get_coupon.png", class:"btn_get_coupon") %>
+    <%= image_submit_tag("mobile/btn_get_coupon.png", class:"btn_get_coupon", onclick:"ga('send', 'event', 'button', 'click', 'm 완료');") %>
     <!-- else -->
   </div>
   <%= image_tag("mobile/text_caution.png", class:"text_caution") %>

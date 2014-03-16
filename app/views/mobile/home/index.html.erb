@@ -7,7 +7,7 @@
       <%= image_tag("mobile/text_event-date.png", class:"event-date") %>
       <%= image_tag("mobile/text_tagline.png", class:"tagline") %>
       <div class="container-btn_gift">
-        <%= link_to new_mobile_user_path do %>
+        <%= link_to new_mobile_user_path, {onclick:"ga('send', 'event', 'button', 'click', 'm 생일 선물 받기');"} do %>
           <%= image_tag("mobile/btn_gift.png", class:"btn_gift") %>
         <% end %>
       </div>
@@ -29,7 +29,7 @@
         </div>
         <iframe width="526" height="390" src="//www.youtube.com/embed/x1ZV_sq-0q0" frameborder="0" allowfullscreen class="video"></iframe>
       </div>
-    </div>	
+    </div>
   </div>
 </div>
 <div class="footer">
