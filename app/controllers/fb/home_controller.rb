@@ -16,17 +16,6 @@ class Fb::HomeController < ApplicationController
   end
   
   def index
-    app_id = Rails.application.secrets.fb_app_id
-    app_secret = Rails.application.secrets.fb_app_secret
-    oauth = Koala::Facebook::OAuth.new(app_id, app_secret)
-    begin
-      request = oauth.parse_signed_request(params["signed_request"])
-      result = request["page"]["liked"]
-      puts request
-    rescue
-      result = "invalid!!!"
-    end
-    
     @user = User.new
   end
 end
