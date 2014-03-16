@@ -78,7 +78,7 @@ body{background: #d4e5e9;}
         .event-date {
           width: 40%;
           float: right;
-          @media (max-width: 480px) { 
+          @media (max-width: 480px) {
             width: 50%;
           }
         }
@@ -188,7 +188,7 @@ body{background: #d4e5e9;}
       }
     }
 
- 
+
 }
     .footer {
       width: 100%;
@@ -283,11 +283,11 @@ body{background: #d4e5e9;}
         font-weight: bold;
         border: 0;
         float: left;
-        -webkit-appearance: none; 
-        -moz-appearance: none; 
+        -webkit-appearance: none;
+        -moz-appearance: none;
         -o-appearance: none;
         background: asset-url("mobile/btn_selectYear100.png") no-repeat left top;
-      
+
         @media (max-width: 767px) {
           width: 79px;
           height: 26px;
@@ -324,8 +324,8 @@ body{background: #d4e5e9;}
       font-weight: bold;
       border: 0;
       float: left;
-      -webkit-appearance: none; 
-      -moz-appearance: none; 
+      -webkit-appearance: none;
+      -moz-appearance: none;
       -o-appearance: none;
       background: asset-url("mobile/btn_selectMonthDay100.png") no-repeat left top;
 
@@ -366,8 +366,8 @@ body{background: #d4e5e9;}
       font-weight: bold;
       border: 0;
       float: left;
-      -webkit-appearance: none; 
-      -moz-appearance: none; 
+      -webkit-appearance: none;
+      -moz-appearance: none;
       -o-appearance: none;
       background: asset-url("mobile/btn_selectMonthDay100.png") no-repeat left top;
 
@@ -452,11 +452,11 @@ body{background: #d4e5e9;}
     .info_input_agree {
       margin-bottom: -1%;
       width: 7%;
-      height: 37px; 
+      height: 37px;
       background: #fff;
       border: 1px solid #bebebe;
-      -webkit-appearance: none; 
-      -moz-appearance: none; 
+      -webkit-appearance: none;
+      -moz-appearance: none;
       -o-appearance: none;
     }
   }
@@ -593,7 +593,7 @@ body{background: #d4e5e9;}
     left: 10%;
     top: 8.3%;
     font-size: 2em;
-    
+
     @media (max-width: 767px) {
       left: 10%;
       top: 8.3%;
@@ -685,4 +685,19 @@ body{background: #d4e5e9;}
 .text_caution{
   padding: 5%;
   width: 85%;
+}
+
+
+
+
+
+#info_input_radio{
+  weight: 24px;
+  height: 24px;
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  -ms-appearance: checkbox;
+  -o-appearance: checkbox;
+  margin-left: 12px;
+  margin-right: 12px;
 }
