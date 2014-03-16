@@ -11,25 +11,29 @@
         <%= image_tag("pc/term.png", class: "header_term") %>
       </div>
       <div class="content"> <!-- Content -->
-        <%= image_tag("pc/title.png", class: "content_title") %><br />
-        <%= image_tag "pc/label_1.png" %><br /><br />
-        <%= link_to "#", id: "gift_button" do %>
+        <div class="c_title">
+		<%= image_tag("pc/title.png", class: "content_title") %>
+        </div>
+		<div class="btn_event">
+		<%= link_to "#", id: "gift_button" do %>
           <%= image_tag "pc/button.png" %>
-        <% end %><br /><br />
+        <% end %>
+        </div>
+		<div class="label_2">
         <%= image_tag "pc/label_2.png" %>
-        <div class="share">
-          <%= image_tag "pc/share_label.png" %>
+        </div>
+		<div class="share">
           <%= image_tag("pc/share_facebook.png", class: "share_icon") %>
           <%= image_tag("pc/share_twitter.png", class: "share_icon") %>
         </div>
-        <%= image_tag("pc/product.png", class: "product") %><br />
       </div>
       <div class="video"> <!-- Video -->
-        <%= image_tag "pc/line.png" %><br /><br />
-        <%= image_tag("pc/vedio_label.png", class: "video_label") %>
+        <div>
+		<%= image_tag("pc/vedio_label.png", class: "video_label") %>
         <%= link_to "#", id: "product_button" do %>
           <%= image_tag("pc/vedio_button.png", class: "video_button") %>
-        <% end %><br />
+        <% end %>
+		</div>
         <iframe width="640" height="390" src="//www.youtube.com/embed/x1ZV_sq-0q0" frameborder="0" allowfullscreen></iframe>
       </div>
       <div> <!-- Caution -->
@@ -38,13 +42,12 @@
       <!-- popup -->
       <div id="popup_info">
         <%= form_for([:pc, @user], remote: true, html: {'data-type'=>'json'}) do |f| %>
-        <%= link_to "#", class: "b-close" do %>
+        <div>
+		<%= link_to "#", class: "b-close" do %>
           <%= image_tag("pc/popup/close.png", class: "close") %>
-        <% end %><br /><br />
-        <%= image_tag("pc/popup/info/title.png", class: "info_title") %><br />
-        <%= image_tag("pc/popup/info/label.png", class: "info_label") %><br />
+        <% end %>
+		</div>
         <div class="info_birth">
-          <br />
           <%= select_year(Date.today, {start_year: 1900, end_year: 2014}, {name:'user[birthday_year]', class:'select_custom_1'})%>
           <%= image_tag("pc/popup/info/birth_label_1.png", class:"birth_label_class") %>
           <%= select_tag "user[birthday_month]", options_for_select([ "3", "4" ], "3"), {class: 'select_custom_2'}%>
@@ -139,9 +142,7 @@
       <div id="popup_product">
         <%= link_to "#", class: "b-close" do %>
           <%= image_tag("pc/popup/close.png", class: "close") %>
-        <% end %><br /><br /><br />
-        <%= image_tag("pc/popup/product/label.png") %><br /><br /><br />
-        <%= image_tag("pc/popup/product/product.png") %><br /><br />
+        <% end %>
       </div>
     </div>
   </body>

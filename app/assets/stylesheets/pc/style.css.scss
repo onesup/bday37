@@ -6,9 +6,8 @@ img{
 }
 
 .body_class{
-  background-color: #E4D6B2;
+  background-color: #d4e5e9;
   margin: 0;
-  background-image: asset-url("pc/bg_repeat.png");
   background-repeat: repeat-x;
 }
 
@@ -17,7 +16,6 @@ img{
   position: absolute;
   left: 50%;
   margin-left: -405px;
-  background-image: asset-url("pc/bg.png");
 }
 
 .header{
@@ -35,18 +33,31 @@ img{
 .content{
   margin-top: 64px;
   text-align: center;
-  background-image: asset-url("pc/backimg.png");
-  background-position: 0% 80%;
-  background-repeat: no-repeat;
+  background: asset-url("pc/backimg.png") no-repeat 100px 220px;
+}
+
+.c_title{
+	padding-bottom:20px;
+}
+
+.btn_event{
+	padding-bottom:456px;
 }
 
 .content_title{
   margin-bottom: -12px;
 }
 
+.label_2{
+	padding-bottom:20px;
+}
+
 .share{
-  margin-top: 18px;
-  margin-bottom: 24px;
+  margin:0 auto;	
+  background-image: asset-url("pc/share_btn_bg.png");
+  width:261px;
+  height:37px;
+  
 }
 
 .share_icon{
@@ -58,10 +69,12 @@ img{
 }
 
 .video{
-  width: 640px;
-  margin-left: 85px;
+  padding-left: 85px;
   margin-bottom: 36px;
   text-align: center;
+  border-top:1px solid #97a7ad;
+  padding-top:20px;
+  margin-top:40px;
 }
 
 .video_label{
@@ -103,11 +116,11 @@ img{
 
 .info_birth{
   width: 369px;
-  height: 103px;
+  height: 83px;
   margin-left: 41px;
-  margin-top: 16px;
   margin-bottom: 16px;
-  background-image: asset-url("pc/popup/info/birth_bg.png");
+  margin-top:140px;
+  padding-top:20px;
 }
 
 .info_other{
@@ -137,8 +150,7 @@ img{
   width: 108px;
   height: 24px;
   border-weight: 4px;
-  font-size: 20px;
-  text-align: center;
+  font-size: 13px;
   line-height: 24px;
   margin-left: 12px;
   margin-bottom: 4px;
@@ -148,8 +160,7 @@ img{
   width: 108px;
   height: 24px;
   border-weight: 4px;
-  font-size: 12px;
-  text-align: center;
+  font-size: 13px;
   line-height: 24px;
   margin-left: 12px;
   margin-bottom: 4px;
