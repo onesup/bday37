@@ -24,14 +24,13 @@ gem 'nokogiri'
 gem 'nori' #xml parser
 gem 'useragent'
 gem 'sucker_punch', '~> 1.0'
-gem 'sasha'
+# gem 'sasha'
 gem 'font-awesome-rails'
 gem 'kaminari'
 gem 'debugger', group: [:development, :test]
-gem 'dragonfly', "~>1.0.3"
-gem 'rqrcode_png'
-gem 'icheck-rails'
-
+# gem 'dragonfly', "~>1.0.3"
+gem 'koala'
+gem 'rack-facebook-signed-request', :git => 'git://github.com/cmer/rack-facebook-signed-request.git'
 group :development do
   gem 'guard-rails',        group: :development
   gem 'pry',                group: :development
