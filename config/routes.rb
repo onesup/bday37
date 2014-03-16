@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get 'index' => 'home#index'
     get 'thank_you' => 'home#thank_you'
     get 'unique_error' => 'home#unique_error'
+    get 'terms' => 'home#terms'
     resources :users
   end
 

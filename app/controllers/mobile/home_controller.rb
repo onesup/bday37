@@ -10,4 +10,8 @@ class Mobile::HomeController < ApplicationController
   def unique_error
   
   end
+
+  def terms
+
+  end
 end
