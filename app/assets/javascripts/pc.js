@@ -6,7 +6,7 @@ $(document).ready(function(){
 
   $("#gift_button").click(function(e){
     e.preventDefault();
-    $("#popup_info").bPopup({ 
+    $("#popup_info").bPopup({
       modalColor: '#000'
     });
   });
@@ -18,26 +18,26 @@ $(document).ready(function(){
       modalColor: '#000'
     });
   });
-    
+
   $("#new_user").bind("ajax:success", function(evt,data,status,xhr){
     response = JSON.parse(xhr.responseText);
     if(response.status==="success"){
       $("#popup_fin1").bPopup({
         closeClass: 'b-close',
         modalColor: '#000',
-        onClose: function(){$("#popup_info").bPopup().close();}  
+        onClose: function(){$("#popup_info").bPopup().close();}
       });
     }else{
-    }            
-    
+    }
+
   }).bind('ajax:error',function(evt,xhr,status,error){
     var $form = $(this),errors,errorText;
     errors = $.parseJSON(xhr.responseText);
-      
+
 
     validation(errors);
   });
-  
+
   $("#product_button").click(function(e){
     e.preventDefault();
     $("#popup_product").bPopup({
@@ -54,11 +54,11 @@ $(document).ready(function(){
 
 function validation(errors){
   if(Object.keys(errors).indexOf("phone") == -1){
-    //폰없다 
+    //폰없다
     for ( error in errors ) {
       $('input[data-name ='+error+']').parent().find('span').remove();
       $('input[data-name ='+error+']').after('<span class="star">*</span>');
-      // $('input[data-name ='+error+']').next().empty('span'); 
+      // $('input[data-name ='+error+']').next().empty('span');
     }
   }else{
     //폰있다
@@ -68,17 +68,14 @@ function validation(errors){
         closeClass: 'b-close',
         modalColor: '#000',
         onClose: function(){$("#popup_info").bPopup().close();}
-      });        
+      });
     }else{
       //중복 아니다
       for ( error in errors ) {
         $('input[data-name ='+error+']').parent().find('span').remove();
         $('input[data-name ='+error+']').after('<span class="star">*</span>');
-        // $('input[data-name ='+error+']').next().empty('span');  
-      } 
-    }   
+        // $('input[data-name ='+error+']').next().empty('span');
+      }
+    }
   }
 }
-
-
-

@@ -12,7 +12,7 @@ img{
 }
 
 .contain{
-  position: absolute;
+  position: relative;
   width: 810px;
   left: 50%;
   margin-left: -405px;
@@ -271,7 +271,7 @@ img{
   background-color: white;
 }
 
-.footer{
+.footer_custom{
   width: 100%;
   background-color: #C5D6DA;
   text-align: center;
