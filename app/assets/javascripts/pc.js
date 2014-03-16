@@ -4,7 +4,7 @@ $(document).ready(function(){
   ga('send', 'event', 'button', 'click', '메인 페이지');
   $('.select_custom_1').selectric();
   $('.select_custom_2').selectric();
-
+  
   $("#gift_button").click(function(e){
     e.preventDefault();
     $("#popup_info").bPopup({
