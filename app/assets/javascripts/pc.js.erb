@@ -58,57 +58,20 @@ $(document).ready(function(){
   });
 
   $("#info_phone").mask("999-9999-9999");
+  
+  $.ajaxSetup({ cache: true });
+  $.getScript('//connect.facebook.net/ko_KR/all.js', function(){
+    FB.init({
+      appId      : '<%= Rails.application.secrets.fb_app_id %>',
+      channelUrl : '//<%= Rails.application.secrets.url %>/channel.html', // Channel file for x-domain comms
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+    FB.Canvas.setSize();
+    FB.Canvas.setAutoGrow();    
+  });
 
-  // $('#info_phone').keyup(function(p_event){
-  //   if( p_event.keyCode >= 48 && p_event.keyCode <= 57 ){
-  //     var phoneNum = $('#info_phone').val();
-  //     var returnNum = phoneNum;
-  //
-  //     while( true )
-  //     {
-  //       var findHP = phoneNum.search("-");
-  //       if( findHP == -1 )
-  //       {
-  //         break;
-  //       }
-  //       else
-  //       {
-  //         var temp1 = phoneNum.substring(0, findHP);
-  //         var temp2 = phoneNum.substring(findHP+1, phoneNum.length);
-  //         phoneNum = temp1.concat(temp2);
-  //       }
-  //     }
-  //
-  //     if( phoneNum.substring(0, 2) == "01" )
-  //     {
-  //       if( phoneNum.length >= 11 )
-  //       {
-  //         var temp1 = phoneNum.substring(0, 3);
-  //         var temp2 = phoneNum.substring(3, 7);
-  //         var temp3 = phoneNum.substring(7, 11);
-  //
-  //         returnNum = temp1+"-"+temp2+"-"+temp3;
-  //       }
-  //       else if( phoneNum.length >= 7 )
-  //       {
-  //         var temp1 = phoneNum.substring(0, 3);
-  //         var temp2 = phoneNum.substring(3, 6);
-  //         var temp3 = phoneNum.substring(6, 10);
-  //
-  //         returnNum = temp1+"-"+temp2+"-"+temp3;
-  //       }
-  //       else if( phoneNum.length >= 4 )
-  //       {
-  //         var temp1 = phoneNum.substring(0, 3);
-  //         var temp2 = phoneNum.substring(3, phoneNum.length);
-  //
-  //         returnNum = temp1+"-"+temp2;
-  //       }
-  //
-  //       $('#info_phone').val(returnNum);
-  //     }
-  //   }
-  // });
 });
 
 function validation(errors){

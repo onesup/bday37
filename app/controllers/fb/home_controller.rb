@@ -12,7 +12,7 @@ class Fb::HomeController < ApplicationController
     rescue
       result = "invalid!!!"
     end
-    redirect_to fb_index_path
+    redirect_to pc_index_path
   end
   
   def index
