@@ -4,4 +4,6 @@ $(document).ready(function(){
     radioClass: 'iradio_minimal',
     increaseArea: '20%' // optional
   });
+
+  $("#info_phone").mask("999-9999-9999");
 });
