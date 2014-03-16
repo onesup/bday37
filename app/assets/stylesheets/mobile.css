@@ -12,6 +12,8 @@
  *
  *= require_self
  *= require pc/icheck/skins/all
+ *= require pc/icheck/skins/minimal/_all
+ *= require pc/icheck/skins/minimal/minimal
  *= require mobile/home_controller
  *= require pc/jquery.selectBox
  *= require pc/selectric
