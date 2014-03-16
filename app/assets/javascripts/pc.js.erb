@@ -4,7 +4,7 @@ $(document).ready(function(){
   ga('send', 'event', 'button', 'click', '메인 페이지');
   $('.select_custom_1').selectric();
   $('.select_custom_2').selectric();
-  
+
   $("#gift_button").click(function(e){
     e.preventDefault();
     $("#popup_info").bPopup({
@@ -69,7 +69,11 @@ $(document).ready(function(){
       xfbml      : true  // parse XFBML
     });
     FB.Canvas.setSize();
-    FB.Canvas.setAutoGrow();    
+    FB.Canvas.setAutoGrow();
+    $("#facebook_share_link").click(function(e){
+      e.preventDefault();
+      share();
+    });
   });
 
 });
@@ -100,4 +104,24 @@ function validation(errors){
       }
     }
   }
+}
+
+function share() {
+  var share_content = {
+    method: "feed",
+    name: "숨",
+    link: "<%= Rails.application.secrets.url %>",
+    picture: '<%#= asset_url "fb_share_img.jpg" %>',
+    caption: "[숨::숨 이벤트]",
+    description: "사랑하는 숨"
+  };
+  FB.ui(share_content, function(response) {
+    if(response && response.post_id) {
+      track_viral_action(viral_url, "facebook");
+      alert("공유되었습니다.");
+    }
+    else {
+      alert("공유 실패");
+    }
+  });
 }
