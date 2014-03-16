@@ -1,6 +1,7 @@
 $(document).ready(function(){
-  // _gaq.push(['_trackEvent', 'button', 'click', 'img down 1546']);
+  // ga(['_trackEvent', 'button', 'click', 'img down 1546']);
   // loadJsFile('http://i42.icast-ad.com/track?ccd=1242&mcd=01040601&pcd=1546');
+  ga('send', 'event', 'button', 'click', '메인 페이지');
   $('.select_custom_1').selectric();
   $('.select_custom_2').selectric();
 
@@ -10,6 +11,7 @@ $(document).ready(function(){
       closeClass: 'b-close',
       modalColor: 'black'
     });
+    ga('send', 'event', 'button', 'click', '생일 선물 받기');
   });
 
   $("#popup_info_to_personal").click(function(e){
@@ -18,6 +20,7 @@ $(document).ready(function(){
       closeClass: 'b-close-2',
       modalColor: 'black'
     });
+    ga('send', 'event', 'button', 'click', '개인정보 동의 팝업');
   });
 
   $("#new_user").bind("ajax:success", function(evt,data,status,xhr){
@@ -44,6 +47,8 @@ $(document).ready(function(){
     $("#popup_product").bPopup({
       modalColor: '#000'
     });
+    ga('send', 'event', 'button', 'click', '제품 자세히 보기');
+
   });
 
   $("#info_input_radio").iCheck({
