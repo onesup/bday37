@@ -7,7 +7,8 @@ $(document).ready(function(){
   $("#gift_button").click(function(e){
     e.preventDefault();
     $("#popup_info").bPopup({
-      modalColor: '#000'
+      closeClass: 'b-close',
+      modalColor: 'black'
     });
   });
 
@@ -15,7 +16,7 @@ $(document).ready(function(){
     e.preventDefault();
     $("#popup_personal").bPopup({
       closeClass: 'b-close-2',
-      modalColor: '#000'
+      modalColor: 'black'
     });
   });
 
@@ -24,7 +25,7 @@ $(document).ready(function(){
     if(response.status==="success"){
       $("#popup_fin1").bPopup({
         closeClass: 'b-close',
-        modalColor: '#000',
+        modalColor: 'black',
         onClose: function(){$("#popup_info").bPopup().close();}
       });
     }else{
@@ -48,8 +49,61 @@ $(document).ready(function(){
   $("#info_input_radio").iCheck({
     checkboxClass: 'icheckbox_minimal',
     radioClass: 'iradio_minimal',
-    increaseArea: '20%' // optional
+    increaseArea: '20%' // option
   });
+
+  $("#info_phone").mask("999-9999-9999");
+
+  // $('#info_phone').keyup(function(p_event){
+  //   if( p_event.keyCode >= 48 && p_event.keyCode <= 57 ){
+  //     var phoneNum = $('#info_phone').val();
+  //     var returnNum = phoneNum;
+  //
+  //     while( true )
+  //     {
+  //       var findHP = phoneNum.search("-");
+  //       if( findHP == -1 )
+  //       {
+  //         break;
+  //       }
+  //       else
+  //       {
+  //         var temp1 = phoneNum.substring(0, findHP);
+  //         var temp2 = phoneNum.substring(findHP+1, phoneNum.length);
+  //         phoneNum = temp1.concat(temp2);
+  //       }
+  //     }
+  //
+  //     if( phoneNum.substring(0, 2) == "01" )
+  //     {
+  //       if( phoneNum.length >= 11 )
+  //       {
+  //         var temp1 = phoneNum.substring(0, 3);
+  //         var temp2 = phoneNum.substring(3, 7);
+  //         var temp3 = phoneNum.substring(7, 11);
+  //
+  //         returnNum = temp1+"-"+temp2+"-"+temp3;
+  //       }
+  //       else if( phoneNum.length >= 7 )
+  //       {
+  //         var temp1 = phoneNum.substring(0, 3);
+  //         var temp2 = phoneNum.substring(3, 6);
+  //         var temp3 = phoneNum.substring(6, 10);
+  //
+  //         returnNum = temp1+"-"+temp2+"-"+temp3;
+  //       }
+  //       else if( phoneNum.length >= 4 )
+  //       {
+  //         var temp1 = phoneNum.substring(0, 3);
+  //         var temp2 = phoneNum.substring(3, phoneNum.length);
+  //
+  //         returnNum = temp1+"-"+temp2;
+  //       }
+  //
+  //       $('#info_phone').val(returnNum);
+  //     }
+  //   }
+  // });
 });
 
 function validation(errors){
