@@ -15,7 +15,7 @@
  *= require pc/style
  *= require pc/icheck/skins/all
  *= require pc/icheck/skins/minimal/_all
- *= require pc/icheck/skins/minimal/_minimal
+ *= require pc/icheck/skins/minimal/minimal
  *= require pc/jquery.selectBox
  *= require pc/selectric
  */
