@@ -53,15 +53,23 @@ img{
 }
 
 .share{
-  margin:0 auto;	
+  margin:0 auto;
   background-image: asset-url("pc/share_btn_bg.png");
   width:261px;
   height:37px;
-  
+
 }
 
-.share_icon{
-  margin-bottom: -8px;
+.share_icon_f{
+  margin-top: 7px;
+  margin-right: 32px;
+  float: right;
+}
+
+.share_icon_t{
+  margin-top: 8px;
+  margin-right: 14px;
+  float: right;
 }
 
 .product{
@@ -183,10 +191,12 @@ img{
 }
 
 .personal_caution{
-  width: 400px;
-  margin-left: 25px;
-  height: 400px;
+  width: 360px;
+  margin-left: 40px;
+  height: 424px;
   resize: none;
+  border: 0;
+
 }
 
 #popup_personal{
@@ -251,6 +261,10 @@ img{
   margin-right: 8px;
   width: 64px;
   float:left;
+}
+
+.label{
+  background-color: white;
 }
 
 span.customSelect {
@@ -350,20 +364,20 @@ span.customSelect2 {
 	}
 }
 .star{
-  
+
   margin-left:2px;
   color:#aaa;
-  
+
 }
 
 .icheckbox_minimal{
   .star{
     margin-left:25px;
   }
-  
+
 }
 
 .popup_info_to_personal{
   margin-left:10px;
-  
+
 }
