@@ -44,8 +44,8 @@ $(document).ready(function(){
 
   $("#product_button").click(function(e){
     e.preventDefault();
-    $("#popup_product").bPopup({
-      modalColor: '#000'
+    $("#popup_product").modal({
+      // closeClass: 'b-close',
     });
     ga('send', 'event', 'button', 'click', '제품 자세히 보기');
 
