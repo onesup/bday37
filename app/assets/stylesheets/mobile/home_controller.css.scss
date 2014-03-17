@@ -6,7 +6,7 @@
 /*-----------------------------------------------------
 * Reset & Base
 *----------------------------------------------------*/
-body, div, ul, li {margin:0;padding:0;}
+*, body, div, ul, li {margin:0;padding:0;}
 a {text-decoration: none;}
 div {position:relative;}
 image {border:0}
@@ -65,13 +65,17 @@ body{background: #d4e5e9;}
 		  text-align:left;
           .logo {
             width: 50%;
-			padding-left:5px;
+			padding-left:10px;
           }
         }
 
         .event-date {
           width: 160px;
           float: right;
+		  text-align:right;
+		  img{
+			  width:150px;
+		  }
         }
 
 		.title{
@@ -111,7 +115,7 @@ body{background: #d4e5e9;}
 
         .container-sns {
 		 
-		  margin:20px 10px;
+		  margin:20px 10px 20px 13px;
 		  padding:25px 0;
 		  border-top:1px solid #a4b7bf;
 		  border-bottom:1px solid #a4b7bf;
@@ -142,13 +146,6 @@ body{background: #d4e5e9;}
           }
         }
 
-        .divider_02 {
-          width: 77%;
-          margin-top: 0;
-          margin-bottom: 7%;
-          padding-left: 10%;
-          padding-right: 10%;
-        }
 
         .container-promotion {
 			margin:10px;
@@ -183,13 +180,18 @@ body{background: #d4e5e9;}
 //      padding-right: 3%;
 
       .wrapper-background {
-	    width: 320px;
+	    width: 480px;
 		margin:0 auto;  
         padding-left: 7px;
         background: #fff;
 		
+		p{
+			margin:0 10px;
+		}
+		
 		p.first{
 			padding-bottom:10px;
+			margin-bottom:10px;
 			border-bottom:1px solid #ccc
 		}
 
@@ -215,29 +217,30 @@ body{background: #d4e5e9;}
 * product.html.erb
 *----------------------------------------------------*/
 #product {
-  width: 640px;
+  width: 480px;
   margin: 0 auto;
 
   .container-product {
-    width: 580px;
+    width: 480px;
     margin: 0 auto;
     margin-bottom: 60px;
+	text-align:center;
 
 
     .text-top {
-      width: 100%;
-      margin-bottom: 6%;
+      width: 200px;
+      margin-bottom: 10px;
 	  text-align:center;
     }
 
     .product {
-      width: 100%;
+      width: 260px;
 	  margin-bottom: 6%;
 	  text-align:center;
     }
 
     .text-bottom {
-      width: 100%;
+      width: 270px;
 	  text-align:center;
     }
   }
