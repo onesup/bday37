@@ -1,5 +1,5 @@
 class Pc::UsersController < ApplicationController
-before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   
   def create
     @user = User.new(user_params)
@@ -9,13 +9,11 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     @user.birthday = DateTime.parse(birthday)
     respond_to do |format|
       if @user.save
-        c = Coupon.new
-        c.code = c.random_code
-        c.user = @user
-        c.save
-        m = Message.send_to(c)
-       
-        puts "@@@@@@@@@@@@@@@@@@@@@@"+m.id.to_s
+        coupon = Coupon.new
+        coupon.code = coupon.random_code
+        coupon.user = @user
+        coupon.save
+        MessageJob.new.async.perform(coupon)
         format.html { redirect_to pc_index_path, notice: 'User was successfully created.' }
         format.json { render json: {status: "success"}, status: :created }
       else
@@ -24,6 +22,20 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
       end
     end
   end
+  
+  def delete
+    test_users = [
+      "010-6418-4332", "010-2515-4373", "010-9911-1804", 
+      "010-2740-7375", "010-7599-0897", "010-4727-1051"
+    ]
+    @users = User.where(test_users)
+    @users.destroy_all
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.json { head :no_content }
+    end
+  end
+    
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

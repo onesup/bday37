@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   
   namespace :pc do
     get 'index' => 'home#index'
-    resources :users
+    resources :users do
+      collection do
+        get 'delete'
+      end
+    end
   end
   
   namespace :mobile do
