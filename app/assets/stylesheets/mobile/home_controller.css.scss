@@ -6,7 +6,7 @@
 /*-----------------------------------------------------
 * Reset & Base
 *----------------------------------------------------*/
-body, div, ul, li {margin:0;padding:0;}
+*, body, div, ul, li {margin:0;padding:0;}
 a {text-decoration: none;}
 div {position:relative;}
 image {border:0}
@@ -51,7 +51,7 @@ body{background: #d4e5e9;}
 * index.html.erb
 *----------------------------------------------------*/
 #main {
-    width: 320px;
+    width: 480px;
     margin: 0 auto;
     padding: 10px 0 0 0;
 
@@ -65,12 +65,17 @@ body{background: #d4e5e9;}
 		  text-align:left;
           .logo {
             width: 50%;
+			padding-left:10px;
           }
         }
 
         .event-date {
-          width: 50%;
+          width: 160px;
           float: right;
+		  text-align:right;
+		  img{
+			  width:150px;
+		  }
         }
 
 		.title{
@@ -110,7 +115,7 @@ body{background: #d4e5e9;}
 
         .container-sns {
 		 
-		  margin:20px 10px;
+		  margin:20px 10px 20px 13px;
 		  padding:25px 0;
 		  border-top:1px solid #a4b7bf;
 		  border-bottom:1px solid #a4b7bf;
@@ -141,13 +146,6 @@ body{background: #d4e5e9;}
           }
         }
 
-        .divider_02 {
-          width: 77%;
-          margin-top: 0;
-          margin-bottom: 7%;
-          padding-left: 10%;
-          padding-right: 10%;
-        }
 
         .container-promotion {
 			margin:10px;
@@ -182,13 +180,18 @@ body{background: #d4e5e9;}
 //      padding-right: 3%;
 
       .wrapper-background {
-	    width: 320px;
+	    width: 480px;
 		margin:0 auto;  
         padding-left: 7px;
         background: #fff;
 		
+		p{
+			margin:0 10px;
+		}
+		
 		p.first{
 			padding-bottom:10px;
+			margin-bottom:10px;
 			border-bottom:1px solid #ccc
 		}
 
@@ -214,29 +217,30 @@ body{background: #d4e5e9;}
 * product.html.erb
 *----------------------------------------------------*/
 #product {
-  width: 640px;
+  width: 480px;
   margin: 0 auto;
 
   .container-product {
-    width: 580px;
+    width: 480px;
     margin: 0 auto;
     margin-bottom: 60px;
+	text-align:center;
 
 
     .text-top {
-      width: 100%;
-      margin-bottom: 6%;
+      width: 200px;
+      margin-bottom: 10px;
 	  text-align:center;
     }
 
     .product {
-      width: 100%;
+      width: 260px;
 	  margin-bottom: 6%;
 	  text-align:center;
     }
 
     .text-bottom {
-      width: 100%;
+      width: 270px;
 	  text-align:center;
     }
   }
@@ -245,7 +249,7 @@ body{background: #d4e5e9;}
 * birthday.html.erb
 *----------------------------------------------------*/
 #birthday {
-  width: 320px;
+  width: 480px;
   margin: 0 auto;
 
   .popup-birthday_text-top {
@@ -256,24 +260,21 @@ body{background: #d4e5e9;}
   }
 
   .container-info {
-    width: 90%;
-    margin: 0 auto 5% auto;
-    padding: 5%;
+    width: 280px;
+    margin: 0 auto;
+    padding: 10px;
     background: #fff;
     
-    @media (max-width: 480px) {
-      width: 79%;
-      margin: 0 0 5% 6%;
-    }
+
 
     .container-year {
-      padding-left: 8%;
+	  float:left;
       .select_year {
-        width: 157px;
-        height: 52px;
-        margin-right: 2%;
+        width: 79px;
+        height: 26px;
+        margin-right: 5px;
         padding-left: 20px;
-        font-size: 1em;
+        font-size: 13px;
         font-weight: bold;
         border: 0;
         float: left;
@@ -302,19 +303,21 @@ body{background: #d4e5e9;}
 
       .label-year {
         float: left;
-        padding: 3% 4% 0 0;
-        width: 3%;
+        padding: 7px 10px 0 0;
+        width: 9px;
       }
     }
 
 
   .container-month {
+	 float:left;
+	 width:80px;
     .select_month {
       width: 108px;
       height: 52px;
-      margin-right: 2%;
+      margin-right: 5px;
       padding-left: 10px;
-      font-size: 1em;
+      font-size: 13px;
       font-weight: bold;
       border: 0;
       float: left;
@@ -343,20 +346,21 @@ body{background: #d4e5e9;}
 
     .label-month {
       float: left;
-      padding: 3% 4% 0 0;
-      width: 3%;
+      padding: 7px 10px 0 0;
+      width: 10px;
+	  display:block;
     }
   }
 
   .container-day {
-
-
+ 	 float:left;
+ 	 width:80px;
     .select_day {
       width: 108px;
       height: 52px;
       margin-right: 2%;
       padding-left: 10px;
-      font-size: 1em;
+      font-size: 13px;
       font-weight: bold;
       border: 0;
       float: left;
@@ -387,8 +391,9 @@ body{background: #d4e5e9;}
 
     .label-day {
       float: left;
-      padding: 3% 4% 0 0;
-      width: 3%;
+      padding: 7px 10px 0 0;
+      width: 9px;
+	  display:block;
     }
   }
 
@@ -401,6 +406,7 @@ body{background: #d4e5e9;}
   .container-name {
     padding-left: 21%;
     margin-bottom: 2%;
+	margin-top:10px;
 
     .text_name {
       width: 10%;
@@ -409,8 +415,10 @@ body{background: #d4e5e9;}
 
     .info_input_name {
       width: 50%;
-      height: 45px;
-      font-size: .8em;
+      height: 30px;
+      font-size: 13px;
+	  -webkit-appearance: none;
+	  border-radius: 0;
     }
   }
 
@@ -423,8 +431,10 @@ body{background: #d4e5e9;}
 
     .info_input_call {
       width: 45%;
-      height: 45px;
-      font-size: .8em;
+      height: 30px;
+      font-size: 13px;
+	  -webkit-appearance: none;
+	  border-radius: 0;
     }
   }
 
@@ -562,7 +572,7 @@ body{background: #d4e5e9;}
 * coupon.html.erb
 *----------------------------------------------------*/
 #coupon {
-  width: 600px;
+  width: 480px;
   margin: 0 auto; }
   #coupon .text_coupon {
     width: 70%;
@@ -581,48 +591,58 @@ body{background: #d4e5e9;}
 *----------------------------------------------------*/
 #coupon_success {
 
-  width: 600px;
+  width: 480px;
   margin: 5% auto 0 auto;
   padding: 0; }
   #coupon_success .container-logo {
-    margin-bottom: 15%;
-    float: left; }
+    margin-bottom: 35px;
+	padding-left:10px;
+    }
     #coupon_success .container-logo .logo {
-      width: 80%;
-      padding-left: 12%; }
+      width: 92px;
+      }
       @media (max-width: 767px) {
         #coupon_success .container-logo .logo {
-          width: 70%;
-          padding-left: 3%;
-          margin-left: 12%; } }
-  #coupon_success .name {
+          width: 92px;
+          } }
+		  
+    #coupon_success {
+    	
+    } 
+	.coupon_tops{
+		text-align:center;}	
+	.name {
     position: absolute;
-    left: 10%;
-    top: 8.3%;
-    font-size: 2em; }
+    left: 10px;
+    top: 0px;
+    font-size: 18px;
+	letter-spacing:-1px; 
+	font-weight:bold;
+	width:70px;
+	text-align:right;
+    }
     @media (max-width: 767px) {
       #coupon_success .name {
-        left: 10%;
-        top: 8.3%;
-        font-size: 1.8em; } }
+        } }
     @media (max-width: 480px) {
       #coupon_success .name {
-        left: 9%;
-        top: 8.7%;
-        font-size: 1.5em; } }
-  #coupon_success .text_coupon_top {
-    margin-bottom: 10%;
-    margin-left: 3%;
-    padding-left: 2%;
-    width: 90%; }
+        } }
+  .text_coupon_top {
+	  width:290px;
+	  padding-left:15px;
+   }
+  #coupon_success .coupon_img{
+	  margin-bottom:20px;
+  }	
   #coupon_success .container-product {
     margin-bottom: 5%;
-    padding-left: 6%; }
-    #coupon_success .container-product .product {
-      width: 95%;
-      margin-bottom: -10%; }
+	text-align:center;}
+	#coupon_success .container-product .product {
+      width: 290px;
+      margin-bottom: 0; 
+      }
   #coupon_success .text_product_caution {
-    width: 80%; }
+    width: 227px; }
   #coupon_success .bottom {
     padding: 10% 0 0 10%;
     padding-bottom: 8%;
@@ -642,6 +662,12 @@ body{background: #d4e5e9;}
 	-moz-transform: scale(1.5);
 	-webkit-transform: scale(1.5);
 	-o-transform: scale(1.5);
+}
+
+
+#coupon_success .coupon_tops{
+	position:relative;
+	height:100px;
 }
 
 .agree_checkbox{
@@ -681,12 +707,14 @@ body{background: #d4e5e9;}
   margin-left: 12px;
   margin-right: 12px;
   float: left;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 .text_terms{
   float: left;
   width: 35%;
-  padding-top: 1%;
+  padding-top: 2%;
 }
 
 .container-terms-master{
