@@ -107,13 +107,14 @@ function validation(errors){
 }
 
 function share() {
+  var text = "[Skin Birthday]\n당신이 태어난 오늘 피부도 새로 태어납니다.\n\n생일을 맞이한 첫 구매 고객님께\n시크릿 프로그래밍 에센스(40ml)를 생일 선물로 드립니다.\n\n지금 쿠폰받기 >\n<%= Rails.application.secrets.url %>";
   var share_content = {
     method: "feed",
     name: "숨",
     link: "<%= Rails.application.secrets.url %>",
     picture: '<%#= asset_url "fb_share_img.jpg" %>',
     caption: "[숨::숨 이벤트]",
-    description: "사랑하는 숨"
+    description: text
   };
   FB.ui(share_content, function(response) {
     if(response && response.post_id) {
