@@ -51,7 +51,7 @@ body{background: #d4e5e9;}
 * index.html.erb
 *----------------------------------------------------*/
 #main {
-    width: 680px;
+    width: 640px;
     margin: 0 auto;
     padding: 5% 0 0 0%;
 
@@ -108,7 +108,7 @@ body{background: #d4e5e9;}
 
         .container-product {
           margin-top: 10%;
-          padding-left: 6%;
+		  text-align:center;
           .product {
             width: 90%;
           }
@@ -226,30 +226,30 @@ body{background: #d4e5e9;}
 * product.html.erb
 *----------------------------------------------------*/
 #product {
-  width: 600px;
+  width: 640px;
   margin: 0 auto;
 
   .container-product {
-    width: 500px;
+    width: 580px;
     margin: 0 auto;
     margin-bottom: 60px;
 
 
     .text-top {
-      width: 70%;
+      width: 100%;
       margin-bottom: 6%;
-      padding-left: 14%;
+	  text-align:center;
     }
 
     .product {
-      width: 40%;
-      margin-bottom: -18%;
-      padding-left: 30%;
+      width: 100%;
+	  margin-bottom: 6%;
+	  text-align:center;
     }
 
     .text-bottom {
-      width: 75%;
-      padding-left: 13%;
+      width: 100%;
+	  text-align:center;
     }
   }
 }
@@ -257,7 +257,7 @@ body{background: #d4e5e9;}
 * birthday.html.erb
 *----------------------------------------------------*/
 #birthday {
-  width: 600px;
+  width: 640px;
   margin: 0 auto;
 
   .popup-birthday_text-top {
@@ -525,7 +525,7 @@ body{background: #d4e5e9;}
 * duplication.html.erb
 *----------------------------------------------------*/
 #duplication {
-  width: 600px;
+  width: 640px;
   margin: 0 auto;
 
   .text_duplicate {
@@ -545,7 +545,7 @@ body{background: #d4e5e9;}
 *----------------------------------------------------*/
 #coupon {
 
-  width: 600px;
+  width: 640px;
   margin: 0 auto;
 
   .text_coupon {
@@ -574,7 +574,7 @@ body{background: #d4e5e9;}
 *----------------------------------------------------*/
 #coupon_success {
 
-  width: 600px;
+  width: 640px;
   margin: 5% auto 0 auto;
   padding: 0;
 
@@ -685,7 +685,7 @@ body{background: #d4e5e9;}
 }
 
 .container-coupon{
-  padding: 8% 20%;
+  padding: 8% 20% 4%;
 }
 
 .text_caution{
