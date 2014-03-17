@@ -420,8 +420,9 @@ body{background: #d4e5e9;}
     }
 
     .info_input_name {
-      width: 35%;
+      width: 50%;
       height: 45px;
+      font-size: .8em;
     }
   }
 
@@ -433,8 +434,9 @@ body{background: #d4e5e9;}
     }
 
     .info_input_call {
-      width: 31%;
+      width: 45%;
       height: 45px;
+      font-size: .8em;
     }
   }
 
@@ -693,17 +695,32 @@ body{background: #d4e5e9;}
   width: 85%;
 }
 
-
-
-
-
-#info_input_radio{
+.info_input_radio{
   weight: 24px;
-  height: 24px;
+  height: 14px;
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
   -ms-appearance: checkbox;
   -o-appearance: checkbox;
   margin-left: 12px;
   margin-right: 12px;
+  float: left;
+}
+
+.text_terms{
+  float: left;
+  width: 35%;
+  padding-top: 1%;
+}
+
+.container-terms-master{
+  margin-left: 13%;
+  width: 87%
+}
+
+.detail_terms{
+  float: left;
+  width: 30%;
+  margin-left: 10%;
+
 }
