@@ -9,12 +9,11 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     @user.birthday = DateTime.parse(birthday)
     respond_to do |format|
       if @user.save
-        c = Coupon.new
-        c.code = c.random_code
-        c.user = @user
-        c.save
-        m = Message.send_to(c)
-       
+        coupon = Coupon.new
+        coupon.code = coupon.random_code
+        coupon.user = @user
+        coupon.save
+        MessageJob.new.async.perform(coupon)
         puts "@@@@@@@@@@@@@@@@@@@@@@"+m.id.to_s
         format.html { redirect_to pc_index_path, notice: 'User was successfully created.' }
         format.json { render json: {status: "success"}, status: :created }
