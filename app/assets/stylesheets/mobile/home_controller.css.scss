@@ -408,8 +408,9 @@ body{background: #d4e5e9;}
     }
 
     .info_input_name {
-      width: 35%;
+      width: 50%;
       height: 45px;
+      font-size: .8em;
     }
   }
 
@@ -421,8 +422,9 @@ body{background: #d4e5e9;}
     }
 
     .info_input_call {
-      width: 31%;
+      width: 45%;
       height: 45px;
+      font-size: .8em;
     }
   }
 
@@ -482,13 +484,6 @@ body{background: #d4e5e9;}
   white-space: pre-line;
 }
 
-/*-----------------------------------------------------
-* coupon.html.erb
-*----------------------------------------------------*/
-#coupon {
-  width: 600px;
-  margin: 0 auto;
-}
 
 /*-----------------------------------------------------
 * thanks.html.erb
@@ -532,120 +527,115 @@ body{background: #d4e5e9;}
 * coupon.html.erb
 *----------------------------------------------------*/
 #coupon {
+  width: 600px;
+  margin: 0 auto; }
 
-  width: 640px;
-  margin: 0 auto;
-
-  .text_coupon {
-    width: 70%;
-    padding-left: 15%;
-  }
-
-  .container-buttons {
-
+/*-----------------------------------------------------
+* thanks.html.erb
+*----------------------------------------------------*/
+#thanks {
+  width: 600px;
+  margin: 0 auto; }
+  #thanks .text_thanks {
+    padding-left: 22%;
+    width: 55%; }
+  #thanks .btn_finish {
     margin-top: 5%;
-    padding-left: 10%;
+    padding-left: 30%;
+    width: 40%; }
 
-    .btn_coupon_use {
+/*-----------------------------------------------------
+* duplication.html.erb
+*----------------------------------------------------*/
+#duplication {
+  width: 600px;
+  margin: 0 auto; }
+  #duplication .text_duplicate {
+    width: 70%;
+    padding-left: 15%; }
+  #duplication .btn_duplicate {
+    width: 40%;
+    margin-top: 6%;
+    padding-left: 30%; }
+
+/*-----------------------------------------------------
+* coupon.html.erb
+*----------------------------------------------------*/
+#coupon {
+  width: 600px;
+  margin: 0 auto; }
+  #coupon .text_coupon {
+    width: 70%;
+    padding-left: 15%; }
+  #coupon .container-buttons {
+    margin-top: 5%;
+    padding-left: 10%; }
+    #coupon .container-buttons .btn_coupon_use {
       width: 42%;
-      margin-right: 3%;
-    }
+      margin-right: 3%; }
+    #coupon .container-buttons .btn_coupon_notuse {
+      width: 42%; }
 
-    .btn_coupon_notuse {
-      width: 42%;
-    }
-
-  }
-}
 /*-----------------------------------------------------
 * coupon_success.html.erb
 *----------------------------------------------------*/
 #coupon_success {
 
-  width: 640px;
+  width: 600px;
   margin: 5% auto 0 auto;
-  padding: 0;
-
-  .container-logo {
+  padding: 0; }
+  #coupon_success .container-logo {
     margin-bottom: 15%;
-    float: left;
-
-    .logo {
+    float: left; }
+    #coupon_success .container-logo .logo {
       width: 80%;
-      padding-left: 12%;
-
+      padding-left: 12%; }
       @media (max-width: 767px) {
-        width: 70%;
-        padding-left: 3%;
-        margin-left: 12%;
-      }
-    }
-  }
-
-  .name {
+        #coupon_success .container-logo .logo {
+          width: 70%;
+          padding-left: 3%;
+          margin-left: 12%; } }
+  #coupon_success .name {
     position: absolute;
     left: 10%;
     top: 8.3%;
-    font-size: 2em;
-
+    font-size: 2em; }
     @media (max-width: 767px) {
-      left: 10%;
-      top: 8.3%;
-      font-size: 1.8em;
-    }
-
+      #coupon_success .name {
+        left: 10%;
+        top: 8.3%;
+        font-size: 1.8em; } }
     @media (max-width: 480px) {
-      left: 9%;
-      top: 8.7%;
-      font-size: 1.5em;
-    }
-
-  }
-
-  .text_coupon_top {
+      #coupon_success .name {
+        left: 9%;
+        top: 8.7%;
+        font-size: 1.5em; } }
+  #coupon_success .text_coupon_top {
     margin-bottom: 10%;
     margin-left: 3%;
     padding-left: 2%;
-    width: 90%;
-  }
-
-  .container-product {
+    width: 90%; }
+  #coupon_success .container-product {
     margin-bottom: 5%;
-    padding-left: 6%;
-
-    .product {
+    padding-left: 6%; }
+    #coupon_success .container-product .product {
       width: 95%;
-      margin-bottom: -10%;
-    }
-  }
-
-  .text_product_caution {
-    width: 80%;
-  }
-
-  .bottom {
-
+      margin-bottom: -10%; }
+  #coupon_success .text_product_caution {
+    width: 80%; }
+  #coupon_success .bottom {
     padding: 10% 0 0 10%;
     padding-bottom: 8%;
-    background: white;
-
-    .text_coupon_caution2 {
-      width: 70%;
-    }
-
-    .btn_coupon_use_before {
+    background: white; }
+    #coupon_success .bottom .text_coupon_caution2 {
+      width: 70%; }
+    #coupon_success .bottom .btn_coupon_use_before {
       margin-top: 5%;
-      width: 90%;
-    }
-
-    .btn_coupon_use_after {
+      width: 90%; }
+    #coupon_success .bottom .btn_coupon_use_after {
       margin-top: 5%;
-      width: 90%;
-    }
+      width: 90%; }
 
-  }
-
-}
 
 .icheckbox_minimal{
   -ms-transform: scale(1.5);
@@ -681,17 +671,32 @@ body{background: #d4e5e9;}
   width: 85%;
 }
 
-
-
-
-
-#info_input_radio{
+.info_input_radio{
   weight: 24px;
-  height: 24px;
+  height: 14px;
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
   -ms-appearance: checkbox;
   -o-appearance: checkbox;
   margin-left: 12px;
   margin-right: 12px;
+  float: left;
+}
+
+.text_terms{
+  float: left;
+  width: 35%;
+  padding-top: 1%;
+}
+
+.container-terms-master{
+  margin-left: 13%;
+  width: 87%
+}
+
+.detail_terms{
+  float: left;
+  width: 30%;
+  margin-left: 10%;
+
 }

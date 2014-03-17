@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20140311070554) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.string   "phone"
+    t.string   "phone",                               null: false
     t.datetime "birthday"
   end
 

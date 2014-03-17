@@ -1,2 +1,15 @@
-<h1>Coupons#update</h1>
-<p>쿠폰이 사용되었습니다!!!!</p>
+<div id="coupon_success">
+	<div class="container-logo">
+		<a href="/"><%= image_tag("mobile/logo.png", class:"logo") %></a>
+	</div>
+	<span class="name"><%= @coupon.user.name %></span>
+	<%= image_tag("mobile/text_coupon_top.png", class:"text_coupon_top") %>
+	<div class="container-product">
+		<%= image_tag("mobile/product.png", class:"product") %>
+		<%= image_tag("mobile/text_product_caution.png", class:"text_product_caution") %>
+	</div>
+	<div class="bottom">
+		<%= image_tag("mobile/text_coupon_caution2.png", class:"text_coupon_caution2") %>
+		<%= image_tag("mobile/btn_coupon_use_after.png", class:"btn_coupon_use_before") %>
+	</div>
+</div>
