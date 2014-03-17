@@ -572,7 +572,7 @@ body{background: #d4e5e9;}
 * coupon.html.erb
 *----------------------------------------------------*/
 #coupon {
-  width: 600px;
+  width: 480px;
   margin: 0 auto; }
   #coupon .text_coupon {
     width: 70%;
@@ -591,48 +591,58 @@ body{background: #d4e5e9;}
 *----------------------------------------------------*/
 #coupon_success {
 
-  width: 600px;
+  width: 480px;
   margin: 5% auto 0 auto;
   padding: 0; }
   #coupon_success .container-logo {
-    margin-bottom: 15%;
-    float: left; }
+    margin-bottom: 35px;
+	padding-left:10px;
+    }
     #coupon_success .container-logo .logo {
-      width: 80%;
-      padding-left: 12%; }
+      width: 92px;
+      }
       @media (max-width: 767px) {
         #coupon_success .container-logo .logo {
-          width: 70%;
-          padding-left: 3%;
-          margin-left: 12%; } }
-  #coupon_success .name {
+          width: 92px;
+          } }
+		  
+    #coupon_success {
+    	
+    } 
+	.coupon_tops{
+		text-align:center;}	
+	.name {
     position: absolute;
-    left: 10%;
-    top: 8.3%;
-    font-size: 2em; }
+    left: 10px;
+    top: 0px;
+    font-size: 18px;
+	letter-spacing:-1px; 
+	font-weight:bold;
+	width:70px;
+	text-align:right;
+    }
     @media (max-width: 767px) {
       #coupon_success .name {
-        left: 10%;
-        top: 8.3%;
-        font-size: 1.8em; } }
+        } }
     @media (max-width: 480px) {
       #coupon_success .name {
-        left: 9%;
-        top: 8.7%;
-        font-size: 1.5em; } }
-  #coupon_success .text_coupon_top {
-    margin-bottom: 10%;
-    margin-left: 3%;
-    padding-left: 2%;
-    width: 90%; }
+        } }
+  .text_coupon_top {
+	  width:290px;
+	  padding-left:15px;
+   }
+  #coupon_success .coupon_img{
+	  margin-bottom:20px;
+  }	
   #coupon_success .container-product {
     margin-bottom: 5%;
-    padding-left: 6%; }
-    #coupon_success .container-product .product {
-      width: 95%;
-      margin-bottom: -10%; }
+	text-align:center;}
+	#coupon_success .container-product .product {
+      width: 290px;
+      margin-bottom: 0; 
+      }
   #coupon_success .text_product_caution {
-    width: 80%; }
+    width: 227px; }
   #coupon_success .bottom {
     padding: 10% 0 0 10%;
     padding-bottom: 8%;
@@ -652,6 +662,12 @@ body{background: #d4e5e9;}
 	-moz-transform: scale(1.5);
 	-webkit-transform: scale(1.5);
 	-o-transform: scale(1.5);
+}
+
+
+#coupon_success .coupon_tops{
+	position:relative;
+	height:100px;
 }
 
 .agree_checkbox{
