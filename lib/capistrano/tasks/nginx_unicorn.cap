@@ -1,7 +1,7 @@
 namespace :load do
   task :defaults do
     set :nginx_server_name, "web"
-    set :nginx_use_ssl, false
+    set :nginx_use_ssl, true
     set :nginx_ssl_certificate, -> { "#{fetch(:nginx_server_name)}.crt" }
     set :nginx_ssl_certificate_key, -> { "#{fetch(:nginx_server_name)}.key" }
     set :nginx_upload_local_certificate, true
