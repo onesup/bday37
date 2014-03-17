@@ -14,4 +14,7 @@ class Mobile::HomeController < ApplicationController
   def terms
 
   end
+  def product
+
+  end
 end

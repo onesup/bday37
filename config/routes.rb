@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     get 'thank_you' => 'home#thank_you'
     get 'unique_error' => 'home#unique_error'
     get 'terms' => 'home#terms'
+    get 'product' => 'home#product'
     resources :users
   end
 
