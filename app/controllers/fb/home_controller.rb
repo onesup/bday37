@@ -12,7 +12,7 @@ class Fb::HomeController < ApplicationController
     rescue
       result = "invalid!!!"
     end
-    redirect_to pc_index_path, :protocol => "http://"
+    redirect_to pc_index_path, :protocol => "https://"
   end
   
   def index
