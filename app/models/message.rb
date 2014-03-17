@@ -18,10 +18,13 @@ class Message < ActiveRecord::Base
   end
   
   def self.send_message(coupon)
-    "[Skin Birthday]
+    "
+    
+    [Skin Birthday]
     생일을 축하드립니다!
     숨37 첫 구매 고객님께 
-    피부생일 선물로 시크릿 프로그래밍 에센스(40ml)를 드립니다
+    피부생일 선물로 
+    시크릿 프로그래밍 에센스(40ml)를 드립니다.
     
     쿠폰받기:" + Rails.application.secrets.url + "/" + coupon.code
   end
@@ -45,15 +48,17 @@ class Message < ActiveRecord::Base
       content_type: 'multipart/form-data',
       'x-waple-authorization' => api_key
     )
-    cmid = JSON.parse(res)["cmid"]
+    parsed_result = JSON.parse(res)
+    cmid = parsed_result["cmid"]
     call_status = String.new
     start = Time.new
     during_time = 0
+    return JSON.parse(res)
     # while call_status.empty? or call_status == "result is null" or during_time < 3.minutes
- #      sleep(10.seconds)
- #      call_status = report(cmid, time)
- #      during_time = Time.now - start
- #    end
+    #   sleep(10.seconds)
+    #   call_status = report(cmid, time)
+    #   during_time = Time.now - start
+    # end
   end
   
   def waiting_for_result(interval_time, finish_time)
