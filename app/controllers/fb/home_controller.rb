@@ -8,7 +8,7 @@ class Fb::HomeController < ApplicationController
     begin
       request = oauth.parse_signed_request(params["signed_request"])
       result = request["page"]["liked"]
-      puts request
+      Rails.logger.info request
     rescue
       result = "invalid!!!"
     end
