@@ -1,4 +1,5 @@
 class CouponsController < ApplicationController
+  layout 'mobile'
   before_action :set_coupon, only: [:destroy, :update, :edit, :show]
   def update
     @coupon.used_at=Time.now
@@ -14,12 +15,14 @@ class CouponsController < ApplicationController
   end
 
   def edit
+    @coupon = Coupon.find_by_code(params[:code])
     if @coupon.is_used? == "used"
-      redirect_to coupons_path(@coupon.code)
+      redirect_to coupon_path(@coupon.code)
     end
   end
   
   def show
+    @coupon = Coupon.find_by_code(params[:code])
     if @coupon.is_used? == "used"
     else
       redirect_to edit_coupon_path(@coupon.code)
@@ -27,14 +30,14 @@ class CouponsController < ApplicationController
   end
   
   private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_coupon
-    @coupon = Coupon.find_by_code(params[:code])
-  end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_coupon
+      @coupon = Coupon.find_by_code(params[:code])
+    end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def coupon_params
-    params[:user] = {status: "used"}
-  end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def coupon_params
+      params[:user] = {status: "used"}
+    end
     
 end
