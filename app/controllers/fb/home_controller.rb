@@ -12,7 +12,7 @@ class Fb::HomeController < ApplicationController
     rescue
       result = "invalid!!!"
     end
-    redirect_to pc_index_path, :protocol => "https://"
+    redirect_to "https://#{Rails.application.secrets.url}/pc/index"
   end
   
   def index
