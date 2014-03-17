@@ -51,7 +51,7 @@ body{background: #d4e5e9;}
 * index.html.erb
 *----------------------------------------------------*/
 #main {
-    width: 320px;
+    width: 480px;
     margin: 0 auto;
     padding: 10px 0 0 0;
 
@@ -65,11 +65,12 @@ body{background: #d4e5e9;}
 		  text-align:left;
           .logo {
             width: 50%;
+			padding-left:5px;
           }
         }
 
         .event-date {
-          width: 50%;
+          width: 160px;
           float: right;
         }
 
@@ -245,7 +246,7 @@ body{background: #d4e5e9;}
 * birthday.html.erb
 *----------------------------------------------------*/
 #birthday {
-  width: 320px;
+  width: 480px;
   margin: 0 auto;
 
   .popup-birthday_text-top {
@@ -256,24 +257,21 @@ body{background: #d4e5e9;}
   }
 
   .container-info {
-    width: 90%;
-    margin: 0 auto 5% auto;
-    padding: 5%;
+    width: 280px;
+    margin: 0 auto;
+    padding: 10px;
     background: #fff;
     
-    @media (max-width: 480px) {
-      width: 79%;
-      margin: 0 0 5% 6%;
-    }
+
 
     .container-year {
-      padding-left: 8%;
+	  float:left;
       .select_year {
-        width: 157px;
-        height: 52px;
-        margin-right: 2%;
+        width: 79px;
+        height: 26px;
+        margin-right: 5px;
         padding-left: 20px;
-        font-size: 1em;
+        font-size: 13px;
         font-weight: bold;
         border: 0;
         float: left;
@@ -302,19 +300,21 @@ body{background: #d4e5e9;}
 
       .label-year {
         float: left;
-        padding: 3% 4% 0 0;
-        width: 3%;
+        padding: 7px 10px 0 0;
+        width: 9px;
       }
     }
 
 
   .container-month {
+	 float:left;
+	 width:80px;
     .select_month {
       width: 108px;
       height: 52px;
-      margin-right: 2%;
+      margin-right: 5px;
       padding-left: 10px;
-      font-size: 1em;
+      font-size: 13px;
       font-weight: bold;
       border: 0;
       float: left;
@@ -343,20 +343,21 @@ body{background: #d4e5e9;}
 
     .label-month {
       float: left;
-      padding: 3% 4% 0 0;
-      width: 3%;
+      padding: 7px 10px 0 0;
+      width: 10px;
+	  display:block;
     }
   }
 
   .container-day {
-
-
+ 	 float:left;
+ 	 width:80px;
     .select_day {
       width: 108px;
       height: 52px;
       margin-right: 2%;
       padding-left: 10px;
-      font-size: 1em;
+      font-size: 13px;
       font-weight: bold;
       border: 0;
       float: left;
@@ -387,8 +388,9 @@ body{background: #d4e5e9;}
 
     .label-day {
       float: left;
-      padding: 3% 4% 0 0;
-      width: 3%;
+      padding: 7px 10px 0 0;
+      width: 9px;
+	  display:block;
     }
   }
 
@@ -401,6 +403,7 @@ body{background: #d4e5e9;}
   .container-name {
     padding-left: 21%;
     margin-bottom: 2%;
+	margin-top:10px;
 
     .text_name {
       width: 10%;
@@ -409,8 +412,10 @@ body{background: #d4e5e9;}
 
     .info_input_name {
       width: 50%;
-      height: 45px;
-      font-size: .8em;
+      height: 30px;
+      font-size: 13px;
+	  -webkit-appearance: none;
+	  border-radius: 0;
     }
   }
 
@@ -423,8 +428,10 @@ body{background: #d4e5e9;}
 
     .info_input_call {
       width: 45%;
-      height: 45px;
-      font-size: .8em;
+      height: 30px;
+      font-size: 13px;
+	  -webkit-appearance: none;
+	  border-radius: 0;
     }
   }
 
@@ -681,12 +688,14 @@ body{background: #d4e5e9;}
   margin-left: 12px;
   margin-right: 12px;
   float: left;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 .text_terms{
   float: left;
   width: 35%;
-  padding-top: 1%;
+  padding-top: 2%;
 }
 
 .container-terms-master{
