@@ -46,9 +46,15 @@
           <div class="info_birth">
             <%= select_year(Date.today, {start_year: 1900, end_year: 2014}, {name:'user[birthday_year]', class:'select_custom_1'})%>
             <%= image_tag("pc/popup/info/birth_label_1.png", class:"birth_label_class") %>
-            <%= select_tag "user[birthday_month]", options_for_select([ "3", "4" ], "3"), {class: 'select_custom_2'}%>
+            <%= select_tag "user[birthday_month]", options_for_select([ "3", "4" ], "3"), {class: 'select_custom_2', id: "select_month"}%>
             <%= image_tag("pc/popup/info/birth_label_2.png", class:"birth_label_class") %>
-            <%= select_day(Date.today, {start_day: 1, end_day: 31}, {name:'user[birthday_day]', class: 'select_custom_2'})%>
+            <%= 
+              select_tag(
+                "user[birthday_day]", 
+                options_for_select(%w(20 21 22 23 24 25 26 27 28 29 30 31), "3"),
+                {name:'user[birthday_day]', class: 'select_custom_2', id: "select_day"}
+              )
+            %>
             <%= image_tag("pc/popup/info/birth_label_3.png", class:"birth_label_class") %>
             <%= image_tag("pc/popup/info/birth_label_4.png", class:"birth_label_class2") %>
           </div>

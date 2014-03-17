@@ -16,7 +16,7 @@
 //= require jquery.bpopup.min
 //= require jquery.customSelect.min
 //= require icheck.min
-//= require jquery.selectBox
+// require jquery.selectBox
 //= require jquery.selectric
 //= require jquery.maskedinput.min
 //= require jquery.modal

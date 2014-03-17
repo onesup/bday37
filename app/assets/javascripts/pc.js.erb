@@ -3,8 +3,39 @@ $(document).ready(function(){
   // loadJsFile('http://i42.icast-ad.com/track?ccd=1242&mcd=01040601&pcd=1546');
   ga('send', 'event', 'button', 'click', '메인 페이지');
   $('.select_custom_1').selectric();
-  $('.select_custom_2').selectric();
-
+  $('.select_custom_2').selectric('refresh');
+  
+  $('#select_month').change(function(e){
+    e.preventDefault();
+    var month;
+    var days;
+    month = $("#select_month").val();
+    if(month === '3'){
+      add_days = [20,21,22,23,24,25,26,27,28,29,30,31];
+      remove_days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+      $.each(remove_days, function( index, value ){
+        $("#select_day option[value="+value+"]").remove();
+      });
+      $.each(add_days, function( index, value ){
+        $("#select_day").append($('<option>',{
+          value:value,
+          text:value
+        })).selectric('refresh');
+      });
+    }else if(month === '4'){
+      add_days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+      remove_days = [20,21,22,23,24,25,26,27,28,29,30,31];
+      $.each(remove_days, function( index, value ){
+        $("#select_day option[value="+value+"]").remove();
+      });
+      $.each(add_days, function( index, value ){
+        $("#select_day").append($('<option>',{
+          value:value,
+          text:value
+        })).selectric('refresh');
+      });
+    }
+  });
   $("#gift_button").click(function(e){
     e.preventDefault();
     $("#popup_info").bPopup({
