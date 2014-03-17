@@ -51,66 +51,52 @@ body{background: #d4e5e9;}
 * index.html.erb
 *----------------------------------------------------*/
 #main {
-    width: 640px;
+    width: 320px;
     margin: 0 auto;
-    padding: 5% 0 0 0%;
+    padding: 10px 0 0 0;
 
     .header {
 
       .top {
-
+		 text-align:center;
         .container-logo {
-          width: 30%;
+          width: 50%;
           float: left;
-
+		  text-align:left;
           .logo {
-            width: 100%;
-            padding-left: 12%;
-
-            @media (max-width: 767px) {
-              width: 70%;
-              padding-left: 3%;
-              margin-left: 12%;
-            }
-          }
-        }
-
-        .event-date {
-          width: 40%;
-          float: right;
-          @media (max-width: 480px) {
             width: 50%;
           }
         }
 
-        .tagline {
-          margin: 10% 0 0 10%;
-          width: 84%;
-
-          @media (max-width: 767px) {
-            width: 82%;
-          }
+        .event-date {
+          width: 50%;
+          float: right;
         }
 
+		.title{
+			text-align:center;
+	        padding-top:34px;
+			margin-bottom:15px;
+			.tagline {
+	          width: 246px;
+	        }
+		}
+
         .container-btn_gift {
-          margin-top: 5%;
-          padding-left: 23%;
-          width: 60%;
-
-          @media (max-width: 767px) {
-            width: 55%;
-          }
-
-          @media (max-width: 480px) {
-            width: 55%;
-          }
+		  margin:0 auto;
+		  display:block;
+		  width: 180px;
+		  text-align:center;
+		  img{
+		  	width: 180px;
+		  }
         }
 
         .container-product {
-          margin-top: 10%;
+          margin-top: 25px;
 		  text-align:center;
           .product {
-            width: 90%;
+            width: 320px;
           }
 
          // .text_product {
@@ -121,37 +107,36 @@ body{background: #d4e5e9;}
 
         }
 
-        .divider_01 {
-          width: 77%;
-          margin-top: 4%;
-          margin-bottom: 5%;
-          padding-left: 10%;
-        }
 
         .container-sns {
-          margin-bottom: 7%;
+		 
+		  margin:20px 10px;
+		  padding:25px 0;
+		  border-top:1px solid #a4b7bf;
+		  border-bottom:1px solid #a4b7bf;
+		  text-align:center;
 
           .text_sns {
-            width: 77%;
-            margin-bottom: 7%;
-            padding-left: 10%;
+            margin-bottom: 10px;
+			text-align:center;
+			width:256px;
           }
 
           .btn_kakaotalk {
-            width: 77%;
-            margin-bottom: 2%;
-            padding-left: 10%;
+			text-align:center;
+            margin-bottom: 10px;
+			width:280px;
           }
 
           .btn_kakaostory {
-            width: 77%;
-            margin-bottom: 2%;
-            padding-left: 10%;
+            margin-bottom: 10px;
+			text-align:center;
+			width:280px;
           }
 
           .btn_facebook {
-            width: 77%;
-            padding-left: 10%;
+			  text-align:center;
+			  width:280px;
 
           }
         }
@@ -165,24 +150,23 @@ body{background: #d4e5e9;}
         }
 
         .container-promotion {
-
-          padding-left: 10%;
-
+			margin:10px;
           .text_screte-programming-essence {
-            margin-right: 17%;
-            width: 44%;
+			display:block;
             float: left;
+			width:164px;
           }
 
           .btn_product-detail {
             margin-top: -2%;
-            width: 25%;
-            float: left;
+			width:85px;
+			display:block;
+            float: right;
           }
 
           .video {
             margin-top: 4%;
-            width: 86%;
+            width: 100%;
           }
         }
       }
@@ -191,33 +175,37 @@ body{background: #d4e5e9;}
 
 }
     .footer {
-      width: 100%;
       background: #fff;
-      margin-top: 3%;
+      margin-top: 5px;
 //      margin-top: 6%;
 //      padding-left: 3%;
 //      padding-right: 3%;
 
       .wrapper-background {
-        padding-left: 5%;
+	    width: 320px;
+		margin:0 auto;  
+        padding-left: 7px;
         background: #fff;
+		
+		p.first{
+			padding-bottom:10px;
+			border-bottom:1px solid #ccc
+		}
 
         .text_notes {
-          margin-top: 5%;
-          width: 80%;
-          margin-left: 2%;
+          margin-top: 20px;
+          width: 265px;
         }
 
         .divider_03 {
-          width: 94%;
+          width: 50%;
           margin-top: 7%;
-          margin-bottom: 4%;
-          padding-left: 0%;
+          margin-bottom: 10px;
         }
 
         .text_copyrights {
-          margin-bottom: 5%;
-          width: 94%;
+          margin-bottom: 10px;
+          width: 271px;
           background: #fff;
         }
       }
