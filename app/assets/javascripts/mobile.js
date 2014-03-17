@@ -20,3 +20,4 @@
 //= require jquery.selectBox
 //= require jquery.selectric
 //= require jquery.maskedinput.min
+//= require kakao.link.js

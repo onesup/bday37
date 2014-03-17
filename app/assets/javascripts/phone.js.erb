@@ -1,0 +1,73 @@
+$(document).ready(function(){
+	$("#info_input_radio").iCheck({
+		checkboxClass: 'icheckbox_minimal',
+		radioClass: 'iradio_minimal',
+    increaseArea: '20%' // optional
+  });
+
+	$("#info_phone").mask("999-9999-9999");
+	$.ajaxSetup({ cache: true });
+	$.getScript('//connect.facebook.net/ko_KR/all.js', function(){
+		FB.init({
+			appId      : '<%= Rails.application.secrets.fb_app_id %>',
+      channelUrl : '//<%= Rails.application.secrets.url %>/channel.html', // Channel file for x-domain comms
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+		FB.Canvas.setSize();
+		FB.Canvas.setAutoGrow();
+		$("#facebook_share_link").click(function(e){
+			e.preventDefault();
+			share();
+		});
+	});
+	$("#kakaotalk_share_link").click(function(e){
+		e.preventDefault();
+		kakao.link("talk").send({
+			msg : "새해를 맞이한 첫 구매 고객님께 시크릿 프로그래밍 에센스를 생일 선물로 드립니다!",
+			url : "<%= Rails.application.secrets.url %>",
+			appid : "skin_birthday",
+			appver : "1.0",
+			appname : "스킨버스데이",
+			type : "link"
+		});
+	});
+  $("#kakaostory_share_link").click(function(e){
+    e.preventDefault();
+    kakao.link("story").send({
+      post : "<%= Rails.application.secrets.url %>",
+      appid : "skin_birthday",
+      appver : "1.0",
+      appname : "스킨버스데이",
+      urlinfo : JSON.stringify({
+        title:"스킨버스데이",
+        desc:"새해를 맞이한 첫 구매 고객님께 시크릿 프로그래밍 에센스를 생일 선물로 드립니다!"+"<%= Rails.application.secrets.url %>",
+        imageurl:["http://i.imgur.com/Cxro80a.jpg"], 
+        type:"article"
+      })
+    });
+  });
+});
+
+
+
+  function share() {
+   var share_content = {
+    method: "feed",
+    name: "숨",
+    link: "<%= Rails.application.secrets.url %>",
+    picture: '<%#= asset_url "fb_share_img.jpg" %>',
+    caption: "[숨::숨 이벤트]",
+    description: "사랑하는 숨"
+  };
+  FB.ui(share_content, function(response) {
+    if(response && response.post_id) {
+     track_viral_action(viral_url, "facebook");
+     alert("공유되었습니다.");
+   }
+   else {
+     alert("공유 실패");
+   }
+ });
+}
