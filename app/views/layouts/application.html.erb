@@ -4,7 +4,8 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <title>Skin Birthday</title>
+  <title>::: su:m37 ::: Skin Birthday</title>
+
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta property="og:url" content="https://<%= Rails.application.secrets.url%>" />
 	<meta property="og:image" content="<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>" />
@@ -26,6 +27,7 @@
   <meta name="twitter:app:id:iphone" content="">
   <meta name="twitter:app:id:ipad" content="">
   <meta name="twitter:app:id:googleplay" content="">
+  <link id="page_favicon" href="images/favicon.ico" rel="icon" type="image/x-icon">
 </head>
 <body class="body_class">
   <%= yield %>
