@@ -231,17 +231,26 @@ body{background: #d4e5e9;}
       width: 200px;
       margin-bottom: 10px;
 	  text-align:center;
+	      @media (max-width: 767px) {
+	        width: 240px;
+	      }
     }
 
     .product {
       width: 260px;
 	  margin-bottom: 6%;
 	  text-align:center;
+      @media (max-width: 767px) {
+         width: 270px;
+      }
     }
 
     .text-bottom {
       width: 270px;
 	  text-align:center;
+      @media (max-width: 767px) {
+         width: 290px;
+      }
     }
   }
 }
