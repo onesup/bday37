@@ -40,7 +40,7 @@ $(document).ready(function(){
     e.preventDefault();
     $("#popup_info").bPopup({
       follow: [false, false], //x, y
-      position: ['auto', 100], //x, y
+      position: ['auto', 60], //x, y
       closeClass: 'b-close',
       modalColor: 'black'
     });
@@ -51,7 +51,10 @@ $(document).ready(function(){
     e.preventDefault();
     $("#popup_personal").bPopup({
       closeClass: 'b-close-2',
-      modalColor: 'black'
+      modalColor: 'black',
+      follow: [false, false], //x, y
+      position: ['auto', 60] //x, y
+      
     });
     ga('send', 'event', 'button', 'click', '개인정보 동의 팝업');
   });
@@ -62,6 +65,8 @@ $(document).ready(function(){
       $("#popup_fin1").bPopup({
         closeClass: 'b-close',
         modalColor: 'black',
+        follow: [false, false], //x, y
+        position: ['auto', 60], //x, y
         onClose: function(){$("#popup_info").bPopup().close();}
       });
     }else{

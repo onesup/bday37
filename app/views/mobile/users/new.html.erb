@@ -8,7 +8,7 @@
   </div>
   <div class="container-info clearfix">
     <div class="container-year clearfix">
-      <%= select_year(Date.today, {start_year: 1900, end_year: 2014}, {name:'user[birthday_year]', class:'select_year'})%>
+      <%= select_year(DateTime.parse("1988. 1. 1."), {start_year: 1900, end_year: 1995}, {name:'user[birthday_year]', class:'select_year'})%>
       <%= image_tag("mobile/popup-birthday_label-year.png", class:"label-year") %>
     </div>
     <div class="container-month clearfix">
