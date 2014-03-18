@@ -83,7 +83,7 @@ function share() {
   var share_content = {
     method: "feed",
     name: "Skin Birthday",
-    link: "<%= Rails.application.secrets.url %>",
+    link: "<%= Rails.application.secrets.url %>/pc/index",
     picture: '<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>',
     caption: "당신이 태어난 오늘, 피부도 새로 태어납니다.",
     description: text

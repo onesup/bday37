@@ -18,7 +18,7 @@ class Mobile::UsersController < ApplicationController
         format.html { redirect_to mobile_thank_you_path, notice: 'User was successfully created.' }
         format.json { render json: {status: "success"}, status: :created, location: @user }
       else
-        format.html { error_redirect(@user.errors) }
+        format.html { render action: 'new' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -36,7 +36,7 @@ class Mobile::UsersController < ApplicationController
 
   def error_redirect(errors)
     unless errors.get(:phone).index("has already been taken") == nil
-      redirect_to mobile_unique_error_path
+      redirect_to mobile_unique_error_path()
     else
       redirect_to action: "new"
       
