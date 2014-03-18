@@ -19,7 +19,7 @@
 //= require jquery.mask
 //= require icheck
 //= require kakao.link.js
-//= require prettyCheckable.min
+// require prettyCheckable
 // require jquery.selectBox
 // require jquery.selectric
 // require jquery.maskedinput.min
