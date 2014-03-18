@@ -83,17 +83,26 @@ body{background: #d4e5e9;}
 	        padding-top:34px;
 			margin-bottom:15px;
 			.tagline {
-	          width: 246px;
+	          width: 260px;
+	  	      @media (max-width: 320px) {
+	  	        width: 246px;
+	  	      }
 	        }
 		}
 
         .container-btn_gift {
 		  margin:0 auto;
 		  display:block;
-		  width: 180px;
+		  width: 220px;
 		  text-align:center;
+	  	      @media (max-width: 320px) {
+	  	        width: 180px;
+	  	      }
 		  img{
-		  	width: 180px;
+		  	width: 220px;
+	  	      @media (max-width: 320px) {
+	  	        width: 180px;
+	  	      }
 		  }
         }
 
@@ -130,19 +139,27 @@ body{background: #d4e5e9;}
           .btn_kakaotalk {
 			text-align:center;
             margin-bottom: 10px;
-			width:280px;
+			width:320px;
+	  	      @media (max-width: 320px) {
+	  	        width:280px;
+	  	      }
           }
 
           .btn_kakaostory {
             margin-bottom: 10px;
 			text-align:center;
-			width:280px;
+			width:320px;
+	  	      @media (max-width: 320px) {
+	  	        width:280px;
+	  	      }
           }
 
           .btn_facebook {
 			  text-align:center;
-			  width:280px;
-
+			  width:320px;
+	  	      @media (max-width: 320px) {
+	  	        width:280px;
+	  	      }
           }
         }
 
@@ -153,18 +170,20 @@ body{background: #d4e5e9;}
 			display:block;
             float: left;
 			width:164px;
+			padding-left:10px;
           }
 
           .btn_product-detail {
             margin-top: -2%;
 			width:85px;
+			padding-right:10px;
 			display:block;
             float: right;
           }
 
           .video {
             margin-top: 4%;
-            width: 100%;
+            width: 95%;
           }
         }
       }
@@ -197,7 +216,11 @@ body{background: #d4e5e9;}
 
         .text_notes {
           margin-top: 20px;
-          width: 265px;
+          width: 290px;
+  	      @media (max-width: 320px) {
+  	        width:265px;
+  	      }
+		  
         }
 
         .divider_03 {
@@ -208,8 +231,11 @@ body{background: #d4e5e9;}
 
         .text_copyrights {
           margin-bottom: 10px;
-          width: 271px;
+          width: 300px;
           background: #fff;
+  	      @media (max-width: 320px) {
+  	        width:271px;
+  	      }
         }
       }
     }
