@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311070554) do
+ActiveRecord::Schema.define(version: 20140318024209) do
+
+  create_table "access_logs", force: true do |t|
+    t.integer  "user_id"
+    t.string   "device"
+    t.string   "ip"
+    t.string   "referer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "coupons", force: true do |t|
     t.integer  "user_id"

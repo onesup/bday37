@@ -5,45 +5,39 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <title>::: su:m37 ::: Skin Birthday</title>
+
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta property="og:url" content="<%= Rails.application.secrets.url%>" />
+	<meta property="og:image" content="<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>" />
+	<meta property="og:title" content="Skin Birthday" />
+	<meta property="og:description" content="생일을 맞이한 첫 구매고객님에게 시크릿 프로그래밍 에센스(40ml)를 생일선물로 드립니다."/>
   <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@su_m37">
-<meta name="twitter:title" content="title event">
-<meta name="twitter:description" content="description event">
-<meta name="twitter:creator" content="@su_m37">
-<meta name="twitter:image:src" content="http://bday.mnv.kr/assets/pc/title-d93b68d1dba453d7b49d54cb235ae74d.png">
-<meta name="twitter:domain" content="http://bday.mnv.kr/pc/index">
-<meta name="twitter:app:name:iphone" content="">
-<meta name="twitter:app:name:ipad" content="">
-<meta name="twitter:app:name:googleplay" content="">
-<meta name="twitter:app:url:iphone" content="">
-<meta name="twitter:app:url:ipad" content="">
-<meta name="twitter:app:url:googleplay" content="">
-<meta name="twitter:app:id:iphone" content="">
-<meta name="twitter:app:id:ipad" content="">
-<meta name="twitter:app:id:googleplay" content="">
-<meta content="::: su:m37 :::" property="og:site_name">
-<meta content="object" property="og:type">
-<meta content="images/sns/facebook_share.jpg" property="og:image">
-<meta content="Skin Birthday" property="og:title">
-<meta content="http://birthday.su-m37.co.kr/" property="og:url">
-<meta content="생일을 맞이한 첫 구매 고객님에게 시크릿 프로그래밍 에센스(40ml)를 생일 선물로 드립니다" property="og:description">
-<link id="page_favicon" href="images/favicon.ico" rel="icon" type="image/x-icon">
+  <meta name="twitter:site" content="@su_m37">
+  <meta name="twitter:title" content="title event">
+  <meta name="twitter:description" content="description event">
+  <meta name="twitter:creator" content="@su_m37">
+  <meta name="twitter:image:src" content="<%= Rails.application.secrets.url%>">
+  <meta name="twitter:domain" content="<%= Rails.application.secrets.url%>">
+  <meta name="twitter:app:name:iphone" content="">
+  <meta name="twitter:app:name:ipad" content="">
+  <meta name="twitter:app:name:googleplay" content="">
+  <meta name="twitter:app:url:iphone" content="">
+  <meta name="twitter:app:url:ipad" content="">
+  <meta name="twitter:app:url:googleplay" content="">
+  <meta name="twitter:app:id:iphone" content="">
+  <meta name="twitter:app:id:ipad" content="">
+  <meta name="twitter:app:id:googleplay" content="">
+  <link id="page_favicon" href="images/favicon.ico" rel="icon" type="image/x-icon">
 </head>
 <body class="body_class">
-
-<%= yield %>
-
-<script>
+  <%= yield %>
+  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-46149688-5', 'mnv.kr');
+  ga('create', '<%= Rails.application.secrets.ga_tracking_id%>', 'mnv.kr');
   ga('send', 'pageview');
-
-</script>
-
+  </script>
 </body>
 </html>
