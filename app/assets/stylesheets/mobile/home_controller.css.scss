@@ -60,11 +60,11 @@ body{background: #d4e5e9;}
       .top {
 		 text-align:center;
         .container-logo {
-          width: 50%;
+          width: 100px;
           float: left;
 		  text-align:left;
           .logo {
-            width: 50%;
+            width: 90px;
 			padding-left:10px;
           }
         }
@@ -80,7 +80,7 @@ body{background: #d4e5e9;}
 
 		.title{
 			text-align:center;
-	        padding-top:34px;
+	        padding-top:25px;
 			margin-bottom:15px;
 			.tagline {
 	          width: 260px;
@@ -681,7 +681,8 @@ body{background: #d4e5e9;}
     }
   }
   #coupon_success .bottom {
-    padding: 10px 0;
+	margin:10px 0;
+    padding: 20px 0;
     background: white;
 	text-align:center;
    }
