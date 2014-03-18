@@ -629,61 +629,68 @@ body{background: #d4e5e9;}
   width: 480px;
   margin: 5% auto 0 auto;
   padding: 0; }
-  #coupon_success .container-logo {
-    margin-bottom: 35px;
+  .container-logo {
+    margin-bottom: 30px;
 	padding-left:10px;
-    }
-    #coupon_success .container-logo .logo {
-      width: 92px;
-      }
-      @media (max-width: 767px) {
-        #coupon_success .container-logo .logo {
-          width: 92px;
-          } }
+  }
+  .container-logo .logo {
+	  width: 80px; 
+  }
+  .coupon_tops{
+	text-align:center;
+	position:relative;
+		.name {
+	    position: absolute;
+	    left: 10px;
+	    top: 0px;
+	    font-size: 18px;
+		letter-spacing:-1px; 
+		font-weight:bold;
+		width:85px;
+		text-align:right;
+	    @media (max-width: 320px) {
+	      width:75px; }
+	    }
+	  .text_coupon_top {
+		  width:330px;
+	    @media (max-width: 320px) {
+	      width:290px;
+	       }
+	   }
+  }
+
+
 		  
-    #coupon_success {
-    	
-    } 
-	.coupon_tops{
-		text-align:center;}	
-	.name {
-    position: absolute;
-    left: 10px;
-    top: 0px;
-    font-size: 18px;
-	letter-spacing:-1px; 
-	font-weight:bold;
-	width:70px;
-	text-align:right;
-    }
-    @media (max-width: 767px) {
-      #coupon_success .name {
-        } }
-    @media (max-width: 480px) {
-      #coupon_success .name {
-        } }
-  .text_coupon_top {
-	  width:290px;
-	  padding-left:15px;
-   }
-  #coupon_success .coupon_img{
-	  margin-bottom:20px;
-  }	
   #coupon_success .container-product {
     margin-bottom: 5%;
 	text-align:center;}
-	#coupon_success .container-product .product {
-      width: 290px;
+	#coupon_success .container-product .coupon_img{
+		margin-bottom:10px;
+	}
+	#coupon_success .container-product .coupon_imgs {
+      width: 330px;
       margin-bottom: 0; 
+       @media (max-width: 320px) {
+       width:290px;
+       }
       }
   #coupon_success .text_product_caution {
-    width: 227px; }
+    width: 300px; 
+    @media (max-width: 320px) {
+    width:250px;
+    }
+  }
   #coupon_success .bottom {
-    padding: 10% 0 0 10%;
-    padding-bottom: 8%;
-    background: white; }
+    padding: 10px 0;
+    background: white;
+	text-align:center;
+   }
     #coupon_success .bottom .text_coupon_caution2 {
-      width: 70%; }
+      width: 290px; 
+      @media (max-width: 320px) {
+      width:265px;
+       }
+	}
     #coupon_success .bottom .btn_coupon_use_before {
       margin-top: 5%;
       width: 90%; }
@@ -700,10 +707,6 @@ body{background: #d4e5e9;}
 }
 
 
-#coupon_success .coupon_tops{
-	position:relative;
-	height:100px;
-}
 
 .agree_checkbox{
 	float:left;
