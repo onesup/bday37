@@ -18,7 +18,13 @@ class Mobile::UsersController < ApplicationController
         format.html { redirect_to mobile_thank_you_path, notice: 'User was successfully created.' }
         format.json { render json: {status: "success"}, status: :created, location: @user }
       else
-        format.html { render action: 'new' }
+        format.html { 
+          if @user.errors.get(:phone).index("has already been taken").nil?
+            render action: 'new' 
+          else
+            redirect_to mobile_unique_error_path()
+          end
+        }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -27,7 +33,7 @@ class Mobile::UsersController < ApplicationController
   def new
     @user = User.new
   end
-  
+    
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user

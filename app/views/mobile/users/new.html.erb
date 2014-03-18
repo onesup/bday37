@@ -40,10 +40,11 @@
     <%= image_tag("mobile/text_name.png", class:"text_name") %>
     <%= f.text_field(:name, 
     {"data-name" => "name", id: "info_name", 
-      class:"input-default info_input_name", value: "", maxlength: "4"})%>
+      class:"input-default info_input_name", value: "", maxlength: "12"})%>
   </div>
   <div class="container-phone">
     <% if @user.errors[:phone].any? %>
+      <script>//location.replace("<%= mobile_unique_error_path() %>");</script>
       <span>*</span>
     <% end %>
     <%= image_tag("mobile/text_phone.png", class:"text_phone") %>
@@ -53,6 +54,7 @@
   <%= image_tag("mobile/divider.png", class:"divider_01") %>
   <div class="container-terms-master">
     <% if @user.errors[:agree].any? %>
+      <script>alert("개인정보활용 동의를 확인해주세요.");</script>
       <span class="check_error">*</span>
     <% end %>
     <%= image_tag("mobile/text_terms.png", class:"text_terms") %>

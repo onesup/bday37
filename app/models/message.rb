@@ -40,7 +40,7 @@ class Message < ActiveRecord::Base
   def send_lms
     url = "http://api.openapi.io/ppurio/1/message/lms/minivertising"
     api_key = Rails.application.secrets.apistore_key
-    time = (Time.now + 5.seconds)
+    time = (Time.now + 1.seconds)
     res = RestClient.post(url,
       {
         "send_time" => time.strftime("%Y%m%d%H%M%S"), 
