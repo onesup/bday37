@@ -20,6 +20,7 @@ img{
 
 .header{
   margin-top: 32px;
+  padding-left:10px;
 }
 
 .haeder_logo{
@@ -77,16 +78,16 @@ img{
 }
 
 .video{
-  margin-bottom: 36px;
   text-align: center;
   border-top:1px solid #97a7ad;
-  padding-top:20px;
-  margin-top:40px;
+  margin:40px 20px 36px 20px;
+  padding:0 20px;
 }
 
 .video_labelarea{
   margin-left: 8px;
   margin-bottom: 64px;
+  padding-top:20px;
 }
 
 .video_label{
