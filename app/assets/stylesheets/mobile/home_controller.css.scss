@@ -698,17 +698,13 @@ body{background: #d4e5e9;}
 }
 
 .info_input_radio{
-  weight: 24px;
-  height: 14px;
-  -webkit-appearance: checkbox;
-  -moz-appearance: checkbox;
-  -ms-appearance: checkbox;
-  -o-appearance: checkbox;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-top: 3%;
+  margin-left: 6%;
   float: left;
-  -webkit-appearance: none;
-  border-radius: 0;
+  -ms-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	-o-transform: scale(1.5);
 }
 
 .text_terms{
