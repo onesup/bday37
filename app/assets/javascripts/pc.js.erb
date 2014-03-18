@@ -53,7 +53,7 @@ $(document).ready(function(){
       closeClass: 'b-close-2',
       modalColor: 'black',
       follow: [false, false], //x, y
-      position: ['auto', 60] //x, y
+      position: ['auto', 70] //x, y
       
     });
     ga('send', 'event', 'button', 'click', '개인정보 동의 팝업');
@@ -66,7 +66,7 @@ $(document).ready(function(){
         closeClass: 'b-close',
         modalColor: 'black',
         follow: [false, false], //x, y
-        position: ['auto', 60], //x, y
+        position: ['auto', 70], //x, y
         onClose: function(){$("#popup_info").bPopup().close();}
       });
     }else{
@@ -131,6 +131,8 @@ function validation(errors){
       $("#popup_fin2").bPopup({
         closeClass: 'b-close',
         modalColor: '#000',
+        follow: [false, false], //x, y
+        position: ['auto', 70], //x, y
         onClose: function(){$("#popup_info").bPopup().close();}
       });
     }else{
