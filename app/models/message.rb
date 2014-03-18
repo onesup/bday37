@@ -27,6 +27,7 @@ class Message < ActiveRecord::Base
     
     쿠폰받기:" + Rails.application.secrets.url + "/" + coupon.code +
     "
+    
 	· 해당 쿠폰은 숨37 브랜드 첫 구매 고객만 사용 가능합니다.
 	· 숨37 멤버십에 가입하셔야 혜택을 누리실 수 있습니다.
 	· 전국 백화점 매장에서만 사용 가능합니다.
