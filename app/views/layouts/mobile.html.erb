@@ -5,10 +5,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="모바일 메인페이지 상단">
+	<meta name="description" content="Skin Birthday">
 	<meta name = "viewport" content = "width=device-width, user-scalable=no" />
-	<meta property="og:url" content="http://sum37.com" />
-	<meta property="og:image" content="http://sum37.com/assets/fb_promotion_image.jpg" />
+	<meta property="og:url" content="<%= Rails.application.secrets.url%>" />
+	<meta property="og:image" content="<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>" />
 	<meta property="og:title" content="숨37 온라인 이벤트" />
 	<meta property="og:description" content="숨37 온라인 이벤트입니다!"/>
 	<title>모바일 메인페이지</title>
@@ -25,7 +25,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-46149688-5', 'mnv.kr');
+  ga('create', '<%= Rails.application.secrets.ga_tracking_id%>', 'mnv.kr');
   ga('send', 'pageview');
 
 </script>
