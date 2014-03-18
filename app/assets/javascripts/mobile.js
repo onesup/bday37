@@ -16,12 +16,11 @@
 //= require phone
 //= require jquery.bpopup.min
 //= require jquery.customSelect.min
-//= require jquery.mask
-//= require icheck
-//= require kakao.link.js
-// require prettyCheckable
+// require icheck.min
 // require jquery.selectBox
 // require jquery.selectric
 // require jquery.maskedinput.min
+//= require jquery.mask
 // jquery.meio.mask.js
 // require jquery.inputmask
+//= require kakao.link.js
