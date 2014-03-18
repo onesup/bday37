@@ -39,6 +39,8 @@ $(document).ready(function(){
   $("#gift_button").click(function(e){
     e.preventDefault();
     $("#popup_info").bPopup({
+      follow: [false, false], //x, y
+      position: ['auto', 100], //x, y
       closeClass: 'b-close',
       modalColor: 'black'
     });
