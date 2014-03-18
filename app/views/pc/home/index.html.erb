@@ -64,7 +64,7 @@
             <div> <%= image_tag("pc/popup/info/info_label_2.png", class:"info_input_label_2") %>
               <input type='text' data-name='phone' id='info_phone' name='user[phone]' class="info_input_call" value="" maxlength="13" /></div>
             <%= image_tag("pc/popup/info/info_label_3.png", class:"info_input_label_3") %>
-            <%= f.check_box "agree", {"data-name" => "agree", id:"info_input_radio", checked:"checked"}%>
+            <%= f.check_box "agree", {"data-name" => "agree", id:"info_input_radio", checked:"checked" }%>
             <%= link_to "#", class:"popup_info_to_personal", id: "popup_info_to_personal" do %>
               <%= image_tag("pc/popup/info/info_personal_button.png", class: "to_personal") %>
             <% end %>
