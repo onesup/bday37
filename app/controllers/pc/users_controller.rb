@@ -26,7 +26,7 @@ class Pc::UsersController < ApplicationController
           @log.save
         
           format.html { redirect_to pc_index_path, notice: 'User was successfully created.' }
-          format.json { render json: {status: "success"}, status: :created }
+          format.json { render json: {status: "success"}, status: :created   }
         else
           format.html { render action: 'new' }
           format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -68,6 +68,6 @@ class Pc::UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :phone, :birthday, :agree)
+      params.require(:user).permit(:name, :phone, :birthday, :agree, :agree2)
     end
 end

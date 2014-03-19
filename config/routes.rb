@@ -37,6 +37,8 @@ Rails.application.routes.draw do
     get 'product' => 'home#product'
     resources :users
   end
+  
+  resources :viral_actions
 
   get 'web_switch' => 'web_switch#index'
   get 'fb_switch' => 'fb_switch#index'
