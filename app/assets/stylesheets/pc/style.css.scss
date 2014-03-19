@@ -108,7 +108,7 @@ img{
 #popup_info{
   display: none;
   width: 450px;
-  height: 522px;
+  height: 560px;
   background-image: asset-url("pc/popup/info/bg.png");
   text-align: center;
 }
@@ -156,7 +156,11 @@ img{
   margin-right: 4px;
   margin-top: 2px;
 }
-
+.info_input_label_4{
+  margin-left: 26px;
+  margin-right: 4px;
+  margin-top: 2px;
+}
 .info_caution_class{
   margin-top: 6px;
 }
@@ -198,10 +202,15 @@ img{
 }
 
 .personal_caution{
-  width: 360px;
+  width: 340px;
   margin: 51px 0 0 46px;
-  height: 424px;
-  resize: none;
+  padding:10px;
+  height: 404px;
+  overflow:scroll;
+  color:#666;
+  line-height:15px;
+  overflow-x:hidden;
+  font-size:12px;
   border: 0;
 
 }

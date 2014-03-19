@@ -304,12 +304,13 @@ body{background: #d4e5e9;}
 
     .container-year {
 	  float:left;
+	  margin-left:13px;
       .select_year {
-        width: 79px;
-        height: 26px;
-        margin-right: 5px;
+        width: 85px;
+        height: 30px;
+        margin-right: 0px;
         padding-left: 20px;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: bold;
         border: 0;
         float: left;
@@ -319,8 +320,8 @@ body{background: #d4e5e9;}
         background: asset-url("mobile/btn_selectYear100.png") no-repeat left top;
 
         @media (max-width: 767px) {
-          width: 79px;
-          height: 26px;
+	      width: 85px;
+	      height: 30px;
           padding-left: 10px;
           font-size: 10px;
           background: asset-url("mobile/btn_selectYear50.png") no-repeat left top;
@@ -346,13 +347,12 @@ body{background: #d4e5e9;}
 
   .container-month {
 	 float:left;
-	 width:80px;
     .select_month {
-      width: 108px;
-      height: 52px;
+      width: 80px;
+      height: 30px;
       margin-right: 5px;
       padding-left: 10px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: bold;
       border: 0;
       float: left;
@@ -389,13 +389,12 @@ body{background: #d4e5e9;}
 
   .container-day {
  	 float:left;
- 	 width:80px;
     .select_day {
-      width: 108px;
-      height: 52px;
-      margin-right: 2%;
+      width: 90px;
+      height: 30px;
+      margin-right: 3px;
       padding-left: 10px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: bold;
       border: 0;
       float: left;
@@ -427,7 +426,7 @@ body{background: #d4e5e9;}
     .label-day {
       float: left;
       padding: 7px 10px 0 0;
-      width: 9px;
+      width: 10px;
 	  display:block;
     }
   }
@@ -475,12 +474,15 @@ body{background: #d4e5e9;}
 
   .divider_01 {
 
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin: 10px 0;
   }
   .container-terms-master {
-    max-width: 100%;
-    display:inline-block;
+	  display:block;
+	  padding-left:100px;
+	  padding-top:5px;
+  }
+  .container-terms-master.second {
+	  padding-top:10px;
   }
   .container-terms {
     padding-left: 13%;
@@ -489,7 +491,6 @@ body{background: #d4e5e9;}
       width: 50%;
       margin-right: 5%;
     }
-
     .info_input_agree {
       margin-bottom: -1%;
       width: 7%;
@@ -520,11 +521,11 @@ body{background: #d4e5e9;}
 }
 #terms {
   margin: 0;
-  padding: 0 30px;
+  padding: 0 20px;
   color: #333;
   font-family: 'Dotum';
-  font-size: 15px;
-  line-height: 2em;
+  font-size: 13px;
+  line-height: 15px;
   word-break: break-all;
   white-space: pre-line;
 }
@@ -728,7 +729,12 @@ body{background: #d4e5e9;}
 }
 
 .container-coupon{
-  padding: 8% 20% 4%;
+  width:180px;
+  margin:0 auto;
+  padding:15px;
+  input{
+	  width:180px;
+  }
 }
 
 .text_caution{
@@ -737,8 +743,8 @@ body{background: #d4e5e9;}
 }
 
 .info_input_radio{
-  margin-top: 3%;
-  margin-left: 6%;
+  margin-top: 5px;
+  margin-left: 10px;
   float: left;
   -ms-transform: scale(1.5);
 	-moz-transform: scale(1.5);
@@ -748,19 +754,18 @@ body{background: #d4e5e9;}
 
 .text_terms{
   float: left;
-  width: 35%;
+  width: 90px;
+  padding-top: 2%;
+}
+.text_terms2{
+  float: left;
+  width: 110px;
   padding-top: 2%;
 }
 
-.container-terms-master{
-  margin-left: 13%;
-  width: 87%
-}
 
 .detail_terms{
-  float: left;
-  width: 30%;
-  margin-left: 10%;
+  width: 82px;
 
 }
 .error{
