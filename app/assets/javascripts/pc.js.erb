@@ -137,6 +137,20 @@ $(document).ready(function(){
 
 });
 
+function twitter_share()
+{
+  $.ajax({
+    type: "POST",
+    url: "/viral_actions.json",
+    data: {
+      'viral_action[platform]': "Twitter",
+      'viral_action[device]': "pc"
+    },
+    success: function (data) {
+    }
+    });
+}
+
 function validation(errors){
   if(Object.keys(errors).indexOf("phone") == -1){
     //폰없다
