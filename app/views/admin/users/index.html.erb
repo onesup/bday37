@@ -35,7 +35,7 @@
                   <%= user.phone unless user.phone.nil? %>
                 </td>
                 <td>
-                  <%= user.access_logs.size unless user.access_logs.empty? %>
+                  <%= user.access_logs_count unless user.access_logs.empty? %>
                 </td>
                 <td>
                   <%= link_to user.coupon.code, send_message_admin_coupon_path(user.coupon) unless user.coupon.nil? %>
