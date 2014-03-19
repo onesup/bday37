@@ -26,7 +26,7 @@ class Pc::UsersController < ApplicationController
           @log.save
         
           format.html { redirect_to pc_index_path, notice: 'User was successfully created.' }
-          format.json { render json: {status: "success"},    }
+          format.json { render json: {status: "success"}, status: :created   }
         else
           format.html { render action: 'new' }
           format.json { render json: @user.errors, status: :unprocessable_entity }
