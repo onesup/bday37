@@ -52,7 +52,7 @@
     id: "info_phone", class:"input-default info_input_call", value: "", maxlength: "13"})%>
   </div>
   <%= image_tag("mobile/divider.png", class:"divider_01") %>
-  <div class="container-terms-master">
+  <div class="container-terms-master clearfix">
     <% if @user.errors[:agree].any? %>
       <script>alert("개인정보활용 동의를 확인해주세요.");</script>
       <span class="check_error">*</span>
@@ -61,7 +61,19 @@
     <%= f.check_box "agree", 
     {"data-name" => "agree", id:"info_input_radio", 
       class: "info_input_radio", checked:"checked" }%>
-    <a href="/mobile/terms" onclick="ga('send', 'event', 'button', 'click', 'm 개인정보동의 활용');"><%= image_tag("mobile/btn_detail_terms.png", class:"detail_terms") %></a>
+  </div>
+  <div class="container-terms-master clearfix">
+    <% if @user.errors[:agree].any? %>
+      <script>alert("개인정보활용 동의를 확인해주세요.");</script>
+      <span class="check_error">*</span>
+    <% end %>
+    <%= image_tag("mobile/text_terms2.png", class:"text_terms2") %>
+    <%= f.check_box "agree", 
+    {"data-name" => "agree", id:"info_input_radio", 
+      class: "info_input_radio", checked:"checked" }%>
+  </div>  
+  <div class="container-terms-master second clearfix">
+  	<a href="/mobile/terms" onclick="ga('send', 'event', 'button', 'click', 'm 개인정보동의 활용');"><%= image_tag("mobile/btn_detail_terms.png", class:"detail_terms") %></a>
   </div>
   <div class="container-coupon">
     <!-- if it is not duplicate -->
