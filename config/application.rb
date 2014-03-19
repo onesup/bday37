@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Bday
   class Application < Rails::Application
+    config.force_ssl = true
     config.time_zone = 'Asia/Seoul'
     config.action_dispatch.default_headers = {
       'X-Frame-Options' => 'ALLOW-FROM https://www.facebook.com'

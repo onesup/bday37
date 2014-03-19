@@ -7,7 +7,11 @@ Rails.application.routes.draw do
         get 'couponused'
       end
     end
-    resources :coupons
+    resources :coupons do
+      member do
+        get 'send_message'
+      end
+    end
   end
 
   namespace :fb do

@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20140319075402) do
     t.string   "name"
     t.string   "phone",                               null: false
     t.datetime "birthday"
+    t.integer  "access_logs_count"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
