@@ -1,6 +1,5 @@
 class Coupon < ActiveRecord::Base
   belongs_to :user
-  belongs_to :message
   
   def send_message
     Message.send_to(self)
