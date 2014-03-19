@@ -22,7 +22,7 @@ class Message < ActiveRecord::Base
     "
 [Skin Birthday]
 생일을 축하드립니다!
-숨37 첫 구매 고객님께 
+숨37을 처음 구매하시는 모든 분에게
 피부생일 선물로 
 시크릿 프로그래밍 에센스(40ml)를 드립니다.
 
