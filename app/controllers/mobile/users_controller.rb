@@ -3,37 +3,52 @@ class Mobile::UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   
   def create
-    @user = User.new(user_params)
-    # phone = params[:user][:phone_1]+"-"+params[:user][:phone_2]+"-"+params[:user][:phone_3]
-    # @user.phone = phone
-    birthday = params[:user][:birthday_year]+"-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
-    @user.birthday = DateTime.parse(birthday)
-    respond_to do |format|
-      if @user.save
-        c = Coupon.new
-        c.code = c.random_code
-        c.user = @user
-        c.save
-        MessageJob.new.async.perform(c)
+    
+    phone = params[:user][:phone]
+    unless User.exists?(phone: phone)
+      @user = User.new(user_params)
+      birthday = params[:user][:birthday_year]+"-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
+      @user.birthday = DateTime.parse(birthday)
+      respond_to do |format|
+        if @user.save
+          c = Coupon.new
+          c.code = c.random_code
+          c.user = @user
+          c.save
+          MessageJob.new.async.perform(c)
         
+          device = "mobile"
+          user_agent = UserAgent.parse(request.user_agent)
+          device = "mobile" if user_agent.mobile?
+          @log = AccessLog.new(ip: request.remote_ip, device: device)
+          @log.user = @user
+          @log.save
+        
+          format.html { redirect_to mobile_thank_you_path, notice: 'User was successfully created.' }
+          format.json { render json: {status: "success"}, status: :created, location: @user }
+        else
+          format.html { 
+            if @user.errors.get(:phone).index("has already been taken").nil?
+              render action: 'new' 
+            else
+              redirect_to mobile_unique_error_path()
+            end
+          }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      @user = User.find_by_phone(phone)
+      respond_to do |format|
         device = "mobile"
         user_agent = UserAgent.parse(request.user_agent)
         device = "mobile" if user_agent.mobile?
         @log = AccessLog.new(ip: request.remote_ip, device: device)
         @log.user = @user
         @log.save
-        
-        format.html { redirect_to mobile_thank_you_path, notice: 'User was successfully created.' }
-        format.json { render json: {status: "success"}, status: :created, location: @user }
-      else
-        format.html { 
-          if @user.errors.get(:phone).index("has already been taken").nil?
-            render action: 'new' 
-          else
-            redirect_to mobile_unique_error_path()
-          end
-        }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+      
+        format.html { redirect_to mobile_unique_error_path }
+        format.json { render json: {status: "duplicated"}, status: :unprocessable_entity}
       end
     end
   end
