@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/' => 'dashboard#index', ad: 'admin'
-    resources :users
+    resources :users do
+      collection do
+        get 'couponused'
+      end
+    end
     resources :coupons
   end
 
