@@ -10,10 +10,10 @@ class Message < ActiveRecord::Base
     message.subject = "Skin Birthday"
     message.send_name = coupon.user.name
     message.sent_at = Time.now + 5.seconds
-    message.save!
+    message.save
     message.user = coupon.user
     message.coupon = coupon
-    message.save!
+    message.save
     message.send_lms
     return message
   end
