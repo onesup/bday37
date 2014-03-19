@@ -206,7 +206,11 @@ img{
   margin: 51px 0 0 46px;
   padding:10px;
   height: 404px;
-  resize: none;
+  overflow:scroll;
+  color:#666;
+  line-height:15px;
+  overflow-x:hidden;
+  font-size:12px;
   border: 0;
 
 }
