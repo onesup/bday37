@@ -125,10 +125,11 @@ $(document).ready(function(){
         type: "POST",
         url: "/viral_actions.json",
         data: {
-          "viral_action[platform]": "Facebook",
-          "viral_action[device]": "pc"
+          'viral_action[platform]': "Facebook",
+          'viral_action[device]': "pc"
         },
         success: function (data) {
+        }
         });
       share();
     });
