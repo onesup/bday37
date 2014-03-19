@@ -37,7 +37,7 @@
                   <p><%= user.updated_at.strftime("%m.%d %H:%M") %></p>
                 </td>
                 <td class="updated_at">
-                  <%= user.access_logs.count unless user.access_logs.empty? %>
+                  <%= user.access_logs.size unless user.access_logs.empty? %>
                 </td>
               </tr>
             <% end %>
