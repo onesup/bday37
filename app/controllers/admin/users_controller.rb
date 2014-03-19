@@ -8,4 +8,5 @@ class Admin::UsersController < ApplicationController
   def couponused
     @couponusedusers = User.includes(:coupon).where(:coupons =>{:status => "used"}).order("coupons.updated_at DESC").page(params[:page]).per(200)
   end
+  
 end

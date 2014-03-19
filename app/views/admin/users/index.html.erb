@@ -10,11 +10,12 @@
         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="data-table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th class="device">디바이스</th>
-              <th class="name">참여자</th>
-              <th>전화번호</th>
-              <th>참여일시</th>
+							<th>ID</th>
+							<th class="device">디바이스</th>
+							<th class="name">참여자</th>
+							<th>전화번호</th>
+							<th>쿠폰 다시보내기</th>
+							<th>참여일시</th>
             </tr>
           </thead>
           <tbody>
@@ -31,6 +32,9 @@
                 </td>
                 <td>
                   <%= user.phone unless user.phone.nil? %>
+                </td>
+                <td>
+                  <%= link_to user.coupon.code, send_message_admin_coupon_path(user.coupon) unless user.coupon.nil? %>
                 </td>
                 <td class="updated_at">
                   <p><%= user.updated_at.strftime("%m.%d %H:%M") %></p>
