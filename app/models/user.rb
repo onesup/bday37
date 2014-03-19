@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :messages
+  has_many :access_logs
   has_one :coupon
   validates :agree, acceptance: true
   validates :name, presence: true
