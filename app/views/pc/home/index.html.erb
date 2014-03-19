@@ -67,14 +67,14 @@
 		    </div>
             <div>
 			<%= image_tag("pc/popup/info/info_label_3.png", class:"info_input_label_3") %>
-            <%= f.check_box "agree", {"data-name" => "agree", id:"info_input_radio" }%>
+            <%= f.check_box "agree", {"data-name" => "agree", id:"info_input_radio", class:"info_input_radio" }%>
             <%= link_to "#", class:"popup_info_to_personal", id: "popup_info_to_personal" do %>
               <%= image_tag("pc/popup/info/info_personal_button.png", class: "to_personal") %>
             <% end %>
           	</div>
             <div>
 			<%= image_tag("pc/popup/info/info_label_4.png", class:"info_input_label_4") %>
-            <%= f.check_box "agree2", {"data-name" => "agree2", id:"info_input_radio2" }%>
+            <%= f.check_box "agree2", {"data-name" => "agree2", id:"info_input_radio2", class:"info_input_radio" }%>
           	</div>
 		  </div>
             <%= image_submit_tag("pc/popup/info/button.png",{id: "info_fin"}) %>
