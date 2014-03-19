@@ -20,6 +20,7 @@ class Mobile::UsersController < ApplicationController
         user_agent = UserAgent.parse(request.user_agent)
         device = "mobile" if user_agent.mobile?
         @log = AccessLog.new(ip: request.remote_ip, device: device)
+        @log.user = @user
         @log.save
         
         format.html { redirect_to mobile_thank_you_path, notice: 'User was successfully created.' }
