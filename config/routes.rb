@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    get '/' => 'dashboard#index', ad: 'admin'
+    get '/' => 'dashboard#index'
     resources :traffic_logs
     resources :users do
       collection do
