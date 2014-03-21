@@ -20,9 +20,8 @@ body{background: #d4e5e9;}
   clear: both;
   height: 0;
 }
-.clearfix { display: inline-block; }
 * html .clearfix { height: 1%; }
-.clearfix { display: block; }
+//.clearfix { display: block; }
 .clickable-link {
   display: block;
   text-indent: -9999em;
@@ -304,7 +303,7 @@ body{background: #d4e5e9;}
 
     .container-year {
 	  float:left;
-	  margin-left:13px;
+	  margin-left:60px;
       .select_year {
         width: 85px;
         height: 30px;
@@ -338,7 +337,7 @@ body{background: #d4e5e9;}
       }
 
       .label-year {
-        float: left;
+        /*float: left;*/
         padding: 7px 10px 0 0;
         width: 9px;
       }
@@ -346,7 +345,7 @@ body{background: #d4e5e9;}
 
 
   .container-month {
-	 float:left;
+	   float:left;
     .select_month {
       width: 80px;
       height: 30px;
@@ -380,15 +379,15 @@ body{background: #d4e5e9;}
     }
 
     .label-month {
-      float: left;
+//      float: left;
       padding: 7px 10px 0 0;
       width: 10px;
-	  display:block;
+//    display:block;
     }
   }
 
   .container-day {
- 	 float:left;
+ 	   float:left;
     .select_day {
       width: 90px;
       height: 30px;
@@ -424,10 +423,10 @@ body{background: #d4e5e9;}
     }
 
     .label-day {
-      float: left;
+//      float: left;
       padding: 7px 10px 0 0;
       width: 10px;
-	  display:block;
+//    display:block;
     }
   }
 
@@ -776,4 +775,9 @@ body{background: #d4e5e9;}
 }
 .field_with_errors {
   display: inline;
+}
+
+.info_birth_date{
+  display: table;
+  clear: both;
 }

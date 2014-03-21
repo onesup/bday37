@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         get 'send_message'
       end
     end
+    resources :viral_actions 
   end
 
   namespace :fb do
