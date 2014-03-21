@@ -1,3 +1,4 @@
+```
 bundle exec cap install
 edit Capfile
 bundle exec rails generate rspec:install
@@ -18,6 +19,7 @@ vi deploy.rb
 cd ./config/deploy
 vi production.rb
 vi staging.rb
-# set :ssh_options, {keys: %w(/Users/onesup/.ssh/ids/bday.mnv.kr/deployer/id_rsa)}
+set :ssh_options, {keys: %w(/Users/onesup/.ssh/ids/bday.mnv.kr/deployer/id_rsa)}
 cd ./
 vi .gitignore
+```
