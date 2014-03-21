@@ -126,15 +126,6 @@ img{
   margin-top: 8px;
 }
 
-.info_birth{
-  width: 369px;
-  height: 83px;
-  margin-left: 41px;
-  margin-bottom: 15px;
-  margin-top:130px;
-  padding:20px 0 0 20px;
-}
-
 .info_other{
   width: 369px;
   margin-left: 41px;
@@ -278,17 +269,12 @@ img{
 }
 
 .birth_label_class{
-  float: left;
   margin: 8px 6px 0 6px;
 }
 
 .birth_label_class2{
   margin-top: 8px;
   margin-left: -48px;
-}
-
-.info_birth{
-
 }
 
 .select_custom_1{
@@ -442,4 +428,23 @@ span.customSelect2 {
 .b-modal {
   background: rgba(0, 0, 0, 0.7) !important;
   opacity: 1 !important;
+}
+
+.info_birth{
+  width: 164px;
+  height: 72px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  margin-top:150px;
+  padding-top:11px;
+}
+
+
+.info_birth_date{
+  display: table;
+  clear: both;
+}
+
+.info_birth_date_empty{
+  clear: both;
 }
