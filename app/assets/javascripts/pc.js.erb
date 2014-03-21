@@ -44,7 +44,7 @@ $(document).ready(function(){
       closeClass: 'b-close',
       modalColor: 'black'
     });
-    ga('send', 'event', 'button', 'click', '생일 선물 받기');
+    ga('send', 'event', 'button', 'click', '피부 선물 받기');
   });
 
   $("#popup_info_to_personal").click(function(e){
@@ -188,7 +188,7 @@ function share() {
     name: "Skin Birthday",
     link: "<%= Rails.application.secrets.url %>/pc/index",
     picture: '<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>',
-    caption: "숨37과 처음 만나는 오늘이, 피부의 생일입니다.",
+    caption: "Make your skin birthday Sponsored by 숨37",
     description: text
   };
   FB.ui(share_content, function(response) {
