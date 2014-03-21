@@ -4,12 +4,17 @@ class Pc::UsersController < ApplicationController
   def create
     
     phone = params[:user][:phone]
+    device = "pc"
+    user_agent = UserAgent.parse(request.user_agent)
+    device = "mobile" if user_agent.mobile?
+    
     unless User.exists?(phone: phone)
       @user = User.new(user_params)
       # phone = params[:user][:phone_1]+"-"+params[:user][:phone_2]+"-"+params[:user][:phone_3]
       # @user.phone = phone
       # birthday = params[:user][:birthday_year]+"-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
       @user.birthday = Time.new #DateTime.parse(birthday)
+      @user.device = device
       respond_to do |format|
         if @user.save
           coupon = Coupon.new
@@ -18,9 +23,6 @@ class Pc::UsersController < ApplicationController
           coupon.save
           MessageJob.new.async.perform(coupon)
         
-          device = "pc"
-          user_agent = UserAgent.parse(request.user_agent)
-          device = "mobile" if user_agent.mobile?
           @log = AccessLog.new(ip: request.remote_ip, device: device)
           @log.user = @user
           @log.save
@@ -35,9 +37,6 @@ class Pc::UsersController < ApplicationController
     else
       @user = User.find_by_phone(phone)
       respond_to do |format|
-        device = "pc"
-        user_agent = UserAgent.parse(request.user_agent)
-        device = "mobile" if user_agent.mobile?
         @log = AccessLog.new(ip: request.remote_ip, device: device)
         @log.user = @user
         @log.save
