@@ -7,8 +7,8 @@ class Mobile::UsersController < ApplicationController
     phone = params[:user][:phone]
     unless User.exists?(phone: phone)
       @user = User.new(user_params)
-      birthday = params[:user][:birthday_year]+"-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
-      @user.birthday = DateTime.parse(birthday)
+      #birthday = params[:user][:birthday_year]+"-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
+      @user.birthday = Time.new #DateTime.parse(birthday)
       respond_to do |format|
         if @user.save
           c = Coupon.new
