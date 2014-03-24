@@ -11,7 +11,7 @@ class FbSwitchController < ApplicationController
       s = params[:s] || ""
       @traffic_log = TrafficLog.new(ip: request.remote_ip, device: device)
       @traffic_log.save
-      redirect_to Rails.application.secrets.page_tab_address+"?s="+ s
+      redirect_to Rails.application.secrets.page_tab_address+"&s="+ s
     end
   end
 end
