@@ -10,13 +10,13 @@
   </div>
   <div class="container-info clearfix">
     <div class="info_birth_date">
-        <div class="container-year clearfix">
+        <!-- <div class="container-year clearfix">-->  
 <!--    <span class="date_year birth_date" ><%#=Time.now.strftime("%Y")%></span>-->  
-        <%= select_year(DateTime.parse("1988. 1. 1."), 
+      <!--<%#= select_year(DateTime.parse("1988. 1. 1."), 
           {start_year: 1900, end_year: 1995}, 
           {name:'user[birthday_year]', class:'select_year'})%>
-          <%= image_tag("mobile/popup-birthday_label-year.png", class:"label-year") %>
-        </div>
+          <%#= image_tag("mobile/popup-birthday_label-year.png", class:"label-year") %>
+        </div> -->
         <div class="container-month clearfix">
           <!-- <span class="date_year birth_date" ><%#=Time.now.strftime("%m")%></span> -->
           <%= 

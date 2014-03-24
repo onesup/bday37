@@ -46,8 +46,8 @@
           <div class="info_birth">
             <div class="info_birth_date">
               <!-- <span class="date_year birth_date" >  <%#=Time.now.strftime("%Y")%></span> -->
-              <%= select_year(DateTime.parse("1988. 1. 1."), {start_year: 1900, end_year: 1995}, {name:'user[birthday_year]', class:'select_custom_1'})%>
-              <%= image_tag("pc/popup/info/birth_label_1.png", class:"birth_label_class") %>
+              <!-- <%#= select_year(DateTime.parse("1988. 1. 1."), {start_year: 1900, end_year: 1995}, {name:'user[birthday_year]', class:'select_custom_1'})%> -->
+              <%#= image_tag("pc/popup/info/birth_label_1.png", class:"birth_label_class") %>
               <%= select_tag "user[birthday_month]", options_for_select([ "3", "4" ], "3"), {class: 'select_custom_2', id: "select_month"}%>
              <!--  <span class="date_month birth_date"><%#=Time.now.strftime("%m")%></span> -->
               <%= image_tag("pc/popup/info/birth_label_2.png", class:"birth_label_class") %>
