@@ -1,9 +1,9 @@
 namespace :load do
   task :defaults do
-    set :nginx_server_name, -> { fetch(:rails_env) == 'production' ? 'birthday.su-m37.co.kr' : 'bday.mnv.kr' }
+    set :nginx_server_name, -> { fetch(:rails_env) == 'production' ? 'birthday.su-m37.com' : 'bday.mnv.kr' }
     set :nginx_use_ssl, true
-    set :nginx_ssl_certificate, -> { "#{fetch(:nginx_server_name)}.chained.crt" }
-    set :nginx_ssl_certificate_key, -> { "#{fetch(:nginx_server_name)}.nopass.key" }
+    set :nginx_ssl_certificate, -> { "#{fetch(:nginx_server_name)}.crt" }
+    set :nginx_ssl_certificate_key, -> { "#{fetch(:nginx_server_name)}.key" }
     set :nginx_upload_local_certificate, true
     set :nginx_ssl_certificate_local_path, -> { Capistrano::CLI.ui.ask "Local path to ssl certificate: " }
     set :nginx_ssl_certificate_key_local_path, -> { Capistrano::CLI.ui.ask "Local path to ssl certificate key: " }

@@ -27,4 +27,5 @@ config/database.yml
 
 config/database.yml
 
+.ruby-version
 db/schema.rb

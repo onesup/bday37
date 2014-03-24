@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320041108) do
+ActiveRecord::Schema.define(version: 20140321084433) do
 
   create_table "access_logs", force: true do |t|
     t.integer  "user_id"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140320041108) do
     t.string   "phone",                               null: false
     t.datetime "birthday"
     t.integer  "access_logs_count"
+    t.string   "device"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
