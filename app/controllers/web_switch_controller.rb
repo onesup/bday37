@@ -1,6 +1,6 @@
 class WebSwitchController < ApplicationController
   def index
-    Rails.logger.info "@@@@@referer: "+URI(request.referer || '').path
+    Rails.logger.info "@@@@@referer: "+(request.referer.to_s)
     tracking_id = Rails.application.secrets.ga_tracking_id
     url = Rails.application.secrets.url
     Gabba::Gabba.new(tracking_id, url).page_view("pc/mobile switch page", "/")
