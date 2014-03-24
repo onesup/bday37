@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   get 'web_switch' => 'web_switch#index'
   get 'fb_switch' => 'fb_switch#index'
 
+  root 'web_switch#index'
+
   get "/:code", to:"coupons#show", contraints:{code: /[a-z]{5}-\d{4}/}, as: "coupon"
   get "/:code/edit", to:"coupons#edit", contraints:{code: /[a-z]{5}-\d{4}/}, as: "edit_coupon"
   put "/:code", to:"coupons#update", contraints:{code: /[a-z]{5}-\d{4}/}, as: "update_coupon"
@@ -52,6 +54,4 @@ Rails.application.routes.draw do
   devise_for :users
   resources :coupons, except: [:update, :edit, :show] do
   end
-  
-  root 'web_switch#index'
 end
