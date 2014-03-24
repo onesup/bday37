@@ -41,7 +41,7 @@ $(document).ready(function(){
       });
 		kakao.link("talk").send({
 			msg : "완전 득템 소식!!\n피부생일?! 에센스 선물까지 준다고!? 대박~\n\nMake your skin birthday\nSponsored by 숨37\n",
-			url : "<%= Rails.application.secrets.url %>",
+			url : "http://bit.ly/su-m37-kt",
 			appid : "skin_birthday",
 			appver : "1.0",
 			appname : "Skin Birthday",
@@ -61,7 +61,7 @@ $(document).ready(function(){
       }
       });
     kakao.link("story").send({
-      post : "완전 득템 소식!!\n피부생일?! 에센스 선물까지 준다고!? 대박~\n\nhttp://"+"<%= Rails.application.secrets.url %>\n\nMake your skin birthday\nSponsored by 숨37",
+      post : "완전 득템 소식!!\n피부생일?! 에센스 선물까지 준다고!? 대박~\n\nhttp://bit.ly/su-m37-ks\n\nMake your skin birthday\nSponsored by 숨37",
       appid : "skin_birthday",
       appver : "1.0",
       appname : "Skin Birthday",
@@ -113,7 +113,7 @@ function share() {
   var share_content = {
     method: "feed",
     name: "Skin Birthday",
-    link: "<%= Rails.application.secrets.url %>/pc/index",
+    link: "<%= Rails.application.secrets.url %>?s=fb",
     picture: '<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>',
     caption: "Make your skin birthday Sponsored by 숨37",
     description: text
