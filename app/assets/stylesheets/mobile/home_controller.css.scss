@@ -64,7 +64,6 @@ body{background: #d4e5e9;}
 		  text-align:left;
           .logo {
             width: 90px;
-			padding-left:10px;
           }
         }
 
@@ -79,7 +78,10 @@ body{background: #d4e5e9;}
 
 		.title{
 			text-align:center;
-	        padding-top:25px;
+	        padding-top:15px;
+	  	      @media (max-width: 320px) {
+	            padding-top:10px;
+	  	      }
 			margin-bottom:15px;
 			.tagline {
 	          width: 260px;
@@ -123,7 +125,7 @@ body{background: #d4e5e9;}
 
         .container-sns {
 		 
-		  margin:20px 10px 20px 13px;
+		  margin:20px 10px 20px 10px;
 		  padding:25px 0;
 		  border-top:1px solid #a4b7bf;
 		  border-bottom:1px solid #a4b7bf;
@@ -132,7 +134,10 @@ body{background: #d4e5e9;}
           .text_sns {
             margin-bottom: 10px;
 			text-align:center;
-			width:256px;
+			width:200px;
+	  	      @media (max-width: 320px) {
+	  	        width:174px;
+	  	      }
           }
 
           .btn_kakaotalk {
@@ -162,6 +167,24 @@ body{background: #d4e5e9;}
           }
         }
 
+
+		.container-sum-sns{
+			padding:20px 10px;
+			border-top:1px solid #a4b7bf;
+			margin:20px 10px 20px 10px;
+			.left{
+				float:left;
+				img{
+					width:40px;
+				}
+			}
+			.right{
+				float:right;
+				img{
+					height:40px;
+				}
+			}
+		}
 
         .container-promotion {
 			margin:10px;
@@ -217,7 +240,7 @@ body{background: #d4e5e9;}
           margin-top: 20px;
           width: 310px;
   	      @media (max-width: 320px) {
-  	        width:270px;
+  	        width:290px;
   	      }
 		  
         }
@@ -287,20 +310,32 @@ body{background: #d4e5e9;}
   margin: 0 auto;
 
   .popup-birthday_text-top {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    width: 70%;
-    padding-left: 15%;
+    margin:10px 0 0;
+	text-align:center;
+	img{
+	 width: 259px;	
+	}
   }
 
   .container-info {
-    width: 280px;
+    width: 290px;
     margin: 0 auto;
     padding: 10px;
     background: #fff;
-    
-
-
+	    @media (max-width: 320px) {
+	       width: 270px;
+	    }	
+	.container-text-top2{
+	 text-align:center;	
+	 padding:5px 0;
+		.text-top2{
+		width: 270px;	
+		}
+	}
+	.container-info-inner{
+		width: 200px;
+		margin: 0 auto;
+	}
     .container-year {
 	  float:left;
 	  padding-left: 10px;
@@ -429,13 +464,15 @@ body{background: #d4e5e9;}
 //    display:block;
     }
   }
-
-    .text-guide {
-      margin-top: 5%;
-      padding-left: 2%;
-    }
   }
-
+  .container-text-guide{
+	  text-align:center;
+	  padding:10px 0 0;
+	  img{
+		  width:274px;
+	  }
+  	
+  }
   .container-name {
     padding-left: 21%;
     margin-bottom: 2%;
@@ -736,30 +773,36 @@ body{background: #d4e5e9;}
   }
 }
 
-.text_caution{
-  padding: 5%;
-  width: 85%;
+.container-text_caution{
+	background:#c6d6da;
+	padding: 20px;
+	.text_caution{
+	  width: 237px;
+	}	
 }
+
 
 .info_input_radio{
   margin-top: 5px;
   margin-left: 10px;
   float: left;
-  -ms-transform: scale(1.5);
-	-moz-transform: scale(1.5);
-	-webkit-transform: scale(1.5);
-	-o-transform: scale(1.5);
+  border-radius: 0;
+  box-shadow: none;
+  -ms-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-o-transform: scale(1.2);
 }
 
 .text_terms{
   float: left;
   width: 90px;
-  padding-top: 2%;
+  padding-top: 7px;
 }
 .text_terms2{
   float: left;
   width: 110px;
-  padding-top: 2%;
+  padding-top: 7px;
 }
 
 
