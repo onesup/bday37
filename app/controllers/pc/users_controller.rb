@@ -12,7 +12,8 @@ class Pc::UsersController < ApplicationController
       @user = User.new(user_params)
       # phone = params[:user][:phone_1]+"-"+params[:user][:phone_2]+"-"+params[:user][:phone_3]
       # @user.phone = phone
-      birthday = params[:user][:birthday_year]+"-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
+      # birthday = params[:user][:birthday_year]+"-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
+      birthday = "2014-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
       @user.birthday = DateTime.parse(birthday)
       @user.device = device
       respond_to do |format|
