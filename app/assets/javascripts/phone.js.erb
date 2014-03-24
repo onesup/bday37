@@ -40,11 +40,11 @@ $(document).ready(function(){
       }
       });
 		kakao.link("talk").send({
-			msg : "완전 득템 소식!!\n피부생일?! 에센스 선물까지 준다고!? 대박~\n\nMake your skin birthday\nSponsored by 숨37\n",
+			msg : "완전 득템 소식~\n피부생일?!\n에센스 선물까지 준다고!?\n\nMake your skin birthday\nSponsored by 숨37\n",
 			url : "<%= Rails.application.secrets.url %>",
 			appid : "skin_birthday",
 			appver : "1.0",
-			appname : "Skin Birthday",
+			appname : "",
 			type : "link"
 		});
 	});
@@ -61,7 +61,7 @@ $(document).ready(function(){
       }
       });
     kakao.link("story").send({
-      post : "완전 득템 소식!!\n피부생일?! 에센스 선물까지 준다고!? 대박~\n\nhttp://"+"<%= Rails.application.secrets.url %>\n\nMake your skin birthday\nSponsored by 숨37",
+      post : "완전 득템 소식~\n피부생일?!\n에센스 선물까지 준다고!?\n\nhttp://"+"<%= Rails.application.secrets.url %>\n\nMake your skin birthday\nSponsored by 숨37",
       appid : "skin_birthday",
       appver : "1.0",
       appname : "Skin Birthday",
