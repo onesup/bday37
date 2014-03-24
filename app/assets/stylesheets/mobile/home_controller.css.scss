@@ -329,7 +329,7 @@ body{background: #d4e5e9;}
 	 text-align:center;	
 	 padding:5px 0;
 		.text-top2{
-		width: 270px;	
+		width: 260px;	
 		}
 	}
 	.container-info-inner{
@@ -381,7 +381,7 @@ body{background: #d4e5e9;}
 
   .container-month {
 	   float:left;
-	   padding-left:73px;
+	   padding-left:63px;
     .select_month {
       width: 80px;
       height: 30px;
@@ -415,10 +415,10 @@ body{background: #d4e5e9;}
     }
 
     .label-month {
-//      float: left;
+      float: left;
       padding: 7px 10px 0 0;
       width: 10px;
-//    display:block;
+      display:block;
     }
   }
 
@@ -459,10 +459,10 @@ body{background: #d4e5e9;}
     }
 
     .label-day {
-//      float: left;
+      float: left;
       padding: 7px 10px 0 0;
       width: 10px;
-//    display:block;
+      display:block;
     }
   }
   }
