@@ -11,15 +11,15 @@
   <div class="container-info clearfix">
     <div class="info_birth_date">
         <div class="container-year clearfix">
-          <span class="date_year birth_date" ><%=Time.now.strftime("%Y")%></span>
-          <%#= select_year(DateTime.parse("1988. 1. 1."), 
+<!--    <span class="date_year birth_date" ><%#=Time.now.strftime("%Y")%></span>-->  
+        <%= select_year(DateTime.parse("1988. 1. 1."), 
           {start_year: 1900, end_year: 1995}, 
           {name:'user[birthday_year]', class:'select_year'})%>
           <%= image_tag("mobile/popup-birthday_label-year.png", class:"label-year") %>
         </div>
         <div class="container-month clearfix">
-          <span class="date_year birth_date" ><%=Time.now.strftime("%m")%></span>
-          <%#= 
+          <!-- <span class="date_year birth_date" ><%#=Time.now.strftime("%m")%></span> -->
+          <%= 
           select_tag "user[birthday_month]", 
           options_for_select([ "3", "4" ], "3"), 
           {class: 'select_month', id:"select_month"}
@@ -27,15 +27,14 @@
           <%= image_tag("mobile/popup-birthday_label-month.png", class:"label-month") %>
         </div>
         <div class="container-day clearfix">
-          <span class="date_year birth_date" ><%=Time.now.strftime("%d")%></span>
-          <%#= 
-          select_tag "user[birthday_day]", 
+<!--     <span class="date_year birth_date" ><%#=Time.now.strftime("%d")%></span>-->          
+<%=       select_tag "user[birthday_day]", 
           options_for_select(%w(20 21 22 23 24 25 26 27 28 29 30 31), "3"),
           {name:'user[birthday_day]', class: 'select_day', id: "select_day"}
           %>
           <%= image_tag("mobile/popup-birthday_label-day.png", class:"label-day") %>
         </div>
-        <%#= image_tag("mobile/popup-birthday_text-guide.png", class:"text-guide") %>
+        <%= image_tag("mobile/popup-birthday_text-guide.png", class:"text-guide") %>
       </div>
   </div>
   <div class="container-name">
