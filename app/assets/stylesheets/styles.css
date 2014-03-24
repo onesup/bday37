@@ -223,3 +223,12 @@ th.user_name{
 th.mms_body{
   width:200px;
 }
+
+.total_user_header{
+  margin-top: 20px;
+  font-size: 16px;
+}
+.user_total{
+	margin-top: 20px;
+	margin-left: 16px;
+}

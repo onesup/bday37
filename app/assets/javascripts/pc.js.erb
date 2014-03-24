@@ -39,6 +39,8 @@ $(document).ready(function(){
   $("#gift_button").click(function(e){
     e.preventDefault();
     $("#popup_info").bPopup({
+      follow: [false, false], //x, y
+      position: ['auto', 60], //x, y
       closeClass: 'b-close',
       modalColor: 'black'
     });
@@ -49,7 +51,10 @@ $(document).ready(function(){
     e.preventDefault();
     $("#popup_personal").bPopup({
       closeClass: 'b-close-2',
-      modalColor: 'black'
+      modalColor: 'black',
+      follow: [false, false], //x, y
+      position: ['auto', 70] //x, y
+      
     });
     ga('send', 'event', 'button', 'click', '개인정보 동의 팝업');
   });
@@ -60,17 +65,30 @@ $(document).ready(function(){
       $("#popup_fin1").bPopup({
         closeClass: 'b-close',
         modalColor: 'black',
+        follow: [false, false], //x, y
+        position: ['auto', 70], //x, y
         onClose: function(){$("#popup_info").bPopup().close();}
       });
-    }else{
+    }else {
     }
 
   }).bind('ajax:error',function(evt,xhr,status,error){
     var $form = $(this),errors,errorText;
     errors = $.parseJSON(xhr.responseText);
 
-
-    validation(errors);
+    if(errors.status==="duplicated"){
+      $("#popup_fin2").bPopup({
+        closeClass: 'b-close',
+        modalColor: '#000',
+        follow: [false, false], //x, y
+        position: ['auto', 70], //x, y
+        onClose: function(){$("#popup_info").bPopup().close();}
+      });
+    }
+    else{
+      validation(errors);
+    }
+    
   });
 
   $("#product_button").click(function(e){
@@ -82,11 +100,11 @@ $(document).ready(function(){
 
   });
 
-  $("#info_input_radio").iCheck({
-    checkboxClass: 'icheckbox_minimal',
-    radioClass: 'iradio_minimal',
-    increaseArea: '20%' // option
-  });
+  // $("#info_input_radio").iCheck({
+  //   checkboxClass: 'icheckbox_minimal',
+  //   radioClass: 'iradio_minimal',
+  //   increaseArea: '20%' // option
+  // });
 
   $("#info_phone").mask("999-9999-9999");
   
@@ -103,11 +121,35 @@ $(document).ready(function(){
     FB.Canvas.setAutoGrow();
     $("#facebook_share_link").click(function(e){
       e.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: "/viral_actions.json",
+        data: {
+          'viral_action[platform]': "Facebook",
+          'viral_action[device]': "pc"
+        },
+        success: function (data) {
+        }
+        });
       share();
     });
   });
 
 });
+
+function twitter_share()
+{
+  $.ajax({
+    type: "POST",
+    url: "/viral_actions.json",
+    data: {
+      'viral_action[platform]': "Twitter",
+      'viral_action[device]': "pc"
+    },
+    success: function (data) {
+    }
+    });
+}
 
 function validation(errors){
   if(Object.keys(errors).indexOf("phone") == -1){
@@ -124,6 +166,8 @@ function validation(errors){
       $("#popup_fin2").bPopup({
         closeClass: 'b-close',
         modalColor: '#000',
+        follow: [false, false], //x, y
+        position: ['auto', 70], //x, y
         onClose: function(){$("#popup_info").bPopup().close();}
       });
     }else{
@@ -138,13 +182,13 @@ function validation(errors){
 }
 
 function share() {
-  var text = "[Skin Birthday]\n당신이 태어난 오늘 피부도 새로 태어납니다.\n\n생일을 맞이한 첫 구매 고객님께\n시크릿 프로그래밍 에센스(40ml)를 생일 선물로 드립니다.\n\n지금 쿠폰받기 >\n<%= Rails.application.secrets.url %>";
+  var text = "생일을 맞이한 첫 구매 고객님께\n시크릿 프로그래밍 에센스(40ml)를 생일 선물로 드립니다.";
   var share_content = {
     method: "feed",
     name: "Skin Birthday",
-    link: "<%= Rails.application.secrets.url %>",
+    link: "<%= Rails.application.secrets.url %>/pc/index",
     picture: '<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>',
-    caption: "당신이 태어난 오늘, 피부도 새로 태어납니다.",
+    caption: "숨37과 처음 만나는 오늘이, 피부의 생일입니다.",
     description: text
   };
   FB.ui(share_content, function(response) {
@@ -153,7 +197,7 @@ function share() {
       alert("공유되었습니다.");
     }
     else {
-      alert("공유 실패");
+      alert("다시 공유해주세요!");
     }
   });
 }

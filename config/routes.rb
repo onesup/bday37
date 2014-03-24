@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    get '/' => 'dashboard#index', ad: 'admin'
-    resources :users
-    resources :coupons
+    get '/' => 'dashboard#index'
+    resources :traffic_logs
+    resources :users do
+      collection do
+        get 'couponused'
+      end
+    end
+    resources :coupons do
+      member do
+        get 'send_message'
+      end
+    end
+    resources :viral_actions 
   end
 
   namespace :fb do
@@ -29,6 +39,8 @@ Rails.application.routes.draw do
     get 'product' => 'home#product'
     resources :users
   end
+  
+  resources :viral_actions
 
   get 'web_switch' => 'web_switch#index'
   get 'fb_switch' => 'fb_switch#index'

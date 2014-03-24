@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$("#info_phone").mask("999-9999-9999");
+  $("#info_input_radio");
 	$.ajaxSetup({ cache: true });
 	$.getScript('//connect.facebook.net/ko_KR/all.js', function(){
 		FB.init({
@@ -13,30 +14,60 @@ $(document).ready(function(){
 		FB.Canvas.setAutoGrow();
 		$("#facebook_share_link").click(function(e){
 			e.preventDefault();
+      $.ajax({
+          type: "POST",
+          url: "/viral_actions.json",
+          data: {
+            'viral_action[platform]': "Facebook",
+            'viral_action[device]': "mobile"
+          },
+          success: function (data) {
+          }
+      });
 			share();
 		});
 	});
 	$("#kakaotalk_share_link").click(function(e){
 		e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/viral_actions.json",
+      data: {
+        'viral_action[platform]': "Kakaotalk",
+        'viral_action[device]': "mobile"
+      },
+      success: function (data) {
+      }
+      });
 		kakao.link("talk").send({
-			msg : "생일을 맞이한 첫 구매 고객님께 시크릿 프로그래밍 에센스를 생일 선물로 드립니다!",
+			msg : "생일을 맞이한 첫 구매 고객님께 시크릿 프로그래밍 에센스(40ml)를 생일 선물로 드립니다.",
 			url : "<%= Rails.application.secrets.url %>",
 			appid : "skin_birthday",
 			appver : "1.0",
-			appname : "스킨버스데이",
+			appname : "Skin Birthday",
 			type : "link"
 		});
 	});
   $("#kakaostory_share_link").click(function(e){
     e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/viral_actions.json",
+      data: {
+        'viral_action[platform]': "Kakaostory",
+        'viral_action[device]': "mobile"
+      },
+      success: function (data) {
+      }
+      });
     kakao.link("story").send({
-      post : "생일을 맞이한 첫 구매 고객님께 시크릿 프로그래밍 에센스를 생일 선물로 드립니다! http://"+"<%= Rails.application.secrets.url %>",
+      post : "생일을 맞이한 첫 구매 고객님께 시크릿 프로그래밍 에센스(40ml)를 생일 선물로 드립니다. http://"+"<%= Rails.application.secrets.url %>",
       appid : "skin_birthday",
       appver : "1.0",
-      appname : "스킨버스데이",
+      appname : "Skin Birthday",
       urlinfo : JSON.stringify({
-        title:"스킨버스데이",
-        desc:"생일을 맞이한 첫 구매 고객님께 시크릿 프로그래밍 에센스를 생일 선물로 드립니다!"+"<%= Rails.application.secrets.url %>",
+        title:"Skin Birthday",
+        desc:"생일을 맞이한 첫 구매 고객님께 시크릿 프로그래밍 에센스를 생일 선물로 드립니다."+"<%= Rails.application.secrets.url %>",
         imageurl:["http://i.imgur.com/OOzHQuf.jpg"],
         type:"article"
       })
@@ -78,13 +109,13 @@ $(document).ready(function(){
 
 
 function share() {
-  var text = "[Skin Birthday]\n당신이 태어난 오늘 피부도 새로 태어납니다.\n\n생일을 맞이한 첫 구매 고객님께\n시크릿 프로그래밍 에센스(40ml)를 생일 선물로 드립니다.\n\n지금 쿠폰받기 >\n<%= Rails.application.secrets.url %>";
+  var text = "생일을 맞이한 첫 구매 고객님께\n시크릿 프로그래밍 에센스(40ml)를 생일 선물로 드립니다.";
   var share_content = {
     method: "feed",
     name: "Skin Birthday",
-    link: "<%= Rails.application.secrets.url %>",
+    link: "<%= Rails.application.secrets.url %>/pc/index",
     picture: '<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>',
-    caption: "당신이 태어난 오늘, 피부도 새로 태어납니다.",
+    caption: "숨37과 처음 만나는 오늘이, 피부의 생일입니다.",
     description: text
   };
   FB.ui(share_content, function(response) {
@@ -93,7 +124,7 @@ function share() {
       alert("공유되었습니다.");
     }
     else {
-      alert("공유 실패");
+      alert("다시 공유해주세요!");
     }
   });
 }

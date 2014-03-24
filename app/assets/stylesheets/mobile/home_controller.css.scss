@@ -20,9 +20,8 @@ body{background: #d4e5e9;}
   clear: both;
   height: 0;
 }
-.clearfix { display: inline-block; }
 * html .clearfix { height: 1%; }
-.clearfix { display: block; }
+//.clearfix { display: block; }
 .clickable-link {
   display: block;
   text-indent: -9999em;
@@ -60,11 +59,11 @@ body{background: #d4e5e9;}
       .top {
 		 text-align:center;
         .container-logo {
-          width: 50%;
+          width: 100px;
           float: left;
 		  text-align:left;
           .logo {
-            width: 50%;
+            width: 90px;
 			padding-left:10px;
           }
         }
@@ -80,20 +79,29 @@ body{background: #d4e5e9;}
 
 		.title{
 			text-align:center;
-	        padding-top:34px;
+	        padding-top:25px;
 			margin-bottom:15px;
 			.tagline {
-	          width: 246px;
+	          width: 260px;
+	  	      @media (max-width: 320px) {
+	  	        width: 246px;
+	  	      }
 	        }
 		}
 
         .container-btn_gift {
 		  margin:0 auto;
 		  display:block;
-		  width: 180px;
+		  width: 220px;
 		  text-align:center;
+	  	      @media (max-width: 320px) {
+	  	        width: 180px;
+	  	      }
 		  img{
-		  	width: 180px;
+		  	width: 220px;
+	  	      @media (max-width: 320px) {
+	  	        width: 180px;
+	  	      }
 		  }
         }
 
@@ -130,19 +138,27 @@ body{background: #d4e5e9;}
           .btn_kakaotalk {
 			text-align:center;
             margin-bottom: 10px;
-			width:280px;
+			width:320px;
+	  	      @media (max-width: 320px) {
+	  	        width:280px;
+	  	      }
           }
 
           .btn_kakaostory {
             margin-bottom: 10px;
 			text-align:center;
-			width:280px;
+			width:320px;
+	  	      @media (max-width: 320px) {
+	  	        width:280px;
+	  	      }
           }
 
           .btn_facebook {
 			  text-align:center;
-			  width:280px;
-
+			  width:320px;
+	  	      @media (max-width: 320px) {
+	  	        width:280px;
+	  	      }
           }
         }
 
@@ -153,18 +169,20 @@ body{background: #d4e5e9;}
 			display:block;
             float: left;
 			width:164px;
+			padding-left:10px;
           }
 
           .btn_product-detail {
             margin-top: -2%;
 			width:85px;
+			padding-right:10px;
 			display:block;
             float: right;
           }
 
           .video {
             margin-top: 4%;
-            width: 100%;
+            width: 95%;
           }
         }
       }
@@ -182,11 +200,11 @@ body{background: #d4e5e9;}
       .wrapper-background {
 	    width: 480px;
 		margin:0 auto;  
-        padding-left: 7px;
         background: #fff;
 		
 		p{
 			margin:0 10px;
+	   	    padding-left: 7px;
 		}
 		
 		p.first{
@@ -197,7 +215,11 @@ body{background: #d4e5e9;}
 
         .text_notes {
           margin-top: 20px;
-          width: 265px;
+          width: 310px;
+  	      @media (max-width: 320px) {
+  	        width:270px;
+  	      }
+		  
         }
 
         .divider_03 {
@@ -208,8 +230,11 @@ body{background: #d4e5e9;}
 
         .text_copyrights {
           margin-bottom: 10px;
-          width: 271px;
+          width: 300px;
           background: #fff;
+  	      @media (max-width: 320px) {
+  	        width:271px;
+  	      }
         }
       }
     }
@@ -231,17 +256,26 @@ body{background: #d4e5e9;}
       width: 200px;
       margin-bottom: 10px;
 	  text-align:center;
+	      @media (max-width: 767px) {
+	        width: 240px;
+	      }
     }
 
     .product {
       width: 260px;
 	  margin-bottom: 6%;
 	  text-align:center;
+      @media (max-width: 767px) {
+         width: 270px;
+      }
     }
 
     .text-bottom {
       width: 270px;
 	  text-align:center;
+      @media (max-width: 767px) {
+         width: 290px;
+      }
     }
   }
 }
@@ -269,12 +303,13 @@ body{background: #d4e5e9;}
 
     .container-year {
 	  float:left;
+	  margin-left:60px;
       .select_year {
-        width: 79px;
-        height: 26px;
-        margin-right: 5px;
+        width: 85px;
+        height: 30px;
+        margin-right: 0px;
         padding-left: 20px;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: bold;
         border: 0;
         float: left;
@@ -284,8 +319,8 @@ body{background: #d4e5e9;}
         background: asset-url("mobile/btn_selectYear100.png") no-repeat left top;
 
         @media (max-width: 767px) {
-          width: 79px;
-          height: 26px;
+	      width: 85px;
+	      height: 30px;
           padding-left: 10px;
           font-size: 10px;
           background: asset-url("mobile/btn_selectYear50.png") no-repeat left top;
@@ -302,7 +337,7 @@ body{background: #d4e5e9;}
       }
 
       .label-year {
-        float: left;
+        /*float: left;*/
         padding: 7px 10px 0 0;
         width: 9px;
       }
@@ -310,14 +345,13 @@ body{background: #d4e5e9;}
 
 
   .container-month {
-	 float:left;
-	 width:80px;
+	   float:left;
     .select_month {
-      width: 108px;
-      height: 52px;
+      width: 80px;
+      height: 30px;
       margin-right: 5px;
       padding-left: 10px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: bold;
       border: 0;
       float: left;
@@ -345,22 +379,21 @@ body{background: #d4e5e9;}
     }
 
     .label-month {
-      float: left;
+//      float: left;
       padding: 7px 10px 0 0;
       width: 10px;
-	  display:block;
+//    display:block;
     }
   }
 
   .container-day {
- 	 float:left;
- 	 width:80px;
+ 	   float:left;
     .select_day {
-      width: 108px;
-      height: 52px;
-      margin-right: 2%;
+      width: 90px;
+      height: 30px;
+      margin-right: 3px;
       padding-left: 10px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: bold;
       border: 0;
       float: left;
@@ -390,10 +423,10 @@ body{background: #d4e5e9;}
     }
 
     .label-day {
-      float: left;
+//      float: left;
       padding: 7px 10px 0 0;
-      width: 9px;
-	  display:block;
+      width: 10px;
+//    display:block;
     }
   }
 
@@ -440,12 +473,15 @@ body{background: #d4e5e9;}
 
   .divider_01 {
 
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin: 10px 0;
   }
   .container-terms-master {
-    max-width: 100%;
-    display:inline-block;
+	  display:block;
+	  padding-left:100px;
+	  padding-top:5px;
+  }
+  .container-terms-master.second {
+	  padding-top:10px;
   }
   .container-terms {
     padding-left: 13%;
@@ -454,7 +490,6 @@ body{background: #d4e5e9;}
       width: 50%;
       margin-right: 5%;
     }
-
     .info_input_agree {
       margin-bottom: -1%;
       width: 7%;
@@ -485,11 +520,11 @@ body{background: #d4e5e9;}
 }
 #terms {
   margin: 0;
-  padding: 0 30px;
+  padding: 0 20px;
   color: #333;
   font-family: 'Dotum';
-  font-size: 15px;
-  line-height: 2em;
+  font-size: 13px;
+  line-height: 15px;
   word-break: break-all;
   white-space: pre-line;
 }
@@ -594,61 +629,69 @@ body{background: #d4e5e9;}
   width: 480px;
   margin: 5% auto 0 auto;
   padding: 0; }
-  #coupon_success .container-logo {
-    margin-bottom: 35px;
+  .container-logo {
+    margin-bottom: 30px;
 	padding-left:10px;
-    }
-    #coupon_success .container-logo .logo {
-      width: 92px;
-      }
-      @media (max-width: 767px) {
-        #coupon_success .container-logo .logo {
-          width: 92px;
-          } }
+  }
+  .container-logo .logo {
+	  width: 80px; 
+  }
+  .coupon_tops{
+	text-align:center;
+	position:relative;
+		.name {
+	    position: absolute;
+	    left: 10px;
+	    top: 0px;
+	    font-size: 18px;
+		letter-spacing:-1px; 
+		font-weight:bold;
+		width:85px;
+		text-align:right;
+	    @media (max-width: 320px) {
+	      width:75px; }
+	    }
+	  .text_coupon_top {
+		  width:330px;
+	    @media (max-width: 320px) {
+	      width:290px;
+	       }
+	   }
+  }
+
+
 		  
-    #coupon_success {
-    	
-    } 
-	.coupon_tops{
-		text-align:center;}	
-	.name {
-    position: absolute;
-    left: 10px;
-    top: 0px;
-    font-size: 18px;
-	letter-spacing:-1px; 
-	font-weight:bold;
-	width:70px;
-	text-align:right;
-    }
-    @media (max-width: 767px) {
-      #coupon_success .name {
-        } }
-    @media (max-width: 480px) {
-      #coupon_success .name {
-        } }
-  .text_coupon_top {
-	  width:290px;
-	  padding-left:15px;
-   }
-  #coupon_success .coupon_img{
-	  margin-bottom:20px;
-  }	
   #coupon_success .container-product {
     margin-bottom: 5%;
 	text-align:center;}
-	#coupon_success .container-product .product {
-      width: 290px;
+	#coupon_success .container-product .coupon_img{
+		margin-bottom:10px;
+	}
+	#coupon_success .container-product .coupon_imgs {
+      width: 330px;
       margin-bottom: 0; 
+       @media (max-width: 320px) {
+       width:290px;
+       }
       }
   #coupon_success .text_product_caution {
-    width: 227px; }
+    width: 300px; 
+    @media (max-width: 320px) {
+    width:250px;
+    }
+  }
   #coupon_success .bottom {
-    padding: 10% 0 0 10%;
-    padding-bottom: 8%;
-    background: white; }
+	margin:10px 0;
+    padding: 20px 0;
+    background: white;
+	text-align:center;
+   }
     #coupon_success .bottom .text_coupon_caution2 {
-      width: 70%; }
+      width: 290px; 
+      @media (max-width: 320px) {
+      width:265px;
+       }
+	}
     #coupon_success .bottom .btn_coupon_use_before {
       margin-top: 5%;
       width: 90%; }
@@ -665,10 +708,6 @@ body{background: #d4e5e9;}
 }
 
 
-#coupon_success .coupon_tops{
-	position:relative;
-	height:100px;
-}
 
 .agree_checkbox{
 	float:left;
@@ -689,7 +728,12 @@ body{background: #d4e5e9;}
 }
 
 .container-coupon{
-  padding: 8% 20% 4%;
+  width:180px;
+  margin:0 auto;
+  padding:15px;
+  input{
+	  width:180px;
+  }
 }
 
 .text_caution{
@@ -698,33 +742,42 @@ body{background: #d4e5e9;}
 }
 
 .info_input_radio{
-  weight: 24px;
-  height: 14px;
-  -webkit-appearance: checkbox;
-  -moz-appearance: checkbox;
-  -ms-appearance: checkbox;
-  -o-appearance: checkbox;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
   float: left;
-  -webkit-appearance: none;
-  border-radius: 0;
+  -ms-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	-o-transform: scale(1.5);
 }
 
 .text_terms{
   float: left;
-  width: 35%;
+  width: 90px;
+  padding-top: 2%;
+}
+.text_terms2{
+  float: left;
+  width: 110px;
   padding-top: 2%;
 }
 
-.container-terms-master{
-  margin-left: 13%;
-  width: 87%
-}
 
 .detail_terms{
-  float: left;
-  width: 30%;
-  margin-left: 10%;
+  width: 82px;
 
+}
+.error{
+  
+}
+.check_error{
+  float: left;
+}
+.field_with_errors {
+  display: inline;
+}
+
+.info_birth_date{
+  display: table;
+  clear: both;
 }
