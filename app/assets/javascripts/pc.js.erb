@@ -186,7 +186,7 @@ function share() {
   var share_content = {
     method: "feed",
     name: "Skin Birthday",
-    link: "<%= Rails.application.secrets.url %>?s=fb",
+    link: "<%= Rails.application.secrets.url %>&s=fb",
     picture: '<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>',
     caption: "Make your skin birthday Sponsored by 숨37",
     description: text
