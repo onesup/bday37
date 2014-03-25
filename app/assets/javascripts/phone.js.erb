@@ -68,7 +68,7 @@ $(document).ready(function(){
       urlinfo : JSON.stringify({
         title:"Skin Birthday",
         desc:"Make Your Skin Birthday Sponsored by 숨37",
-        imageurl:["http://i.imgur.com/OOzHQuf.jpg"],
+        imageurl:['<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>'],
         type:"article"
       })
     });
