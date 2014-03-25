@@ -10,41 +10,37 @@ class Mobile::UsersController < ApplicationController
     user_agent = UserAgent.parse(request.user_agent)
     device = "mobile" if user_agent.mobile?
     
-    unless User.exists?(phone: phone)
-      @user = User.new(user_params)
-      birthday = "2014-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
-      @user.birthday = DateTime.parse(birthday)
-      @user.device = device
+    @user = User.new(user_params)
+    birthday = "2014-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
+    @user.birthday = DateTime.parse(birthday)
+    @user.device = device
       
-      respond_to do |format|
-        if @user.save
-          c = Coupon.new
-          c.code = c.random_code
-          c.user = @user
-          c.save
-          MessageJob.new.async.perform(c)
-        
-          @log = AccessLog.new(ip: request.remote_ip, device: device)
-          @log.user = @user
-          @log.save
-        
-          format.html { redirect_to mobile_thank_you_path, notice: 'User was successfully created.' }
-          format.json { render json: {status: "success"}, status: :created, location: @user }
-        else
-          format.html { render action: 'new' }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
-        end
-      end
-    else
-      @user = User.find_by_phone(phone)
-      respond_to do |format|
+    respond_to do |format|
+      if @user.save
+        c = Coupon.new
+        c.code = c.random_code
+        c.user = @user
+        c.save
+        MessageJob.new.async.perform(c)
         
         @log = AccessLog.new(ip: request.remote_ip, device: device)
         @log.user = @user
         @log.save
-      
-        format.html { redirect_to mobile_unique_error_path }
-        format.json { render json: {status: "duplicated"}, status: :unprocessable_entity}
+        
+        format.html { redirect_to mobile_thank_you_path, notice: 'User was successfully created.' }
+        format.json { render json: {status: "success"}, status: :created, location: @user }
+      else
+        format.html {
+          flag = "uniqueness"
+          flag = "presence" unless @user.errors.values.flatten.index("must be accepted").nil?
+          flag = "presence" unless @user.errors.values.flatten.index("can't be blank").nil?
+          if flag == "presence"
+            render action: 'new' 
+          else
+            redirect_to mobile_unique_error_path
+          end
+        }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
