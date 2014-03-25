@@ -1,6 +1,7 @@
 class CouponsController < ApplicationController
   layout 'mobile'
   before_action :set_coupon, only: [:destroy, :update, :edit, :show]
+  skip_before_action  :verify_authenticity_token
   def update
     @coupon.used_at=Time.now
     respond_to do |format|

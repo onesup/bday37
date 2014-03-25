@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, notice: '권한이 필요합니다.'
     end
   end
-  
+    
   protected
 
   def layout_by_resource
