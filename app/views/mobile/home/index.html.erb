@@ -1,62 +1,66 @@
 <div id="main">
-  <div class="header">
-    <div class="top clearfix">
-      <div class="clearfix">
-	 	 <div class="container-logo">
-      	  <a href="/"><%= image_tag("mobile/logo.png", class:"logo") %></a>
-     	 </div>
-	 	 <div class="event-date">
-     	 <%= image_tag("mobile/text_event-date.png", class:"event-datess") %>
-	 	 </div>
-	  </div>
-	  <div class="title">
-          <%= image_tag("mobile/text_tagline.png", class:"tagline") %>
-      </div>
-	  <div class="container-btn_gift">
-        <%= link_to new_mobile_user_path, {onclick:"ga('send', 'event', 'button', 'click', 'm 생일 선물 받기');"} do %>
-          <%= image_tag("mobile/btn_gift.png", class:"btn_gift") %>
-        <% end %>
-      </div>
-      <div class="container-product">
-        <%= image_tag("mobile/product.png", class:"product") %>
-      </div>
+	<div class="header">
+		<div class="top clearfix">
+			<div class="clearfix">
+				<div class="container-logo">
+					<a href="/"><%= image_tag("mobile/logo.png", class:"logo") %></a>
+				</div>
+				<div class="event-date">
+					<%= image_tag("mobile/text_event-date.png", class:"event-datess") %>
+				</div>
+			</div>
+			<div class="title">
+				<%= image_tag("mobile/text_tagline.png", class:"tagline") %>
+			</div>
+			<div class="container-btn_gift">
+				<%= link_to new_mobile_user_path, {onclick:"ga('send', 'event', 'button', 'click', 'm 생일 선물 받기');"} do %>
+				<%= image_tag("mobile/btn_gift.png", class:"btn_gift") %>
+				<% end %>
+			</div>
+			<div class="container-product">
+				<%= image_tag("mobile/product.png", class:"product") %>
+			</div>
       
-      <div class="container-sns">
-        <%= image_tag("mobile/text_sns.png", class:"text_sns") %>
-        <a href="#" id="kakaotalk_share_link"><%= image_tag("mobile/btn_kakaotalk.png", class:"btn_kakaotalk") %></a>
-        <a href="#" id="kakaostory_share_link"><%= image_tag("mobile/btn_kakaostory.png", class:"btn_kakaostory") %></a>
-        <a href="#" id="facebook_share_link"><%= image_tag("mobile/btn_facebook.png", class:"btn_facebook") %></a>
-      </div>
+			<div class="container-sns">
+				<%= image_tag("mobile/text_sns.png", class:"text_sns") %>
+				<a href="#" id="kakaotalk_share_link"><%= image_tag("mobile/btn_kakaotalk.png", class:"btn_kakaotalk") %></a>
+				<a href="#" id="kakaostory_share_link"><%= image_tag("mobile/btn_kakaostory.png", class:"btn_kakaostory") %></a>
+				<a href="#" id="facebook_share_link"><%= image_tag("mobile/btn_facebook.png", class:"btn_facebook") %></a>
+			</div>
       
-      <div class="container-promotion">
-		<div class="clearfix">
-        	<%= image_tag("mobile/text_screte-programming-essence.png", class:"text_screte-programming-essence") %>
-         	<a href="/mobile/product"  class="container-product-detail"><%= image_tag("mobile/btn_product-detail.png", class:"btn_product-detail") %></a>
+			<div class="container-promotion">
+				<div class="clearfix">
+					<%= image_tag("mobile/text_screte-programming-essence.png", class:"text_screte-programming-essence") %>
+					<a href="/mobile/product"  class="container-product-detail"><%= image_tag("mobile/btn_product-detail.png", class:"btn_product-detail") %></a>
+				</div>
+				<iframe width="300" height="210" src="//www.youtube.com/embed/bax4BgeYnGI" frameborder="0" allowfullscreen class="video"></iframe>
+			</div>
+	  
+			<div class="container-sum-sns clearfix">
+				<div class="left">
+					<a href="https://www.facebook.com/sum37.beauty?fref=ts" target="_blank">
+						<%= image_tag("mobile/btn_sum_fb.png", class:"btn_sum_fb") %>
+					</a>
+					<a href="http://tinyurl.com/mx47enm">
+						<%= image_tag("mobile/btn_sum_ks.png", class:"btn_sum_fb") %>
+					</a>
+				</div>
+				<div class="right">
+					<a href="http://su-m37.co.kr/mobile/store/nearStore.jsp" target="_blank">
+						<%= image_tag("mobile/btn_sum_store.png", class:"btn_sum_fb") %>
+					</a>
+				</div>
+			</div>
 		</div>
-        <iframe width="300" height="210" src="//www.youtube.com/embed/bax4BgeYnGI" frameborder="0" allowfullscreen class="video"></iframe>
-      </div>
-	  
-      <div class="container-sum-sns clearfix">
-		<div class="left">
-        <a href="https://www.facebook.com/sum37.beauty?fref=ts" target="_blank"><%= image_tag("mobile/btn_sum_fb.png", class:"btn_sum_fb") %></a>
-		<a href="#"><%= image_tag("mobile/btn_sum_ks.png", class:"btn_sum_fb") %></a>
-      	</div>
-		<div class="right">
-        <a href="http://su-m37.co.kr/mobile/store/nearStore.jsp" target="_blank"><%= image_tag("mobile/btn_sum_store.png", class:"btn_sum_fb") %></a>
-      	</div>
-	  </div>
-	  
-	  	  
-    </div>
-  </div>
+	</div>
 </div>
 <div class="footer">
-  <div class="wrapper-background">
-    <p class=first>
-	<%= image_tag("mobile/text_notes.png", class:"text_notes") %>
-	</p>
-	<p>
-    <%= image_tag("mobile/text_copyrights.png", class:"text_copyrights") %>
-	</p>
-  </div>
+	<div class="wrapper-background">
+		<p class=first>
+			<%= image_tag("mobile/text_notes.png", class:"text_notes") %>
+		</p>
+		<p>
+			<%= image_tag("mobile/text_copyrights.png", class:"text_copyrights") %>
+		</p>
+	</div>
 </div>
