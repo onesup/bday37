@@ -11,8 +11,8 @@ $(document).ready(function(){
     var days;
     month = $("#select_month").val();
     if(month === '3'){
-      add_days = [20,21,22,23,24,25,26,27,28,29,30,31];
-      remove_days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+      add_days = [25,26,27,28,29,30,31];
+      remove_days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27];
       $.each(remove_days, function( index, value ){
         $("#select_day option[value="+value+"]").remove();
       });
@@ -23,8 +23,8 @@ $(document).ready(function(){
         })).selectric('refresh');
       });
     }else if(month === '4'){
-      add_days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
-      remove_days = [20,21,22,23,24,25,26,27,28,29,30,31];
+      add_days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27];
+      remove_days = [25,26,27,28,29,30,31];
       $.each(remove_days, function( index, value ){
         $("#select_day option[value="+value+"]").remove();
       });
