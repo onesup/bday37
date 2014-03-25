@@ -20,9 +20,10 @@ class Message < ActiveRecord::Base
   
   def self.send_message(coupon)
     "
-"+coupon.user.name+"님 피부생일을 축하드려요!
-시크릿 프로그래밍 에센스 40ml
-선물을 드립니다.
+"+coupon.user.name+"님
+피부생일을 축하드려요!
+시크릿 프로그래밍 에센스 
+40ml 선물을 드립니다.
 지금 받으러가요!
 
 쿠폰받기:" + Rails.application.secrets.url + "/" + coupon.code +
