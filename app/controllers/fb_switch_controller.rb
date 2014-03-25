@@ -13,12 +13,12 @@ class FbSwitchController < ApplicationController
     g.page_view("fb/mobile switch page", "/")    
     user_agent = UserAgent.parse(request.user_agent)
     if user_agent.mobile?
-      device="mobile"
+      device = "mobile"
       @traffic_log = TrafficLog.new(ip: request.remote_ip, device: device, referer: referer)
       @traffic_log.save
       redirect_to mobile_index_path({s: params[:s]})
     else
-      device="pc"
+      device = "pc"
       s = params[:s] || ""
       @traffic_log = TrafficLog.new(ip: request.remote_ip, device: device, referer: referer)
       @traffic_log.save
