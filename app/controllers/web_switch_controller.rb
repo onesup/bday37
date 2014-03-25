@@ -1,11 +1,15 @@
 class WebSwitchController < ApplicationController
   def index
-    referer = URI(request.referer || '').path
-    Rails.logger.info "@@@@@referer: "+URI(request.env["HTTP_REFERER"] || '').path
+    if request.referer.nil?
+      referer = "-"
+    else
+      referer = URI(request.referer || '').scheme + "://" + URI(request.referer || '').host 
+    end
+    Rails.logger.info "@@@@@referer: " + referer
     tracking_id = Rails.application.secrets.ga_tracking_id
     url = Rails.application.secrets.url
     g = Gabba::Gabba.new(tracking_id, url)
-    g.referer(referer)
+    g.referer(request.referer)
     g.page_view("pc/mobile switch page", "/")
     user_agent = UserAgent.parse(request.user_agent)
     if user_agent.mobile?
