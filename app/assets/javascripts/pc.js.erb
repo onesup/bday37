@@ -76,7 +76,7 @@ $(document).ready(function(){
     var $form = $(this),errors,errorText;
     errors = $.parseJSON(xhr.responseText);
 
-    if(errors.status==="duplicated"){
+    if(errors.status === "duplicated"){
       $("#popup_fin2").bPopup({
         closeClass: 'b-close',
         modalColor: '#000',
@@ -153,38 +153,27 @@ function twitter_share()
 
 function validation(errors){
 	var flag;
+	flag = "uniqueness";
 	$.each(errors,function(key, value){
-		if(key === "phone"){
-			flag = "phone";
+		if(value == "must be accepted" || value == "can't be blank" ){
+			flag = "presence";
 		}
 	});
-  if(flag === "phone"){
-    //폰없다
-    for ( error in errors ) {
-      $('input[data-name ='+error+']').parent().find('span').remove();
-      $('input[data-name ='+error+']').after('<span class="star">*</span>');
-      // $('input[data-name ='+error+']').next().empty('span');
-    }
-  }else{
-    //폰있다
-    if(errors.phone.indexOf("has already been taken") != -1){
-      //중복이다
-      $("#popup_fin2").bPopup({
-        closeClass: 'b-close',
-        modalColor: '#000',
-        follow: [false, false], //x, y
-        position: ['auto', 70], //x, y
-        onClose: function(){$("#popup_info").bPopup().close();}
-      });
-    }else{
-      //중복 아니다
-      for ( error in errors ) {
-        $('input[data-name ='+error+']').parent().find('span').remove();
-        $('input[data-name ='+error+']').after('<span class="star">*</span>');
-        // $('input[data-name ='+error+']').next().empty('span');
-      }
-    }
-  }
+	if(flag == "presence"){
+		$('.star').empty();
+		for ( error in errors ) {
+		  $('input[data-name ='+error+']').parent().find('span').remove();
+		  $('input[data-name ='+error+']').after('<span class="star">*</span>');
+		}
+	}else if(flag == "uniqueness"){
+    $("#popup_fin2").bPopup({
+      closeClass: 'b-close',
+      modalColor: '#000',
+      follow: [false, false], //x, y
+      position: ['auto', 70], //x, y
+      onClose: function(){$("#popup_info").bPopup().close();}
+    });		
+	}
 }
 
 function share() {

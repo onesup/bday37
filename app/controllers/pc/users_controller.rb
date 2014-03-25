@@ -2,48 +2,33 @@ class Pc::UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_action  :verify_authenticity_token
   
-  def create
-    
+  def create    
     phone = params[:user][:phone]
     device = "pc"
     user_agent = UserAgent.parse(request.user_agent)
     device = "mobile" if user_agent.mobile?
-    
-    unless User.exists?(phone: phone)
-      @user = User.new(user_params)
-      # phone = params[:user][:phone_1]+"-"+params[:user][:phone_2]+"-"+params[:user][:phone_3]
-      # @user.phone = phone
-      # birthday = params[:user][:birthday_year]+"-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
-      birthday = "2014-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
-      @user.birthday = DateTime.parse(birthday)
-      @user.device = device
-      respond_to do |format|
-        if @user.save
-          coupon = Coupon.new
-          coupon.code = coupon.random_code
-          coupon.user = @user
-          coupon.save
-          MessageJob.new.async.perform(coupon)
-        
-          @log = AccessLog.new(ip: request.remote_ip, device: device)
-          @log.user = @user
-          @log.save
-        
-          format.html { redirect_to pc_index_path, notice: 'User was successfully created.' }
-          format.json { render json: {status: "success"}, status: :created   }
-        else
-          format.html { render action: 'new' }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
-        end
-      end
-    else
-      @user = User.find_by_phone(phone)
-      respond_to do |format|
+
+    @user = User.new(user_params)
+    birthday = "2014-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
+    @user.birthday = DateTime.parse(birthday)
+    @user.device = device
+    respond_to do |format|
+      if @user.save
+        coupon = Coupon.new
+        coupon.code = coupon.random_code
+        coupon.user = @user
+        coupon.save
+        MessageJob.new.async.perform(coupon)
+      
         @log = AccessLog.new(ip: request.remote_ip, device: device)
         @log.user = @user
         @log.save
       
-        format.json { render json: {status: "duplicated"}, status: :unprocessable_entity}
+        format.html { redirect_to pc_index_path, notice: 'User was successfully created.' }
+        format.json { render json: {status: "success"}, status: :created   }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
