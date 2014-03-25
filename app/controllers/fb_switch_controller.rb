@@ -1,7 +1,6 @@
 class FbSwitchController < ApplicationController
   def index
     tracking_id = Rails.application.secrets.ga_tracking_id
-    tracking_id = Rails.application.secrets.ga_tracking_id
     url = Rails.application.secrets.url
     g = Gabba::Gabba.new(tracking_id, url)
     g.referer(request.referer)
