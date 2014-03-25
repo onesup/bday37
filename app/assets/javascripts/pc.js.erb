@@ -160,10 +160,10 @@ function validation(errors){
 		}
 	});
 	if(flag == "presence"){
-		$('.star').empty();
+		$(".star").empty();
 		for ( error in errors ) {
-		  $('input[data-name ='+error+']').parent().find('span').remove();
-		  $('input[data-name ='+error+']').after('<span class="star">*</span>');
+		  // $('input[data-name ='+error+']').parent().find('span').remove();
+		 $('input[data-name ='+error+']').after("<span class='star "+error+"'>*</span>");
 		}
 	}else if(flag == "uniqueness"){
     $("#popup_fin2").bPopup({
