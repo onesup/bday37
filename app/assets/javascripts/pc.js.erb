@@ -152,7 +152,13 @@ function twitter_share()
 }
 
 function validation(errors){
-  if(Object.keys(errors).indexOf("phone") == -1){
+	var flag;
+	$.each(errors,function(key, value){
+		if(key === "phone"){
+			flag = "phone";
+		}
+	});
+  if(flag === "phone"){
     //폰없다
     for ( error in errors ) {
       $('input[data-name ='+error+']').parent().find('span').remove();
@@ -161,7 +167,7 @@ function validation(errors){
     }
   }else{
     //폰있다
-    if(errors.phone.indexOf("has already been taken") !=-1){
+    if(errors.phone.indexOf("has already been taken") != -1){
       //중복이다
       $("#popup_fin2").bPopup({
         closeClass: 'b-close',
