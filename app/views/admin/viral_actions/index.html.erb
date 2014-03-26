@@ -9,14 +9,34 @@
       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
         <thead>
           <tr>
+            <th>날짜</th>
             <th>PC</th>
             <th>모바일</th>
             <th>합계</th>
           </tr>
         </thead>
         <tbody>
+          <% @viral_action_counts_daily.each do |v| %>
           <tr>
-           <% @viral_action_counts.each do |v| %>
+            <td>
+             <span><%=v.created_date%></span>  
+            </td> 
+            <td>
+             <span><%=v.pc_count%></span>  
+            </td>
+            <td>
+              <span><%=v.mobile_count%></span>  
+            </td>
+            <td>
+              <span><%=v.total_count%></span>  
+            </td>
+          </tr>
+          <% end %>
+          <% @viral_action_counts_sum.each do |v| %>
+          <tr>
+            <td>
+             <span>총합계</span>  
+            </td> 
             <td>
              <span><%=v.pc_count%></span>  
             </td>
@@ -36,16 +56,42 @@
       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
         <thead>
           <tr>
+            <th>날짜</th>
             <th>페이스북</th>
             <th>트위터</th>
             <th>카카오스토리</th>
             <th>카카오톡</th>
-            <th>합</th>
+            <th>합계</th>
           </tr>
         </thead>
         <tbody>
+           <% @viral_platform_counts_daily.each do |v| %>
+           <tr>
+            <td>
+             <span><%=v.created_date%></span>  
+            </td>
+            <td>
+             <span><%=v.facebook_count%></span>  
+            </td>
+            <td>
+              <span><%=v.twitter_count%></span>  
+            </td>
+            <td>
+              <span><%=v.kakaostory_count%></span>  
+            </td>
+            <td>
+              <span><%=v.kakaotalk_count%></span>  
+            </td>
+            <td>
+              <span><%=v.total_count%></span>  
+            </td>
+          </tr>
+          <% end %>
+          <% @viral_platform_counts_sum.each do |v| %>
           <tr>
-           <% @viral_platform_counts.each do |v| %>
+            <td>
+             <span>총합계</span>  
+            </td>
             <td>
              <span><%=v.facebook_count%></span>  
             </td>
