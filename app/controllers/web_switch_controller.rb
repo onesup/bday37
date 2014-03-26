@@ -9,9 +9,9 @@ class WebSwitchController < ApplicationController
     Rails.logger.info "@@@@@referer: " + referer
     tracking_id = Rails.application.secrets.ga_tracking_id
     url = Rails.application.secrets.url
-    g = Gabba::Gabba.new(tracking_id, url)
-    g.referer(request.referer)
-    g.page_view("pc/mobile switch page", "/")
+    # g = Gabba::Gabba.new(tracking_id, url)
+    # g.referer(request.referer)
+    # g.page_view("pc/mobile switch page", "/")
     user_agent = UserAgent.parse(request.user_agent)
     source = params[:s] || "-"
     if user_agent.mobile?
