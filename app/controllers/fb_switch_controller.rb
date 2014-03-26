@@ -5,6 +5,7 @@ class FbSwitchController < ApplicationController
     else
       referer = URI(request.referer || '').scheme + "://" + URI(request.referer || '').host 
     end
+    session[:referer] = request.referer
     Rails.logger.info "@@@@@referer: " + referer
     tracking_id = Rails.application.secrets.ga_tracking_id
     url = Rails.application.secrets.url
@@ -31,7 +32,7 @@ class FbSwitchController < ApplicationController
       @traffic_log.referer = referer
       @traffic_log.source = source
       @traffic_log.save
-      redirect_to Rails.application.secrets.page_tab_address+"?s="+ s
+      redirect_to Rails.application.secrets.page_tab_address
     end
   end
 end

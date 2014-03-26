@@ -5,6 +5,7 @@ class WebSwitchController < ApplicationController
     else
       referer = URI(request.referer || '').scheme + "://" + URI(request.referer || '').host 
     end
+    session[:referer] = request.referer
     Rails.logger.info "@@@@@referer: " + referer
     tracking_id = Rails.application.secrets.ga_tracking_id
     url = Rails.application.secrets.url
