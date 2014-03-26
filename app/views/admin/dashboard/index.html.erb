@@ -18,13 +18,26 @@
             <% @traffic_stats.each do |traffic_stat| %>
               <tr class="">
                 <td>
-                  <%= traffic_stat.created_date %>
+                  <span><%= traffic_stat.created_date %></span>
                 </td>
                 <td>
-                  <%= traffic_stat.pc_count %>
+                  <span><%= traffic_stat.pc_count %></span>
                 </td>
                 <td>
-                  <%= traffic_stat.mobile_count %>
+                  <span><%= traffic_stat.mobile_count %></span>
+                </td>
+              </tr>
+            <% end %>
+            <% @traffic_stats_sum.each do |traffic_stat| %>
+              <tr class="">
+                <td>
+                  <span>총합계</span>
+                </td>
+                <td>
+                  <span><%= traffic_stat.pc_count %></span>
+                </td>
+                <td>
+                  <span><%= traffic_stat.mobile_count %></span>
                 </td>
               </tr>
             <% end %>
@@ -43,10 +56,20 @@
             <% @viral_stats.each do |viral_stat| %>
               <tr class="">
                 <td>
-                  <%= viral_stat.created_date %>
+                  <span><%= viral_stat.created_date %></span>
                 </td>
                 <td>
-                  <%= viral_stat.viral_count %>
+                  <span><%= viral_stat.viral_count %></span>
+                </td>
+              </tr>
+            <% end %>
+            <% @viral_stats_sum.each do |viral_stat| %>
+              <tr class="">
+                <td>
+                  <span>총합계</span>
+                </td>
+                <td>
+                  <span><%= viral_stat.viral_count %></span>
                 </td>
               </tr>
             <% end %>
@@ -67,16 +90,32 @@
             <% @user_stats.each do |user_stat| %>
               <tr class="">
                 <td>
-                  <%= user_stat.created_date %>
+                  <span><%= user_stat.created_date %></span>
                 </td>
                 <td>
-                  <%= user_stat.pc_count %>
+                  <span><%= user_stat.pc_count %></span>
                 </td>
                 <td>
-                  <%= user_stat.mobile_count %>
+                  <span><%= user_stat.mobile_count %></span>
                 </td>
                 <td>
-                  <%= user_stat.coupon_user_count %>
+                  <span><%= user_stat.coupon_user_count %></span>
+                </td>
+              </tr>
+            <% end %>
+            <% @user_stats_sum.each do |user_stat| %>
+              <tr class="">
+                <td>
+                  <span>총합계</span>
+                </td>
+                <td>
+                  <span><%= user_stat.pc_count %></span>
+                </td>
+                <td>
+                  <span><%= user_stat.mobile_count %></span>
+                </td>
+                <td>
+                  <span><%= user_stat.coupon_user_count %></span>
                 </td>
               </tr>
             <% end %>
