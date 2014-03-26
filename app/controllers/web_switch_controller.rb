@@ -12,13 +12,14 @@ class WebSwitchController < ApplicationController
     g.referer(request.referer)
     g.page_view("pc/mobile switch page", "/")
     user_agent = UserAgent.parse(request.user_agent)
+    source = params[:s] || "-"
     if user_agent.mobile?
       device="mobile"
       @traffic_log = TrafficLog.new
       @traffic_log.ip = request.remote_ip 
       @traffic_log.device = device
       @traffic_log.referer = referer
-      @traffic_log.source = params[:s]
+      @traffic_log.source = source
       @traffic_log.save
       redirect_to mobile_index_path({s: params[:s]})
     else
@@ -27,7 +28,7 @@ class WebSwitchController < ApplicationController
       @traffic_log.ip = request.remote_ip 
       @traffic_log.device = device
       @traffic_log.referer = referer
-      @traffic_log.source = params[:s]
+      @traffic_log.source = source
       @traffic_log.save
       redirect_to pc_index_path({s: params[:s]})
     end
