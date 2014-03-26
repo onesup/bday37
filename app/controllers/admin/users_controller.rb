@@ -8,6 +8,7 @@ class Admin::UsersController < ApplicationController
   
   def couponused
     @couponusedusers = User.includes(:coupon).where(:coupons =>{:status => "used"}).order("coupons.updated_at DESC").page(params[:page]).per(200)
+    @couponused_counts = User.select("date(coupons.updated_at) used_date,count(*) used_count ").joins(:coupon).where(:coupons =>{:status => "used"}).group("date(coupons.updated_at)").order("date(coupons.updated_at)")
   end
   
 end
