@@ -14,7 +14,9 @@ class Admin::TrafficLogsController < ApplicationController
     ,sum(case when source='kt' then 1 else 0 end) as kt_count
     ,sum(case when source='fbapp' then 1 else 0 end) as fbapp_count
     ,sum(case when source='page' then 1 else 0 end) as page_count
-    ,sum(case when source not in ('lgh','sum37','lc','tw','fb','sw','ks','kt','fbapp','page') then 1 else 0 end) as etc_count
+    ,sum(case when source='lm' then 1 else 0 end) as mobileapp_count
+    ,sum(case when source='edm' then 1 else 0 end) as edm_count
+    ,sum(case when source not in ('lgh','sum37','lc','tw','fb','sw','ks','kt','fbapp','page','lm','edm') then 1 else 0 end) as etc_count
     ,count(*) as total_count").group("date(created_at)").order("date(created_at)")
     @traffic_stats_sum = TrafficLog.select("
      sum(case when source='lgh' then 1 else 0 end) as lgh_count
@@ -27,7 +29,9 @@ class Admin::TrafficLogsController < ApplicationController
     ,sum(case when source='kt' then 1 else 0 end) as kt_count
     ,sum(case when source='fbapp' then 1 else 0 end) as fbapp_count
     ,sum(case when source='page' then 1 else 0 end) as page_count
-    ,sum(case when source not in ('lgh','sum37','lc','tw','fb','sw','ks','kt','fbapp','page') then 1 else 0 end) as etc_count
+    ,sum(case when source='lm' then 1 else 0 end) as mobileapp_count
+    ,sum(case when source='edm' then 1 else 0 end) as edm_count
+    ,sum(case when source not in ('lgh','sum37','lc','tw','fb','sw','ks','kt','fbapp','page','lm','edm') then 1 else 0 end) as etc_count
     ,count(*) as total_count")
     
     # @event_stats = @traffic_stats.joins(@viral_stats).where(@traffic_stats.create_date => @viral_stats.created)
