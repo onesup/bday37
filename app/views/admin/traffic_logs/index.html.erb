@@ -10,106 +10,120 @@
         <thead>
           <tr>
             <th>날짜</th>
-            <th>법인</th>
-            <th>숨37</th>
-            <th>l-care</th>
-            <th>스마트월렛</th>
-            <th>카카오스토리</th>
-            <th>카카오톡</th>
-            <th>페이스북</th>
-            <th>트위터</th>
-            <th>페이스북광고</th>
-            <th>페이스북페이지</th>
+            <th class="fb">페이스북</th>
+            <th class="tw">트위터</th>
+            <th class="ks">카카오스토리</th>
+            <th class="kt">카카오톡</th>
+            <th class="lc">l-care</th>
+            <th class="sw">스마트월렛</th>
+            <th class="lgh">법인</th>
+						<th class="mobileapp">모바일앱</th>
+            <th class="sum37">숨37</th>
+            <th class="fbapp">페이스북광고</th>
+						<th class="edm">EDM</th>
+						<th class="page">페이스북페이지</th>
             <th>기타</th>
             <th>합계</th>
           </tr>
         </thead>
         <tbody>
            <% @traffic_stats.each do |t| %>
-           <tr>
-            <td>
-             <span><%=t.created_date%></span>  
-            </td> 
-            <td>
-             <span><%=t.lgh_count%></span>  
-            </td>
-            <td>
-              <span><%=t.sum37_count%></span>  
-            </td>
-            <td>
-              <span><%=t.lc_count%></span>  
-            </td>
-            <td>
-              <span><%=t.sw_count%></span>  
-            </td>
-            <td>
-              <span><%=t.ks_count%></span>  
-            </td>
-            <td>
-              <span><%=t.kt_count%></span>  
-            </td>
-            <td>
-              <span><%=t.fb_count%></span>  
-            </td>
-            <td>
-              <span><%=t.tw_count%></span>  
-            </td>
-            <td>
-              <span><%=t.fbapp_count%></span>  
-            </td>
-            <td>
-              <span><%=t.page_count%></span>  
-            </td>
-            <td>
-              <span><%=t.etc_count%></span>  
-            </td>
-            <td>
-              <span><%=t.total_count%></span>  
-            </td>
-          </tr>
-          <% end %>
-           <% @traffic_stats_sum.each do |t| %>
-           <tr>
-            <td>
-             <span>총합계</span>  
-            </td> 
-            <td>
-             <span><%=t.lgh_count%></span>  
-            </td>
-            <td>
-              <span><%=t.sum37_count%></span>  
-            </td>
-            <td>
-              <span><%=t.lc_count%></span>  
-            </td>
-            <td>
-              <span><%=t.sw_count%></span>  
-            </td>
-            <td>
-              <span><%=t.ks_count%></span>  
-            </td>
-            <td>
-              <span><%=t.kt_count%></span>  
-            </td>
-            <td>
-              <span><%=t.fb_count%></span>  
-            </td>
-            <td>
-              <span><%=t.tw_count%></span>  
-            </td>
-            <td>
-              <span><%=t.fbapp_count%></span>  
-            </td>
-            <td>
-              <span><%=t.page_count%></span>  
-            </td>
-            <td>
-              <span><%=t.etc_count%></span>  
-            </td>
-            <td>
-              <span><%=t.total_count%></span>  
-            </td>
-          </tr>
+					 <tr>
+						 <td>
+							 <span><%=t.created_date%></span>  
+						 </td> 
+						 <td class="fb">
+							 <span><%=t.fb_count%></span>  
+						 </td>
+						 <td class="tw">
+							 <span><%=t.tw_count%></span>  
+						 </td>
+						 <td class="ks">
+							 <span><%=t.ks_count%></span>  
+						 </td>
+						 <td class="kt">
+							 <span><%=t.kt_count%></span>  
+						 </td>
+						 <td class="lc">
+							 <span><%=t.lc_count%></span>  
+						 </td>
+						 <td class="sw">
+							 <span><%=t.sw_count%></span>  
+						 </td>
+						 <td class="lgh">
+							 <span><%=t.lgh_count%></span>  
+						 </td>
+						 <td class="mobileapp">
+							 <span>mapp<%#=t.sw_count%></span>  
+						 </td>
+						 <td class="sum37">
+							 <span><%=t.sum37_count%></span>  
+						 </td>
+						 <td class="fbapp">
+							 <span><%=t.fbapp_count%></span>  
+						 </td>
+						 <td class="EDM">
+							 <span>edm<%#=t.fbapp_count%></span>  
+						 </td>
+						 <td class="page">
+							 <span><%=t.page_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.etc_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.total_count%></span>  
+						 </td>
+					 </tr>
+					 <% end %>
+					 <% @traffic_stats_sum.each do |t| %>
+					 <tr>
+						 <td>
+							 <span>총합계</span>  
+						 </td> 
+						 <td>
+							 <span><%=t.fb_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.tw_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.ks_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.kt_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.lc_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.sw_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.lgh_count%></span>  
+						 </td>
+						 <td class="mapp">
+							 <span>mapp<%#=t.lgh_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.sum37_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.fbapp_count%></span>  
+						 </td>
+						 <td class="edm">
+							 <span>edm<%#=t.fbapp_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.page_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.etc_count%></span>  
+						 </td>
+						 <td>
+							 <span><%=t.total_count%></span>  
+						 </td>
+					 </tr>
           <% end %>
           
         </tbody>
