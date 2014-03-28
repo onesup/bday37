@@ -236,3 +236,6 @@ th.mms_body{
 .daily-used-coupon{
   margin-top: 35px;
 }
+.traffic-logs th{
+	font-size: 11px;
+}
