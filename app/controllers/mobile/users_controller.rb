@@ -4,17 +4,14 @@ class Mobile::UsersController < ApplicationController
   skip_before_action  :verify_authenticity_token
   
   def create
-    
     phone = params[:user][:phone]
     device = "mobile"
     user_agent = UserAgent.parse(request.user_agent)
     device = "mobile" if user_agent.mobile?
-    
     @user = User.new(user_params)
     birthday = "2014-"+params[:user][:birthday_month]+"-"+params[:user][:birthday_day]
     @user.birthday = DateTime.parse(birthday)
     @user.device = device
-      
     respond_to do |format|
       if @user.save
         c = Coupon.new
@@ -22,11 +19,9 @@ class Mobile::UsersController < ApplicationController
         c.user = @user
         c.save
         MessageJob.new.async.perform(c)
-        
         @log = AccessLog.new(ip: request.remote_ip, device: device)
         @log.user = @user
         @log.save
-        
         format.html { redirect_to mobile_thank_you_path, notice: 'User was successfully created.' }
         format.json { render json: {status: "success"}, status: :created, location: @user }
       else

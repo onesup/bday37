@@ -3,7 +3,25 @@
     <a href="javascript:history.go(-1)" class="btn_close"><%= image_tag("mobile/btn_close.png", class:"btn_close") %></a>
   </div>
   <%= image_tag("mobile/text_thanks.png", class:"text_thanks") %>
-  <%= link_to mobile_index_path, {onclick: "ga('send', 'event', 'button', 'click', 'm 참여 완료');"} do %>
+  <%= link_to mobile_index_path, 
+		{onclick: "ga('send', 'event', 'button', 'click', 'm 참여 완료');"} do %>
     <%= image_tag("mobile/btn_finish.png", class:"btn_finish") %>
   <%end%>
 </div>
+<!-- Facebook Conversion Code for 테스트 -->
+<script type="text/javascript">
+var fb_param = {};
+fb_param.pixel_id = '6012354702952';
+fb_param.value = '0.00';
+fb_param.currency = 'KRW';
+(function(){
+  var fpw = document.createElement('script');
+  fpw.async = true;
+  fpw.src = '//connect.facebook.net/en_US/fp.js';
+  var ref = document.getElementsByTagName('script')[0];
+  ref.parentNode.insertBefore(fpw, ref);
+})();
+</script>
+<noscript>
+	<img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6012354702952&amp;value=0&amp;currency=KRW" />
+</noscript>
