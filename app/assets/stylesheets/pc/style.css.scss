@@ -55,20 +55,25 @@ img{
 .share{
   margin:0 auto;
   background-image: asset-url("pc/share_btn_bg.png");
-  width:261px;
-  height:37px;
+  width:301px;
+  height:43px;
 
 }
 
 .share_icon_f{
   margin-top: 7px;
-  margin-right: 18px;
+  margin-right: 22px;
   float: right;
 }
 
 .share_icon_t{
   margin-top: 8px;
-  margin-right: 18px;
+  margin-right: 21px;
+  float: right;
+}
+.share_icon_b{
+  margin-top: 10px;
+  margin-right: 25px;
   float: right;
 }
 
@@ -266,6 +271,23 @@ img{
   height: 550px;
   background-image: asset-url("pc/popup/product/bg.png");
   text-align: center;
+}
+
+#popup_blog{
+	z-index:9999;
+  width: 420px;
+  height: 316px;
+  background-image: asset-url("pc/popup/blog/blog_bg.jpg");
+  text-align: center;
+}
+#popup_blog .code{
+	padding:140px 40px 20px;
+	height:80px;
+	text-align:left;
+}
+#popup_blog .btn{
+	display:block;
+	padding-bottom:20px;
 }
 
 .birth_label_class{
