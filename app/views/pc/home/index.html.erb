@@ -179,13 +179,12 @@
           <%= image_tag("pc/popup/close.png", class: "close") %>
         <% end %>
 			<div class="code">
-				<a href="#" class="copy_html" 
-					data-clipboard-text="<%= '<img src="http://birthday.su-m37.co.kr/blog_730.jpg"/>' %>">
-					<%='<img src="http://birthday.su-m37.co.kr/blog_730.jpg"/>' %>
+				<a href="#" class="copy_html" data-clipboard-text="<%= @code %>">
+					<%= @code %>
 				</a>
 			</div>
-      <%= link_to "#", class: "btn copy_html", id: "html-copy-button",
-				"data-clipboard-text" => '<img src="http://birthday.su-m37.co.kr/blog_730.jpg"/>' do %>
+      <%= link_to "#", class: "btn copy_html", id: "html-copy-button", 
+				"data-clipboard-text" => @code do %>
         <%= image_tag("pc/popup/blog/btn.png") %>
       <% end %>
     </div>	  
