@@ -1,4 +1,32 @@
 $(document).ready(function(){
+	
+	var clientText = new ZeroClipboard( $(".copy_html"), {
+		moviePath: "https://<%= Rails.application.secrets.url%>/ZeroClipboard.swf",
+		debug: true
+	} );
+
+	clientText.on( "load", function(clientText)
+	{
+		console.log("kjlkf");
+		// $('#flash-loaded').fadeIn();
+
+		clientText.on( "complete", function(clientText, args) {
+			console.log("aakjf");
+			clientText.setText( args.text );
+				// $('#text-to-copy-text').fadeIn();
+		} );
+	} );
+	
+	
+	// ZeroClipboard.config( { moviePath: '/ZeroClipboard.swf' } );
+	// var client = new ZeroClipboard($(".copy_html"));
+	// client.on( 'copy', function (event) {
+	// 	alert("복사되었습니다.");
+	// 	ga('send', 'event', 'button', 'click', '클립보드로 복사하는 버튼');
+	//   event.clipboardData.setData( "text/plain", "Copy me!" );
+	// });
+	
+	
   // ga(['_trackEvent', 'button', 'click', 'img down 1546']);
   // loadJsFile('http://i42.icast-ad.com/track?ccd=1242&mcd=01040601&pcd=1546');
   ga('send', 'event', 'button', 'click', '메인 페이지');
@@ -97,12 +125,24 @@ $(document).ready(function(){
 
   });
 
-  // $("#info_input_radio").iCheck({
-  //   checkboxClass: 'icheckbox_minimal',
-  //   radioClass: 'iradio_minimal',
-  //   increaseArea: '20%' // option
-  // });
-
+  $("#blog_share_link").click(function(e){
+    e.preventDefault();
+    $("#popup_blog").modal({
+      // closeClass: 'b-close',
+    });
+    ga('send', 'event', 'button', 'click', 'pc 블로그로 공유하기 버튼');
+  });	
+	// client.on( "load", function(client) {
+	// 	console.log("kjf");
+	// 	client.on( "aftercopy", function(e) {
+	// 		
+	// 	});
+	// });
+	
+	// $("#html-copy-button").click(function(e){
+// 		e.preventDefault();
+// 		
+// 	});
   $("#info_phone").mask("999-9999-9999");
   
   $.ajaxSetup({ cache: true });
@@ -133,6 +173,8 @@ $(document).ready(function(){
   });
 
 });
+
+
 
 function twitter_share()
 {
