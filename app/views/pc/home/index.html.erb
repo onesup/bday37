@@ -179,7 +179,7 @@
           <%= image_tag("pc/popup/close.png", class: "close") %>
         <% end %>
 			<div class="code">
-				<a href="#" class="copy_html" data-clipboard-text="<%= @code %>">
+				<a href="#" class="copy_html" id="html-copy-link"data-clipboard-text="<%= @code %>">
 					<%= @code %>
 				</a>
 			</div>

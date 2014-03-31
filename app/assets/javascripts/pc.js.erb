@@ -1,29 +1,33 @@
 $(document).ready(function(){
 	
-	var clientText = new ZeroClipboard( $(".copy_html"), {
-		moviePath: "https://<%= Rails.application.secrets.url%>/ZeroClipboard.swf",
-		debug: true
-	} );
-
-	clientText.on( "load", function(clientText)
-	{
-		console.log("kjlkf");
-		// $('#flash-loaded').fadeIn();
-
-		clientText.on( "complete", function(clientText, args) {
-			console.log("aakjf");
-			clientText.setText( args.text );
-				// $('#text-to-copy-text').fadeIn();
-		} );
-	} );
+	// var copyButton = new ZeroClipboard($("#html-copy-button"));
+	var copyLink = new ZeroClipboard($("#html-copy-link"));
+	  $("#html-copy-button").on("click", function(){
+	    alert("복사됐어요^^");
+	  });
+	
+	// var clientText = new ZeroClipboard( $(".copy_html"), {
+	// 	moviePath: "<%= asset_path('ZeroClipboard.swf') %>",
+	// 	debug: false
+	// } );
+	// clientText.on( "load", function(clientText){
+	// 	console.log("kjlkf");	
+	// 	clientText.on( "complete", function(clientText, args) {
+	// 		console.log("aakjf");
+	// 	// 	clientText.setText( args.text );
+	// 	} );
+	// } );
 	
 	
-	// ZeroClipboard.config( { moviePath: '/ZeroClipboard.swf' } );
-	// var client = new ZeroClipboard($(".copy_html"));
-	// client.on( 'copy', function (event) {
-	// 	alert("복사되었습니다.");
-	// 	ga('send', 'event', 'button', 'click', '클립보드로 복사하는 버튼');
-	//   event.clipboardData.setData( "text/plain", "Copy me!" );
+	// var client = new ZeroClipboard($(".copy_html"),{
+	// 	moviePath: "<%= asset_path('ZeroClipboard.swf') %>"
+	// });
+	// // client.on( 'load', function (event) {
+	// 	client.on('copy', function(client){
+	// 		console.log("복사되었습니다.");
+	// 		// ga('send', 'event', 'button', 'click', '클립보드로 복사하는 버튼');
+	// 		
+	// 	});
 	// });
 	
 	
