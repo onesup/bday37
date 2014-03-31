@@ -58,6 +58,7 @@ $(document).ready(function(){
   $("#new_user").bind("ajax:success", function(evt,data,status,xhr){
     response = JSON.parse(xhr.responseText);
     if(response.status==="success"){
+			fb_analytics();
       $("#popup_fin1").bPopup({
         closeClass: 'b-close',
         modalColor: 'black',
@@ -199,4 +200,18 @@ function range(lowEnd, highEnd){
 	    list.push(i);
 	}
 	return list;
+}
+
+function fb_analytics(){
+	var fb_param = {};
+	fb_param.pixel_id = '6012354702952';
+	fb_param.value = '0.00';
+	fb_param.currency = 'KRW';
+	(function(){
+	  var fpw = document.createElement('script');
+	  fpw.async = true;
+	  fpw.src = '//connect.facebook.net/en_US/fp.js';
+	  var ref = document.getElementsByTagName('script')[0];
+	  ref.parentNode.insertBefore(fpw, ref);
+	})();
 }
