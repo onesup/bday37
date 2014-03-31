@@ -20,6 +20,5 @@
 //= require jquery.selectric
 //= require jquery.maskedinput.min
 //= require jquery.modal
-//= require zeroclipboard
-// require ZeroClipboard
+//= require ZeroClipboard
 //= require pc

@@ -1,38 +1,23 @@
 $(document).ready(function(){
 	
-	// var copyButton = new ZeroClipboard($("#html-copy-button"));
-	var copyLink = new ZeroClipboard($("#html-copy-link"));
-	  $("#html-copy-button").on("click", function(){
-	    alert("복사됐어요^^");
-	  });
-	
-	// var clientText = new ZeroClipboard( $(".copy_html"), {
-	// 	moviePath: "<%= asset_path('ZeroClipboard.swf') %>",
-	// 	debug: false
-	// } );
-	// clientText.on( "load", function(clientText){
-	// 	console.log("kjlkf");	
-	// 	clientText.on( "complete", function(clientText, args) {
-	// 		console.log("aakjf");
-	// 	// 	clientText.setText( args.text );
-	// 	} );
-	// } );
-	
-	
-	// var client = new ZeroClipboard($(".copy_html"),{
-	// 	moviePath: "<%= asset_path('ZeroClipboard.swf') %>"
-	// });
-	// // client.on( 'load', function (event) {
-	// 	client.on('copy', function(client){
-	// 		console.log("복사되었습니다.");
-	// 		// ga('send', 'event', 'button', 'click', '클립보드로 복사하는 버튼');
-	// 		
-	// 	});
-	// });
-	
-	
   // ga(['_trackEvent', 'button', 'click', 'img down 1546']);
   // loadJsFile('http://i42.icast-ad.com/track?ccd=1242&mcd=01040601&pcd=1546');
+	
+	
+	var clip = new ZeroClipboard( $(".copy_html"), {
+		moviePath: "<%= asset_path('ZeroClipboard.swf') %>",
+		swfPath: "<%= asset_path('ZeroClipboard.swf') %>",
+		// trustedDomains: ['*'],
+		// allowScriptAccess: "always",
+		debug: false
+	} );
+	
+	clip.on("load", function (clip) {
+		clip.on( "complete", function(clip, args) {
+			ga('send', 'event', 'button', 'click', '클립보드로 복사하는 버튼');
+			alert("ctrl+c 되었습니다.\nctrl+v 만 해주시면 되어요^^");
+		});
+	});
   ga('send', 'event', 'button', 'click', '메인 페이지');
   $('.select_custom_1').selectric();
   $('.select_custom_2').selectric('refresh');
@@ -136,17 +121,7 @@ $(document).ready(function(){
     });
     ga('send', 'event', 'button', 'click', 'pc 블로그로 공유하기 버튼');
   });	
-	// client.on( "load", function(client) {
-	// 	console.log("kjf");
-	// 	client.on( "aftercopy", function(e) {
-	// 		
-	// 	});
-	// });
-	
-	// $("#html-copy-button").click(function(e){
-// 		e.preventDefault();
-// 		
-// 	});
+		
   $("#info_phone").mask("999-9999-9999");
   
   $.ajaxSetup({ cache: true });
