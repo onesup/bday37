@@ -285,6 +285,11 @@ img{
 	height:80px;
 	text-align:left;
 }
+#popup_blog .code a{
+	color:#666;
+	text-decoration:none;
+	font-size:13px;
+}
 #popup_blog .btn{
 	display:block;
 	padding-bottom:20px;
@@ -456,8 +461,8 @@ margin-top:8px;
 .popup_info_to_personal{
   margin-left:10px;
   position:absolute;
-  left:168px;
-
+  left:160px;
+  top:60px;
 }
 
 .close-modal{
