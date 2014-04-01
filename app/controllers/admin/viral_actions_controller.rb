@@ -20,6 +20,7 @@ class Admin::ViralActionsController < ApplicationController
     	sum(case when viral_actions.platform = 'twitter' then 1 else 0 end) as twitter_count, 
     	sum(case when viral_actions.platform = 'kakaostory' then 1 else 0 end) as kakaostory_count, 
     	sum(case when viral_actions.platform = 'kakaotalk' then 1 else 0 end) as kakaotalk_count, 
+      sum(case when viral_actions.platform = 'blog' then 1 else 0 end) as blog_count, 
     	count(*) as total_count")
         .group("date(viral_actions.created_at)")
         .order("date(viral_actions.created_at)")
@@ -28,6 +29,7 @@ class Admin::ViralActionsController < ApplicationController
       sum(case when viral_actions.platform = 'twitter' then 1 else 0 end) as twitter_count, 
       sum(case when viral_actions.platform = 'kakaostory' then 1 else 0 end) as kakaostory_count, 
       sum(case when viral_actions.platform = 'kakaotalk' then 1 else 0 end) as kakaotalk_count, 
+      sum(case when viral_actions.platform = 'blog' then 1 else 0 end) as blog_count, 
       count(*) as total_count") 
   end
 end
