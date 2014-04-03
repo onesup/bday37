@@ -30,6 +30,18 @@
 		                  <span><%= traffic_stat.mobile_count - 305 %></span>
 		                </td>
 		              </tr>
+								<% else %>
+		              <tr class="">
+		                <td>
+		                  <span><%= traffic_stat.created_date %></span>
+		                </td>
+		                <td>
+		                  <span><%= traffic_stat.pc_count%></span>
+		                </td>
+		                <td>
+		                  <span><%= traffic_stat.mobile_count %></span>
+		                </td>
+		              </tr>								
 								<% end %>
 							<% end %>
             <% end %>
