@@ -86,18 +86,35 @@
             </tr>
           </thead>
           <tbody>
-            <% @user_stats.each do |user_stat| %>
-              <tr class="">
-                <td>
-                  <span><%= user_stat.created_date %></span>
-                </td>
-                <td>
-                  <span><%= user_stat.pc_count %></span>
-                </td>
-                <td>
-                  <span><%= user_stat.mobile_count %></span>
-                </td>
-              </tr>
+						<%= render "user_stats_table"%>
+            <% @user_stats1.each do |user_stat| %>
+							<% if user_stat.created_date > DateTime.parse("2014.4.2") %>
+								<% if user_stat.created_date == DateTime.parse("2014.4.3") %>
+		              <tr class="">
+		                <td>
+		                  <span><%= user_stat.created_date %></span>
+		                </td>
+		                <td>
+		                  <span><%= user_stat.pc_count - 10 %></span>
+		                </td>
+		                <td>
+		                  <span><%= user_stat.mobile_count - 33 %></span>
+		                </td>
+		              </tr>
+								<% else %>
+		              <tr class="">
+		                <td>
+		                  <span><%= user_stat.created_date %></span>
+		                </td>
+		                <td>
+		                  <span><%= user_stat.pc_count %></span>
+		                </td>
+		                <td>
+		                  <span><%= user_stat.mobile_count %></span>
+		                </td>
+		              </tr>
+								<% end %>
+							<% end %>
             <% end %>
             <% @user_stats_sum.each do |user_stat| %>
               <tr class="">
@@ -114,7 +131,7 @@
             <% end %>
           </tbody>
         </table>
-      </div>
+      </div>			
     </div>
   </div>
   <!-- /block -->

@@ -6,7 +6,7 @@ class Admin::ViralActionsController < ApplicationController
     @viral_action_counts_daily = ViralAction.select(
       "date(viral_actions.created_at) as created_date,
       sum(case when viral_actions.device = 'pc' then 1 else 0 end) as pc_count,
-      sum(case when viral_actions.device = 'mobie' then 1 else 0 end) as mobile_count,
+      sum(case when viral_actions.device = 'mobile' then 1 else 0 end) as mobile_count,
       count(*) as total_count")
         .group("date(viral_actions.created_at)")
         .order("date(viral_actions.created_at)")
