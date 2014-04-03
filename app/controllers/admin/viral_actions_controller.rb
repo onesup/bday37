@@ -15,14 +15,14 @@ class Admin::ViralActionsController < ApplicationController
       sum(case when viral_actions.device = 'mobile' then 1 else 0 end) as mobile_count, 
       count(*) as total_count")
     @viral_platform_counts_daily = ViralAction.select(
-      "date(viral_actions.created_at) as created_date,
+      "date(convert_tz(viral_actions.created_at,'+00:00','+09:00')) as created_date,
       sum(case when viral_actions.platform = 'facebook' then 1 else 0 end) as facebook_count, 
     	sum(case when viral_actions.platform = 'twitter' then 1 else 0 end) as twitter_count, 
     	sum(case when viral_actions.platform = 'kakaostory' then 1 else 0 end) as kakaostory_count, 
     	sum(case when viral_actions.platform = 'kakaotalk' then 1 else 0 end) as kakaotalk_count, 
       sum(case when viral_actions.platform = 'blog' then 1 else 0 end) as blog_count, 
     	count(*) as total_count")
-        .group("date(viral_actions.created_at)")
+        .group("date(convert_tz(viral_actions.created_at,'+00:00','+09:00'))")
         .order("date(viral_actions.created_at)")
     @viral_platform_counts_sum = ViralAction.select(
       "sum(case when viral_actions.platform = 'facebook' then 1 else 0 end) as facebook_count, 
