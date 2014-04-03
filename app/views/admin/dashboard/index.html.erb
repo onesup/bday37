@@ -15,18 +15,23 @@
             </tr>
           </thead>
           <tbody>
+						<%= render "traffic_stats_table"%>
             <% @traffic_stats.each do |traffic_stat| %>
-              <tr class="">
-                <td>
-                  <span><%= traffic_stat.created_date %></span>
-                </td>
-                <td>
-                  <span><%= traffic_stat.pc_count %></span>
-                </td>
-                <td>
-                  <span><%= traffic_stat.mobile_count %></span>
-                </td>
-              </tr>
+							<% if traffic_stat.created_date > DateTime.parse("2014.4.2") %>
+								<% if traffic_stat.created_date == DateTime.parse("2014.4.3") %>
+		              <tr class="">
+		                <td>
+		                  <span><%= traffic_stat.created_date %></span>
+		                </td>
+		                <td>
+		                  <span><%= traffic_stat.pc_count - 83%></span>
+		                </td>
+		                <td>
+		                  <span><%= traffic_stat.mobile_count - 305 %></span>
+		                </td>
+		              </tr>
+								<% end %>
+							<% end %>
             <% end %>
             <% @traffic_stats_sum.each do |traffic_stat| %>
               <tr class="">
@@ -44,6 +49,7 @@
           </tbody>
         </table>
       </div>
+			
       <div class="span3">
         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
           <thead>
