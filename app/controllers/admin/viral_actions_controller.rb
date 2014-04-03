@@ -4,11 +4,11 @@ class Admin::ViralActionsController < ApplicationController
   def index
     @viral_actions = ViralAction.order("id desc").page(params[:page]).per(200)
     @viral_action_counts_daily = ViralAction.select(
-      "date(viral_actions.created_at) as created_date,
+      "date(convert_tz(viral_actions.created_at,'+00:00','+09:00')) as created_date,
       sum(case when viral_actions.device = 'pc' then 1 else 0 end) as pc_count,
       sum(case when viral_actions.device = 'mobile' then 1 else 0 end) as mobile_count,
       count(*) as total_count")
-        .group("date(viral_actions.created_at)")
+        .group("date(convert_tz(viral_actions.created_at,'+00:00','+09:00'))")
         .order("date(viral_actions.created_at)")
     @viral_action_counts_sum = ViralAction.select(
       "sum(case when viral_actions.device = 'pc' then 1 else 0 end) as pc_count,

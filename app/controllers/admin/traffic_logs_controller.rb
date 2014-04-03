@@ -3,7 +3,8 @@ class Admin::TrafficLogsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @traffic_stats = TrafficLog.select("date(created_at) as created_date
+    @traffic_stats = TrafficLog.select(
+    "date(created_at) as created_date
     ,sum(case when source='lgh' then 1 else 0 end) as lgh_count
     ,sum(case when source='sum37' then 1 else 0 end) as sum37_count
     ,sum(case when source='lc' then 1 else 0 end) as lc_count
@@ -19,8 +20,8 @@ class Admin::TrafficLogsController < ApplicationController
     ,sum(case when source='edm' then 1 else 0 end) as edm_count
     ,sum(case when source not in ('lgh','sum37','lc','tw','fb','sw','ks','kt','blog','fbapp','page','lm','edm') then 1 else 0 end) as etc_count
     ,count(*) as total_count").group("date(created_at)").order("date(created_at)")
-    @traffic_stats_sum = TrafficLog.select("
-     sum(case when source='lgh' then 1 else 0 end) as lgh_count
+    @traffic_stats_sum = TrafficLog.select(
+    "sum(case when source='lgh' then 1 else 0 end) as lgh_count
     ,sum(case when source='sum37' then 1 else 0 end) as sum37_count
     ,sum(case when source='lc' then 1 else 0 end) as lc_count
     ,sum(case when source='tw' then 1 else 0 end) as tw_count
