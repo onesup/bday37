@@ -100,6 +100,20 @@ $(document).ready(function(){
 			});
 		}
 	});
+  $('#gift_button').click(function(e){
+    e.preventDefault();
+    var month;
+    var days;
+    var enddate = new Date(Date.parse("2014-04-04"));
+    var now = new Date();
+    if (now <= enddate){
+      window.location.href = "/mobile/users/new";     
+    }
+    else
+    {
+      alert("이벤트가 종료되었습니다. 이벤트 종료일: 2014-04-24");
+    }
+	});
 });
 
 

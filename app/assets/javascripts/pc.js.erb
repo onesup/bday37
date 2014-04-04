@@ -52,12 +52,20 @@ $(document).ready(function(){
   });
   $("#gift_button").click(function(e){
     e.preventDefault();
-    $("#popup_info").bPopup({
-      follow: [false, false], //x, y
-      position: ['auto', 60], //x, y
-      closeClass: 'b-close',
-      modalColor: 'black'
-    });
+    var enddate = new Date(Date.parse("2014-04-25"));
+    var now = new Date();
+    if (now <= enddate){
+      $("#popup_info").bPopup({
+        follow: [false, false], //x, y
+        position: ['auto', 60], //x, y
+        closeClass: 'b-close',
+        modalColor: 'black'
+      });
+    }
+    else
+    {
+      alert("이벤트가 종료되었습니다. 이벤트 종료일: 2014-04-24");
+    }
     ga('send', 'event', 'button', 'click', '피부 선물 받기');
   });
 
