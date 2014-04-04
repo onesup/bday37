@@ -28,58 +28,114 @@
           </tr>
         </thead>
         <tbody>
+          <%= render "traffic_stats_table" %>
            <% @traffic_stats.each do |t| %>
-					 <tr>
-						 <td>
-							 <span><%=t.created_date%></span>  
-						 </td> 
-						 <td class="fb">
-							 <span><%=t.fb_count%></span>  
-						 </td>
-						 <td class="tw">
-							 <span><%=t.tw_count%></span>  
-						 </td>
-						 <td class="ks">
-							 <span><%=t.ks_count%></span>  
-						 </td>
-						 <td class="kt">
-							 <span><%=t.kt_count%></span>  
-						 </td>
-						 <td class="blog">
-							 <span><%=t.blog_count%></span>  
-						 </td>
-						 <td class="lc">
-							 <span><%=t.lc_count%></span>  
-						 </td>
-						 <td class="sw">
-							 <span><%=t.sw_count%></span>  
-						 </td>
-						 <td class="lgh">
-							 <span><%=t.lgh_count%></span>  
-						 </td>
-						 <td class="mobileapp">
-							 <span><%=t.mobileapp_count%></span>  
-						 </td>
-						 <td class="sum37">
-							 <span><%=t.sum37_count%></span>  
-						 </td>
-						 <td class="fbapp">
-							 <span><%=t.fbapp_count%></span>  
-						 </td>
-						 <td class="EDM">
-							 <span><%=t.edm_count%></span>  
-						 </td>
-						 <td class="page">
-							 <span><%=t.page_count%></span>  
-						 </td>
-						 <td>
-							 <span><%=t.etc_count%></span>  
-						 </td>
-						 <td>
-							 <span><%=t.total_count%></span>  
-						 </td>
-					 </tr>
-					 <% end %>
+						<% if t.created_date > DateTime.parse("2014.4.3") %>
+							<% if t.created_date == DateTime.parse("2014.4.4") %>
+     					 <tr>
+       						 <td>
+       							 <span><%=t.created_date%></span>  
+       						 </td> 
+       						 <td class="fb">
+       							 <span><%=t.fb_count - 4 %></span>  
+       						 </td>
+       						 <td class="tw">
+       							 <span><%=t.tw_count%></span>  
+       						 </td>
+       						 <td class="ks">
+       							 <span><%=t.ks_count - 4 %></span>  
+       						 </td>
+       						 <td class="kt">
+       							 <span><%=t.kt_count - 5 %></span>  
+       						 </td>
+       						 <td class="blog">
+       							 <span><%=t.blog_count%></span>  
+       						 </td>
+       						 <td class="lc">
+       							 <span><%=t.lc_count%></span>  
+       						 </td>
+       						 <td class="sw">
+       							 <span><%=t.sw_count%></span>  
+       						 </td>
+       						 <td class="lgh">
+       							 <span><%=t.lgh_count - 3%></span>  
+       						 </td>
+       						 <td class="mobileapp">
+       							 <span><%=t.mobileapp_count%></span>  
+       						 </td>
+       						 <td class="sum37">
+       							 <span><%=t.sum37_count - 35%></span>  
+       						 </td>
+       						 <td class="fbapp">
+       							 <span><%=t.fbapp_count- 165%></span>  
+       						 </td>
+       						 <td class="EDM">
+       							 <span><%=t.edm_count - 20%></span>  
+       						 </td>
+       						 <td class="page">
+       							 <span><%=t.page_count%></span>  
+       						 </td>
+       						 <td>
+       							 <span><%=t.etc_count- 16%></span>  
+       						 </td>
+       						 <td>
+       							 <span><%=t.total_count - 252%></span>  
+       						 </td>
+       					 </tr>
+              <% else %>
+      					 <tr>
+        						 <td>
+        							 <span><%=t.created_date%></span>  
+        						 </td> 
+        						 <td class="fb">
+        							 <span><%=t.fb_count%></span>  
+        						 </td>
+        						 <td class="tw">
+        							 <span><%=t.tw_count%></span>  
+        						 </td>
+        						 <td class="ks">
+        							 <span><%=t.ks_count%></span>  
+        						 </td>
+        						 <td class="kt">
+        							 <span><%=t.kt_count%></span>  
+        						 </td>
+        						 <td class="blog">
+        							 <span><%=t.blog_count%></span>  
+        						 </td>
+        						 <td class="lc">
+        							 <span><%=t.lc_count%></span>  
+        						 </td>
+        						 <td class="sw">
+        							 <span><%=t.sw_count%></span>  
+        						 </td>
+        						 <td class="lgh">
+        							 <span><%=t.lgh_count%></span>  
+        						 </td>
+        						 <td class="mobileapp">
+        							 <span><%=t.mobileapp_count%></span>  
+        						 </td>
+        						 <td class="sum37">
+        							 <span><%=t.sum37_count%></span>  
+        						 </td>
+        						 <td class="fbapp">
+        							 <span><%=t.fbapp_count%></span>  
+        						 </td>
+        						 <td class="EDM">
+        							 <span><%=t.edm_count%></span>  
+        						 </td>
+        						 <td class="page">
+        							 <span><%=t.page_count%></span>  
+        						 </td>
+        						 <td>
+        							 <span><%=t.etc_count%></span>  
+        						 </td>
+        						 <td>
+        							 <span><%=t.total_count%></span>  
+        						 </td>
+        					 </tr>
+        					 <% end %>
+              <% end %>
+            <% end %>       
 					 <% @traffic_stats_sum.each do |t| %>
 					 <tr>
 						 <td>
