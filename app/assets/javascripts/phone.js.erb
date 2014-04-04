@@ -104,9 +104,9 @@ $(document).ready(function(){
     e.preventDefault();
     var month;
     var days;
-    var enddate = new Date(Date.parse("2014-04-04"));
+    var enddate = new Date(Date.parse("2014-04-25"));
     var now = new Date();
-    if (now <= enddate){
+    if (now < enddate){
       window.location.href = "/mobile/users/new";     
     }
     else

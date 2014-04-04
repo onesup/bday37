@@ -54,7 +54,7 @@ $(document).ready(function(){
     e.preventDefault();
     var enddate = new Date(Date.parse("2014-04-25"));
     var now = new Date();
-    if (now <= enddate){
+    if (now < enddate){
       $("#popup_info").bPopup({
         follow: [false, false], //x, y
         position: ['auto', 60], //x, y
