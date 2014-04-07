@@ -11,7 +11,7 @@
           <tr>
             <th>채널</th>
             <% if params[:id].to_i == 1 %>
-              <th class="sun"><%= (DateTime.now-DateTime.now.wday).beginning_of_day.strftime('%Y-%m-%d') %> (일)</th>
+              <th class="sun"><%= days_helper(0)%></th>
               <th class="mon"><%= (DateTime.now-DateTime.now.wday+1).beginning_of_day.strftime('%Y-%m-%d') %> (월)</th>
               <th class="tue"><%= (DateTime.now-DateTime.now.wday+2).beginning_of_day.strftime('%Y-%m-%d') %> (화)</th>
               <th class="wed"><%= (DateTime.now-DateTime.now.wday+3).beginning_of_day.strftime('%Y-%m-%d') %> (수)</th>

@@ -1,6 +1,8 @@
 class Coupon < ActiveRecord::Base
   belongs_to :user
   
+  scope :used, -> { where status: 'used' }
+  
   def send_message
     Message.send_to(self)
   end

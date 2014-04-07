@@ -4,7 +4,7 @@
     <div class="navbar navbar-inner block-header">
       <div class="muted pull-left">쿠폰 사용자 목록</div>
     </div>
-		<p class="user_total">총 사용자 <%= User.count %>중 <%= @couponusedusers.count %>명</p>
+		<p class="user_total">총 사용자 <%= User.count %>중 <%= Coupon.used.count %>명</p>
     <div class="row-fluid block-content collapse in">
       <div class="span3 ">
       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered daily-used-coupon">
