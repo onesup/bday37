@@ -1,2 +1,43 @@
 class TrafficLog < ActiveRecord::Base
+  
+  def self.pagenate_by_week(page)
+    page ||= 1 
+    page = page.to_i
+    start_date = (DateTime.now-DateTime.now.wday-7*(page-1)).beginning_of_day
+    end_date = (DateTime.now+(7-DateTime.now.wday)-7*(page-1)).beginning_of_day
+    self.source_by_weekday(start_date,end_date)
+  end
+  
+  def self.source_by_weekday(start_date,end_date)
+    self.select("source
+, sum(case when DayofWeek(created_at) = 1 then 1 else 0 end) as 'sun'
+, sum(case when DayofWeek(created_at) = 2 then 2 else 0 end) as 'mon'
+, sum(case when DayofWeek(created_at) = 3 then 3 else 0 end) as 'tue'
+, sum(case when DayofWeek(created_at) = 4 then 4 else 0 end) as 'wed'
+, sum(case when DayofWeek(created_at) = 5 then 5 else 0 end) as 'thu'
+, sum(case when DayofWeek(created_at) = 6 then 6 else 0 end) as 'fri'
+, sum(case when DayofWeek(created_at) = 7 then 7 else 0 end) as 'sat' "
+ ).where("created_at >= ? and created_at < ?", start_date, end_date
+ ).group("source").order("source")
+  end
+  
+  def self.pagenate_by_week_sum(page)
+    page ||= 1 
+    page = page.to_i
+    start_date = (DateTime.now-DateTime.now.wday-7*(page-1)).beginning_of_day
+    end_date = (DateTime.now+(7-DateTime.now.wday)-7*(page-1)).beginning_of_day
+    self.source_by_weekday_sum(start_date,end_date)
+  end
+  
+  def self.source_by_weekday_sum(start_date,end_date)
+    self.select("
+  sum(case when DayofWeek(created_at) = 1 then 1 else 0 end) as 'sun'
+, sum(case when DayofWeek(created_at) = 2 then 2 else 0 end) as 'mon'
+, sum(case when DayofWeek(created_at) = 3 then 3 else 0 end) as 'tue'
+, sum(case when DayofWeek(created_at) = 4 then 4 else 0 end) as 'wed'
+, sum(case when DayofWeek(created_at) = 5 then 5 else 0 end) as 'thu'
+, sum(case when DayofWeek(created_at) = 6 then 6 else 0 end) as 'fri'
+, sum(case when DayofWeek(created_at) = 7 then 7 else 0 end) as 'sat' "
+ ).where("created_at >= ? and created_at < ?", start_date, end_date)
+  end
 end
