@@ -13,7 +13,7 @@ namespace :load do
     set :unicorn_log, -> { "#{shared_path}/log/unicorn.log" }
     set :unicorn_error_log, -> { "#{shared_path}/log/unicorn.err.log" }
     set :unicorn_user, -> { fetch(:user) }
-    set :unicorn_workers, 3
+    set :unicorn_workers, 5
     set :unicorn_rack_env, -> { fetch(:rails_env) == 'development' ? 'development' : 'production' }
   end
 end
