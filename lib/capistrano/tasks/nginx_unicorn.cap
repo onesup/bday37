@@ -1,6 +1,7 @@
 namespace :load do
   task :defaults do
-    set :nginx_server_name, -> { fetch(:rails_env) == 'production' ? 'birthday.su-m37.co.kr' : 'bday.mnv.kr' }
+    # set :nginx_server_name, -> { fetch(:rails_env) == 'production' ? 'birthday.su-m37.co.kr' : 'bday.mnv.kr' }
+    set :nginx_server_name, -> { 'birthday.su-m37.co.kr' }
     set :nginx_use_ssl, true
     set :nginx_ssl_certificate, -> { "#{fetch(:nginx_server_name)}.chained.crt" }
     set :nginx_ssl_certificate_key, -> { "#{fetch(:nginx_server_name)}.nopass.key" }
@@ -30,10 +31,10 @@ namespace :nginx do
         # execute :sudo, :cp, "/tmp/null.site /etc/nginx/sites-enabled/#{s.strip}"
       end
       
-      template "nginx_site.erb", "/tmp/nginx.#{fetch(:application)}"
-      execute :sudo, :cp, "/tmp/nginx.#{fetch(:application)} /etc/nginx/sites-available/#{fetch(:application)}"
-      execute :rm, "/tmp/nginx.#{fetch(:application)}"
-      execute :sudo, :ln, "-fs", "/etc/nginx/sites-available/#{fetch(:application)} /etc/nginx/sites-enabled/#{fetch(:application)}"
+      # template "nginx_site.erb", "/tmp/nginx.#{fetch(:application)}"
+      # execute :sudo, :cp, "/tmp/nginx.#{fetch(:application)} /etc/nginx/sites-available/#{fetch(:application)}"
+      # execute :rm, "/tmp/nginx.#{fetch(:application)}"
+      # execute :sudo, :ln, "-fs", "/etc/nginx/sites-available/#{fetch(:application)} /etc/nginx/sites-enabled/#{fetch(:application)}"
       
       # if fetch(:nginx_use_ssl)
       #   if fetch(:nginx_upload_local_certificate)
@@ -84,26 +85,26 @@ end
 namespace :unicorn do
   desc "Setup Unicorn initializer and app configuration"
   task :setup do
-    on roles :app do |host|
-      execute "mkdir -p #{shared_path}/config"
-      execute "mkdir -p #{shared_path}/tmp/pids"
-      execute "mkdir -p #{shared_path}/log"
-      template "unicorn.rb.erb", fetch(:unicorn_config)
-      template "unicorn_init.erb", "/tmp/unicorn_init"
-      execute "chmod +x /tmp/unicorn_init"
-      execute :sudo, :cp, "/tmp/unicorn_init /etc/init.d/unicorn_#{fetch(:application)}"
-      execute :rm, "/tmp/unicorn_init"
-    end
-    on roles :wep do
-      execute "mkdir -p #{shared_path}/config"
-      execute "mkdir -p #{shared_path}/tmp/pids"
-      execute "mkdir -p #{shared_path}/log"
-      template "unicorn.rb.erb", fetch(:unicorn_config)
-      template "unicorn_init.erb", "/tmp/unicorn_init"
-      execute "chmod +x /tmp/unicorn_init"
-      execute :sudo, :cp, "/tmp/unicorn_init /etc/init.d/unicorn_#{fetch(:application)}"
-      execute :rm, "/tmp/unicorn_init"
-    end
+    # on roles :app do |host|
+    #   execute "mkdir -p #{shared_path}/config"
+    #   execute "mkdir -p #{shared_path}/tmp/pids"
+    #   execute "mkdir -p #{shared_path}/log"
+    #   template "unicorn.rb.erb", fetch(:unicorn_config)
+    #   template "unicorn_init.erb", "/tmp/unicorn_init"
+    #   execute "chmod +x /tmp/unicorn_init"
+    #   execute :sudo, :cp, "/tmp/unicorn_init /etc/init.d/unicorn_#{fetch(:application)}"
+    #   execute :rm, "/tmp/unicorn_init"
+    # end
+    # on roles :wep do
+    #   execute "mkdir -p #{shared_path}/config"
+    #   execute "mkdir -p #{shared_path}/tmp/pids"
+    #   execute "mkdir -p #{shared_path}/log"
+    #   template "unicorn.rb.erb", fetch(:unicorn_config)
+    #   template "unicorn_init.erb", "/tmp/unicorn_init"
+    #   execute "chmod +x /tmp/unicorn_init"
+    #   execute :sudo, :cp, "/tmp/unicorn_init /etc/init.d/unicorn_#{fetch(:application)}"
+    #   execute :rm, "/tmp/unicorn_init"
+    # end
   end
   
   %w[start stop restart].each do |command|
@@ -126,12 +127,12 @@ namespace :assets do
   desc "Precompile assets on local machine and upload them to the server."
   task :precompile do
     on roles :web do |host|
-      run_locally do
-        execute "bundle exec rake assets:precompile"
-        execute "rsync -vr --exclude='.DS_Store' public/assets #{fetch :user}@#{host.hostname}:#{shared_path}/"
-        execute "bundle exec rake assets:clean"
-      end
-      execute :ln, "-fs", "#{shared_path}/assets #{current_path}/public/assets"
+      # run_locally do
+      #   execute "bundle exec rake assets:precompile"
+      #   execute "rsync -vr --exclude='.DS_Store' public/assets #{fetch :user}@#{host.hostname}:#{shared_path}/"
+      #   execute "bundle exec rake assets:clean"
+      # end
+      # execute :ln, "-fs", "#{shared_path}/assets #{current_path}/public/assets"
     end
   end
   
@@ -142,19 +143,19 @@ namespace :db do
   desc "Create and Migrate DB"
   task :setup do
     on roles :db do |host|
-      template "database_yml.erb", "#{release_path}/config/database.yml"
-      
-      within release_path do
-        with rails_env: :production do
-          execute :rake, "db:create"
-        end
-        with rails_env: :staging do
-          execute :rake, "db:create"
-        end
-        with rails_env: :m3 do
-          execute :rake, "db:create"
-        end
-      end
+  #     template "database_yml.erb", "#{release_path}/config/database.yml"
+  #     
+  #     within release_path do
+  #       with rails_env: :production do
+  #         execute :rake, "db:create"
+  #       end
+  #       with rails_env: :staging do
+  #         execute :rake, "db:create"
+  #       end
+  #       with rails_env: :m3 do
+  #         execute :rake, "db:create"
+  #       end
+  #     end
     end
   end
   
