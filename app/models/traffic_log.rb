@@ -11,15 +11,24 @@ class TrafficLog < ActiveRecord::Base
   def self.source_by_weekday(start_date, end_date)
     puts "@@"
     puts start_date
+    puts end_date
+    # self.select("source
+    #   ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 1 then 1 else 0 end) as 'sun'
+    #   ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 2 then 2 else 0 end) as 'mon'
+    #   ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 3 then 3 else 0 end) as 'tue'
+    #   ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 4 then 4 else 0 end) as 'wed'
+    #   ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 5 then 5 else 0 end) as 'thu'
+    #   ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 6 then 6 else 0 end) as 'fri'
+    #   ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 7 then 7 else 0 end) as 'sat' ")
     self.select("source
-      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 1 then 1 else 0 end) as 'sun'
+      ,sum(case when DayofWeek(created_at) = 1 then 1 else 0 end) as 'sun'
       ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 2 then 2 else 0 end) as 'mon'
-      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 3 then 3 else 0 end) as 'tue'
-      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 4 then 4 else 0 end) as 'wed'
-      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 5 then 5 else 0 end) as 'thu'
-      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 6 then 6 else 0 end) as 'fri'
-      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 7 then 7 else 0 end) as 'sat' ")
-        .where("convert_tz(created_at,'+00:00','+09:00') >= ? and convert_tz(created_at,'+00:00','+09:00') < ?", start_date, end_date)
+      ,sum(case when DayofWeek(created_at) = 3 then 3 else 0 end) as 'tue'
+      ,sum(case when DayofWeek(created_at) = 4 then 4 else 0 end) as 'wed'
+      ,sum(case when DayofWeek(created_at) = 5 then 5 else 0 end) as 'thu'
+      ,sum(case when DayofWeek(created_at) = 6 then 6 else 0 end) as 'fri'
+      ,sum(case when DayofWeek(created_at) = 7 then 7 else 0 end) as 'sat' ")
+        .where("created_at >= ? and created_at < ?", start_date, end_date)
         .group("source").order("source")
   end
   
@@ -33,13 +42,13 @@ class TrafficLog < ActiveRecord::Base
   
   def self.source_by_weekday_sum(start_date,end_date)
     self.select(
-      "sum(case when DayofWeek(created_at) = 1 then 1 else 0 end) as 'sun'
-      ,sum(case when DayofWeek(created_at) = 2 then 2 else 0 end) as 'mon'
-      ,sum(case when DayofWeek(created_at) = 3 then 3 else 0 end) as 'tue'
-      ,sum(case when DayofWeek(created_at) = 4 then 4 else 0 end) as 'wed'
-      ,sum(case when DayofWeek(created_at) = 5 then 5 else 0 end) as 'thu'
-      ,sum(case when DayofWeek(created_at) = 6 then 6 else 0 end) as 'fri'
-      ,sum(case when DayofWeek(created_at) = 7 then 7 else 0 end) as 'sat' ")
+      "sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 1 then 1 else 0 end) as 'sun'
+      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 2 then 2 else 0 end) as 'mon'
+      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 3 then 3 else 0 end) as 'tue'
+      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 4 then 4 else 0 end) as 'wed'
+      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 5 then 5 else 0 end) as 'thu'
+      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 6 then 6 else 0 end) as 'fri'
+      ,sum(case when DayofWeek(convert_tz(created_at,'+00:00','+09:00')) = 7 then 7 else 0 end) as 'sat' ")
         .where("created_at >= ? and created_at < ?", start_date, end_date)
   end
 end
