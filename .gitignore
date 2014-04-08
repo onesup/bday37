@@ -32,3 +32,5 @@ db/schema.rb
 db/schema.rb
 
 lib/capistrano/templates/database_yml.erb
+
+lib/capistrano/templates/database_yml.erb
