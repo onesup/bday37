@@ -28,8 +28,18 @@ staging:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: <%= fetch :application %>_staging
+  database: <%= fetch :application %>_production
   pool: 5
   username: root
   password:
-  host: localhost
+  host: 218.54.31.120
+
+m3:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: <%= fetch :application %>_production
+  pool: 5
+  username: root
+  password:
+  host: 218.54.31.120
