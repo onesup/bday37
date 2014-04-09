@@ -31,12 +31,5 @@ ga('create', '<%= Rails.application.secrets.ga_tracking_id%>', '<%= Rails.applic
 ga('send', 'pageview');
 </script>
 <script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script> 
-<script type="text/javascript"> 
-	if(!wcs_add) var wcs_add = {}; 
-	wcs.ref = '<%= session[:referer] %>';
-	wcs_add["wa"] = "55c2e49a69d394";
-	wcs_do(); 
-</script>
-
 </body>
 </html>
