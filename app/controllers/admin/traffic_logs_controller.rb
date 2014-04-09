@@ -39,8 +39,10 @@ class Admin::TrafficLogsController < ApplicationController
   end
   
   def logs
-    @traffic_stats = TrafficLog.pagenate_by_week(params[:id])
-    @traffic_stats_sum = TrafficLog.pagenate_by_week_sum(params[:id])
+    id = params[:id]
+    id = 1 if id.nil?
+    @traffic_stats = TrafficLog.pagenate_by_week(id)
+    @traffic_stats_sum = TrafficLog.pagenate_by_week_sum(id)
   end
   
 end
