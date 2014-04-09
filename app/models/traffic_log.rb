@@ -1,6 +1,10 @@
 class TrafficLog < ActiveRecord::Base
+  def self.first_day()
+    self.select("created_at").order("created_at").limit(1) 
+  end
   
-  def self.pagenate_by_week(page)
+  
+  def self.paginate_by_week(page)
     page ||= 1 
     page = page.to_i
     start_date = (DateTime.now-DateTime.now.wday-7*(page-1)).beginning_of_day
@@ -21,7 +25,7 @@ class TrafficLog < ActiveRecord::Base
         .group("source").order("source")
   end
   
-  def self.pagenate_by_week_sum(page)
+  def self.paginate_by_week_sum(page)
     page ||= 1 
     page = page.to_i
     start_date = (DateTime.now-DateTime.now.wday-7*(page-1)).beginning_of_day

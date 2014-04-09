@@ -88,6 +88,16 @@
              <% end %>       
         </tbody>
       </table>
+      <% @traffic_first_day.each do |t| %>
+        <% if t.created_at >= (DateTime.now-DateTime.now.wday-7*(params[:id].to_i-1)).beginning_of_day and t.created_at <= (DateTime.now-DateTime.now.wday-1*(params[:id].to_i-1)).beginning_of_day  %>
+          <%= week_paginate_next(params[:id].to_i,"logs_admin_traffic_log_path")%>
+        <% elsif params[:id].to_i == 1 %>
+          <%= week_paginate_prev(params[:id],"logs_admin_traffic_log_path")%>
+        <% else %>
+          <%= week_paginate_prev(params[:id].to_i,"logs_admin_traffic_log_path")%>
+          <%= week_paginate_next(params[:id].to_i,"logs_admin_traffic_log_path")%>
+        <% end %>
+      <% end %>
     </div>
      
     <div class="row-fluid block-content collapse in">

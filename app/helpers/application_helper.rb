@@ -21,4 +21,12 @@ module ApplicationHelper
     # today = Date.parse("2014. 4. 2")
     (today.month..4).to_a
   end
+  
+  def week_paginate_next(current_page,link_path)
+    link_to "다음주", eval(link_path+"("+(current_page.to_i-1).to_s+")")
+  end
+
+  def week_paginate_prev(current_page, link_path)
+    link_to "지난주", eval(link_path+"("+(current_page.to_i+1).to_s+")")
+  end
 end
