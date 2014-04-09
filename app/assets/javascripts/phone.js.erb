@@ -80,8 +80,8 @@ $(document).ready(function(){
     month = $("#select_month").val();
 		d = new Date();
 		this_day = d.getDate();
-    if(month === '3'){
-			add_days = range(this_day, 31);
+    if(month === '4'){
+			add_days = range(this_day, 30);
 			$("#select_day option").remove();
 			$.each(add_days, function( index, value ){
 				$("#select_day").append($('<option>',{
@@ -89,8 +89,8 @@ $(document).ready(function(){
 					text:value
 				}));
 			});
-    }else if(month === '4'){
-			add_days = range(1, 27);
+    }else if(month === '5'){
+			add_days = range(1, 6);
 			$("#select_day option").remove();
 			$.each(add_days, function( index, value ){
 				$("#select_day").append($('<option>',{
