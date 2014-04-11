@@ -80,8 +80,8 @@ $(document).ready(function(){
     month = $("#select_month").val();
 		d = new Date();
 		this_day = d.getDate();
-    if(month === '3'){
-			add_days = range(this_day, 31);
+    if(month === '4'){
+			add_days = range(this_day, 30);
 			$("#select_day option").remove();
 			$.each(add_days, function( index, value ){
 				$("#select_day").append($('<option>',{
@@ -89,8 +89,8 @@ $(document).ready(function(){
 					text:value
 				}));
 			});
-    }else if(month === '4'){
-			add_days = range(1, 27);
+    }else if(month === '5'){
+			add_days = range(1, 6);
 			$("#select_day option").remove();
 			$.each(add_days, function( index, value ){
 				$("#select_day").append($('<option>',{
@@ -102,17 +102,17 @@ $(document).ready(function(){
 	});
   $('#gift_button').click(function(e){
     e.preventDefault();
-    var month;
-    var days;
-    var enddate = new Date(Date.parse("2014-04-25"));
-    var now = new Date();
-    if (now < enddate){
+    // var month;
+    // var days;
+    // var enddate = new Date(Date.parse("2014-04-25"));
+    // var now = new Date();
+    // if (now < enddate){
       window.location.href = "/mobile/users/new";     
-    }
-    else
-    {
-      alert("이벤트가 종료되었습니다. 이벤트 종료일: 2014-04-24");
-    }
+    // }
+    // else
+    // {
+    //   alert("이벤트가 종료되었습니다. 이벤트 종료일: 2014-04-24");
+    // }
 	});
 });
 

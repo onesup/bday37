@@ -30,8 +30,8 @@ $(document).ready(function(){
     month = $("#select_month").val();
 		d = new Date();
 		this_day = d.getDate();
-    if(month === '3'){
-			add_days = range(this_day, 31);
+    if(month === '4'){
+			add_days = range(this_day, 30);
       $("#select_day option").remove();
       $.each(add_days, function( index, value ){
         $("#select_day").append($('<option>',{
@@ -39,9 +39,9 @@ $(document).ready(function(){
           text:value
         })).selectric('refresh');
       });
-    }else if(month === '4'){
+    }else if(month === '5'){
       $("#select_day option").remove();
-			add_days = range(1, 27);
+			add_days = range(1, 6);
       $.each(add_days, function( index, value ){
         $("#select_day").append($('<option>',{
           value:value,
@@ -52,19 +52,19 @@ $(document).ready(function(){
   });
   $("#gift_button").click(function(e){
     e.preventDefault();
-    var enddate = new Date(Date.parse("2014-04-25"));
+    // var enddate = new Date(Date.parse("2014-04-25"));
     // var now = new Date();
-		var now = new Date(Date.parse("<%= Time.now %>"));
-    if (now < enddate){
+		// var now = new Date(Date.parse("<%= Time.now %>"));
+    // if (now < enddate){
       $("#popup_info").bPopup({
         follow: [false, false], //x, y
         position: ['auto', 60], //x, y
         closeClass: 'b-close',
         modalColor: 'black'
       });
-    }else{
-      alert("이벤트가 종료되었습니다. 이벤트 종료일: 2014-04-24");
-    }
+    // }else{
+    //   alert("이벤트가 종료되었습니다. 이벤트 종료일: 2014-04-24");
+    // }
     ga('send', 'event', 'button', 'click', '피부 선물 받기');
   });
 
