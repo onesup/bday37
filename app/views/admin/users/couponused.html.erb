@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-           <% @couponused_counts.each do |c| %>
+           <% @coupon_used_counts.each do |c| %>
            <tr>
             <td>
              <span><%=c.used_date%></span>  
@@ -29,7 +29,7 @@
       </table>
       </div>
     <div class="span8">
-        <%= paginate @couponusedusers %>
+        <%= paginate @coupon_used_users %>
         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="data-table">
           <thead>
             <tr>
@@ -40,7 +40,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @couponusedusers.each do |user| %>
+            <% @coupon_used_users.each do |user| %>
               <tr class="">
                 <td>
                   <%= user.id %>
@@ -58,7 +58,7 @@
             <% end %>
           </tbody>
         </table>
-        <%= paginate @couponusedusers %>
+        <%= paginate @coupon_used_users %>
       </div>
     </div>
   </div>
