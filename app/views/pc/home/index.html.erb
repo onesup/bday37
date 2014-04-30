@@ -45,18 +45,18 @@
               <%= image_tag("pc/popup/close.png", class: "close") %>
             <% end %>
           </div>
-          <%= form_for([:pc, @user], remote: true, html: {'data-type'=>'json'}) do |f| %>
+          <%#= form_for([:pc, @user], remote: true, html: {'data-type'=>'json'}) do |f| %>
           <div class="info_birth">
             <div class="info_birth_date">
               <!-- <span class="date_year birth_date" >  <%#=Time.now.strftime("%Y")%></span> -->
               <!-- <%#= select_year(DateTime.parse("1988. 1. 1."), {start_year: 1900, end_year: 1995}, {name:'user[birthday_year]', class:'select_custom_1'})%> -->
               <%#= image_tag("pc/popup/info/birth_label_1.png", class:"birth_label_class") %>
-              <%= select_tag "user[birthday_month]", 
+              <%#= select_tag "user[birthday_month]", 
 								options_for_select(months_option_helper, Time.now.month), 
 								{class: 'select_custom_2', id: "select_month"} %>
              <!--  <span class="date_month birth_date"><%#=Time.now.strftime("%m")%></span> -->
               <%= image_tag("pc/popup/info/birth_label_2.png", class:"birth_label_class") %>
-              <%= 
+              <%#= 
                 select_tag(
                   "user[birthday_day]", 
                   options_for_select(days_option_helper, Time.now.day),
@@ -78,20 +78,20 @@
 		    </div>
             <div class="check_box">
 			<%= image_tag("pc/popup/info/info_label_3.png", class:"info_input_label_3") %>
-            <%= f.check_box "agree", {"data-name" => "agree", id:"info_input_radio", class:"info_input_radio" }%>
+            <%#= f.check_box "agree", {"data-name" => "agree", id:"info_input_radio", class:"info_input_radio" }%>
             <%= link_to "#", class:"popup_info_to_personal", id: "popup_info_to_personal" do %>
               <%= image_tag("pc/popup/info/info_personal_button.png", class: "to_personal") %>
             <% end %>
           	</div>
             <div class="check_box second">
 			<%= image_tag("pc/popup/info/info_label_4.png", class:"info_input_label_4") %>
-            <%= f.check_box "agree2", {"data-name" => "agree2", id:"info_input_radio2", class:"info_input_radio" }%>
+            <%#= f.check_box "agree2", {"data-name" => "agree2", id:"info_input_radio2", class:"info_input_radio" }%>
           	</div>
 		  </div>
             <%= image_submit_tag("pc/popup/info/button.png",{id: "info_fin"}) %>
 
 
-          <%end%>
+          <%#end%>
         </div>
       <div id="popup_personal">
         <%= link_to "#", class: "b-close-2" do %>

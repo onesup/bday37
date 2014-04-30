@@ -13,7 +13,8 @@
 				<%= image_tag("mobile/text_tagline.png", class:"tagline") %>
 			</div>
 			<div class="container-btn_gift">
-				<%= link_to new_mobile_user_path, {onclick:"ga('send', 'event', 'button', 'click', 'm 생일 선물 받기');", id:"gift_button"} do %>
+				<%#= link_to new_mobile_user_path, {onclick:"ga('send', 'event', 'button', 'click', 'm 생일 선물 받기');", id:"gift_button"} do %>
+				<%= link_to "#", id:"gift_button" do%>
 				<%= image_tag("mobile/btn_gift.png", class:"btn_gift") %>
 				<% end %>
 			</div>
