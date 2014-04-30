@@ -58,7 +58,7 @@ $(document).ready(function(){
 			url: '/current_time',
 			success: function (data) {
 				if(Date.parse(finish_time) < Date.parse(data.time)){
-					alert("아쉽네요! \n다음엔 조금더 서둘러주세요~");
+					alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
 				}else{
 		      $("#popup_info").bPopup({
 		        follow: [false, false], //x, y
@@ -128,7 +128,7 @@ $(document).ready(function(){
 
   $("#blog_share_link").click(function(e){
     e.preventDefault();
-		alert('아쉽네요!/n 다음엔 조금더 서둘러주세요~');
+		alert('아쉽네요!\n 다음엔 조금더 서둘러주세요~');
     // $("#popup_blog").modal({
     //   // closeClass: 'b-close',
     // });
@@ -150,7 +150,7 @@ $(document).ready(function(){
     FB.Canvas.setAutoGrow();
     $("#facebook_share_link").click(function(e){
       e.preventDefault();
-			alert('아쉽네요!/n 다음엔 조금더 서둘러주세요~');
+			alert('아쉽네요!\n다음엔 조금더 서둘러주세요~');
       // $.ajax({
       //   type: "POST",
       //   url: "/viral_actions.json",
