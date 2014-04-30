@@ -23,16 +23,16 @@ Rails.application.routes.draw do
   namespace :fb do
     post 'create' => 'home#create'
     get 'index' => 'home#index'
-    # resources :users
+    resources :users
   end
   
   namespace :pc do
     get 'index' => 'home#index'
-    # resources :users do
-    #   collection do
-    #     get 'delete'
-    #   end
-    # end
+    resources :users do
+      collection do
+        get 'delete'
+      end
+    end
   end
   
   namespace :mobile do
@@ -41,7 +41,7 @@ Rails.application.routes.draw do
     get 'unique_error' => 'home#unique_error'
     get 'terms' => 'home#terms'
     get 'product' => 'home#product'
-    # resources :users
+    resources :users
   end
   
   resources :viral_actions
