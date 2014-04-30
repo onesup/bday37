@@ -28,11 +28,7 @@ Rails.application.routes.draw do
   
   namespace :pc do
     get 'index' => 'home#index'
-    resources :users do
-      collection do
-        get 'delete'
-      end
-    end
+    resources :users, only: [:create]
   end
   
   namespace :mobile do
@@ -41,7 +37,7 @@ Rails.application.routes.draw do
     get 'unique_error' => 'home#unique_error'
     get 'terms' => 'home#terms'
     get 'product' => 'home#product'
-    resources :users
+    resources :users, only: [:new]
   end
   
   resources :viral_actions
