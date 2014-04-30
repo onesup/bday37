@@ -14,17 +14,18 @@ $(document).ready(function(){
 		FB.Canvas.setAutoGrow();
 		$("#facebook_share_link").click(function(e){
 			e.preventDefault();
-      $.ajax({
-          type: "POST",
-          url: "/viral_actions.json",
-          data: {
-            'viral_action[platform]': "Facebook",
-            'viral_action[device]': "mobile"
-          },
-          success: function (data) {
-          }
-      });
-			share();
+			alert('아쉽네요!/n 다음엔 조금더 서둘러주세요~');
+			//       $.ajax({
+			//           type: "POST",
+			//           url: "/viral_actions.json",
+			//           data: {
+			//             'viral_action[platform]': "Facebook",
+			//             'viral_action[device]': "mobile"
+			//           },
+			//           success: function (data) {
+			//           }
+			//       });
+			// share();
 		});
 	});
 	
@@ -46,49 +47,51 @@ $(document).ready(function(){
 	
 	$("#kakaotalk_share_link").click(function(e){
 		e.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "/viral_actions.json",
-      data: {
-        'viral_action[platform]': "Kakaotalk",
-        'viral_action[device]': "mobile"
-      },
-      success: function (data) {
-      }
-      });
-		kakao.link("talk").send({
-			msg : "완전 득템 소식~\n피부생일?!\n에센스 선물까지 준다고!?\n\n숨37과 처음 만나는 순간,\n피부생일이 시작됩니다.\n\nMake Your Skin Birthday\nSponsored by 숨37\n",
-			url : "http://bit.ly/su-m37-kt",
-			appid : "skin_birthday",
-			appver : "1.0",
-			appname : "",
-			type : "link"
-		});
+		alert('아쉽네요!/n 다음엔 조금더 서둘러주세요~');
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/viral_actions.json",
+    //   data: {
+    //     'viral_action[platform]': "Kakaotalk",
+    //     'viral_action[device]': "mobile"
+    //   },
+    //   success: function (data) {
+    //   }
+    //   });
+		// kakao.link("talk").send({
+		// 	msg : "완전 득템 소식~\n피부생일?!\n에센스 선물까지 준다고!?\n\n숨37과 처음 만나는 순간,\n피부생일이 시작됩니다.\n\nMake Your Skin Birthday\nSponsored by 숨37\n",
+		// 	url : "http://bit.ly/su-m37-kt",
+		// 	appid : "skin_birthday",
+		// 	appver : "1.0",
+		// 	appname : "",
+		// 	type : "link"
+		// });
 	});
   $("#kakaostory_share_link").click(function(e){
     e.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "/viral_actions.json",
-      data: {
-        'viral_action[platform]': "Kakaostory",
-        'viral_action[device]': "mobile"
-      },
-      success: function (data) {
-      }
-      });
-    kakao.link("story").send({
-      post : "완전 득템 소식~\n피부생일?!\n에센스 선물까지 준다고!?\nhttp://bit.ly/su-m37-ks\n\n숨37과 처음 만나는 순간,\n피부생일이 시작됩니다.\n\nMake Your Skin Birthday\nSponsored by 숨37",
-      appid : "skin_birthday",
-      appver : "1.0",
-      appname : "Skin Birthday",
-      urlinfo : JSON.stringify({
-        title:"Skin Birthday",
-        desc:"Make Your Skin Birthday Sponsored by 숨37",
-        imageurl:['https://<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>'],
-        type:"article"
-      })
-    });
+		alert('아쉽네요!/n 다음엔 조금더 서둘러주세요~');
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/viral_actions.json",
+    //   data: {
+    //     'viral_action[platform]': "Kakaostory",
+    //     'viral_action[device]': "mobile"
+    //   },
+    //   success: function (data) {
+    //   }
+    //   });
+    // kakao.link("story").send({
+    //   post : "완전 득템 소식~\n피부생일?!\n에센스 선물까지 준다고!?\nhttp://bit.ly/su-m37-ks\n\n숨37과 처음 만나는 순간,\n피부생일이 시작됩니다.\n\nMake Your Skin Birthday\nSponsored by 숨37",
+    //   appid : "skin_birthday",
+    //   appver : "1.0",
+    //   appname : "Skin Birthday",
+    //   urlinfo : JSON.stringify({
+    //     title:"Skin Birthday",
+    //     desc:"Make Your Skin Birthday Sponsored by 숨37",
+    //     imageurl:['https://<%= Rails.application.secrets.url + asset_url("sns/facebook_share.jpg") %>'],
+    //     type:"article"
+    //   })
+    // });
   });
   $('#select_month').change(function(e){
     e.preventDefault();

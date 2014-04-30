@@ -128,10 +128,11 @@ $(document).ready(function(){
 
   $("#blog_share_link").click(function(e){
     e.preventDefault();
-    $("#popup_blog").modal({
-      // closeClass: 'b-close',
-    });
-    ga('send', 'event', 'button', 'click', 'pc 블로그로 공유하기 버튼');
+		alert('아쉽네요!/n 다음엔 조금더 서둘러주세요~');
+    // $("#popup_blog").modal({
+    //   // closeClass: 'b-close',
+    // });
+    // ga('send', 'event', 'button', 'click', 'pc 블로그로 공유하기 버튼');
   });	
 		
   $("#info_phone").mask("999-9999-9999");
@@ -149,17 +150,18 @@ $(document).ready(function(){
     FB.Canvas.setAutoGrow();
     $("#facebook_share_link").click(function(e){
       e.preventDefault();
-      $.ajax({
-        type: "POST",
-        url: "/viral_actions.json",
-        data: {
-          'viral_action[platform]': "Facebook",
-          'viral_action[device]': "pc"
-        },
-        success: function (data) {
-        }
-        });
-      share();
+			alert('아쉽네요!/n 다음엔 조금더 서둘러주세요~');
+      // $.ajax({
+      //   type: "POST",
+      //   url: "/viral_actions.json",
+      //   data: {
+      //     'viral_action[platform]': "Facebook",
+      //     'viral_action[device]': "pc"
+      //   },
+      //   success: function (data) {
+      //   }
+      //   });
+      // share();
     });
   });
 
