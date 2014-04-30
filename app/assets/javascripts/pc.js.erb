@@ -52,23 +52,24 @@ $(document).ready(function(){
   });
   $("#gift_button").click(function(e){
     e.preventDefault();
-		var finish_time = "2014-04-30 23:59:59 +0900";
-		$.ajax({
-			type: 'get',
-			url: '/current_time',
-			success: function (data) {
-				if(Date.parse(finish_time) < Date.parse(data.time)){
-					alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
-				}else{
-		      $("#popup_info").bPopup({
-		        follow: [false, false], //x, y
-		        position: ['auto', 60], //x, y
-		        closeClass: 'b-close',
-		        modalColor: 'black'
-		      });
-				}
-			}
-		});
+		alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
+		// var finish_time = "2014-04-30 23:59:59 +0900";
+		// $.ajax({
+		// 	type: 'get',
+		// 	url: '/current_time',
+		// 	success: function (data) {
+		// 		if(Date.parse(finish_time) < Date.parse(data.time)){
+		// 			alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
+		// 		}else{
+		//       $("#popup_info").bPopup({
+		//         follow: [false, false], //x, y
+		//         position: ['auto', 60], //x, y
+		//         closeClass: 'b-close',
+		//         modalColor: 'black'
+		//       });
+		// 		}
+		// 	}
+		// });
     ga('send', 'event', 'button', 'click', '피부 선물 받기');
   });
 
