@@ -2,9 +2,27 @@ class Coupon < ActiveRecord::Base
   belongs_to :user
   
   scope :used, -> { where status: 'used' }
+  scope :not_used, -> { where status: 'not_used' }
   
   def send_message
     Message.send_to(self)
+  end
+  
+  def send_retention
+    Message.send_retention_to(self)
+  end
+  
+  def self.send_retention_message
+    offset_start = 3626
+    finish = not_used.count
+    until offset_start > finish
+      offset_start = offset_start + 100
+      not_used.limit(100).offset(offset_start).each do |c|
+        unless c.user.nil?
+          c.send_retention
+        end
+      end
+    end
   end
   
   def random_code

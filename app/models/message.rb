@@ -18,6 +18,43 @@ class Message < ActiveRecord::Base
     return message
   end
   
+  def self.send_retention_to(coupon)
+    message = self.new
+    message.send_phone = Rails.application.secrets.send_phone
+    message.dest_phone = coupon.user.phone 
+    message.msg_body = self.send_retention(coupon)
+    message.subject = "Skin Birthday"
+    message.send_name = coupon.user.name
+    message.sent_at = Time.now + 5.seconds
+    message.save
+    message.user = coupon.user
+    message.coupon = coupon
+    message.save
+    message.send_lms
+    return message
+  end
+  
+  def self.send_retention(coupon)
+    "
+서둘러주세요!
+ 
+시크릿 프로그래밍 에센스
+40ml 쿠폰 사용 기간이 
+이제 6일 남았어요.
+
+쿠폰 사용기간 : ~ 5월 6일(화)
+ 
+쿠폰받기: https://birthday.su-m37.co.kr/"+coupon.code+"
+ 
+모바일 쿠폰 유의사항
+ 
+- 숨37 첫 구매고객에게만 제공됩니다.
+- 숨37 멤버십에 가입하셔야 혜택을 누리실 수 있습니다.
+- 전국 백화점 매장에서만 사용 가능합니다.
+- 쿠폰은 한정수량으로 조기 소진될 수 있으며 1인 1회로 한정되어 있습니다.
+"
+  end
+  
   def self.send_message(coupon)
     "
 "+coupon.user.name+"님
@@ -65,6 +102,7 @@ class Message < ActiveRecord::Base
     call_status = String.new
     start = Time.new
     during_time = 0
+    puts res
     return JSON.parse(res)
     # while call_status.empty? or call_status == "result is null" or during_time < 3.minutes
     #   sleep(10.seconds)

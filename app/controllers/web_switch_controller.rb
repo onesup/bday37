@@ -31,4 +31,10 @@ class WebSwitchController < ApplicationController
       redirect_to pc_index_path({s: params[:s]})
     end
   end
+  
+  def current_time
+    respond_to do |format|
+      format.json { render json: {time: Time.now}, status: :ok}
+    end
+  end
 end

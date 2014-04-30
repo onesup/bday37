@@ -27,6 +27,23 @@ $(document).ready(function(){
 			share();
 		});
 	});
+	
+	$("#gift_button").click(function(e){
+		e.preventDefault();
+		var finish_time = "2014-04-30 23:59:59 +0900";
+		$.ajax({
+			type: 'get',
+			url: '/current_time',
+			success: function (data) {
+				if(Date.parse(finish_time) < Date.parse(data.time)){
+					alert("아쉽네요! \n다음엔 조금더 서둘러주세요~");
+				}else{
+					window.location.href = "/mobile/users/new"; 
+				}
+			}
+		});
+	});
+	
 	$("#kakaotalk_share_link").click(function(e){
 		e.preventDefault();
     $.ajax({
@@ -99,20 +116,6 @@ $(document).ready(function(){
 				}));
 			});
 		}
-	});
-  $('#gift_button').click(function(e){
-    e.preventDefault();
-    // var month;
-    // var days;
-    // var enddate = new Date(Date.parse("2014-04-25"));
-    // var now = new Date();
-    // if (now < enddate){
-      window.location.href = "/mobile/users/new";     
-    // }
-    // else
-    // {
-    //   alert("이벤트가 종료되었습니다. 이벤트 종료일: 2014-04-24");
-    // }
 	});
 });
 

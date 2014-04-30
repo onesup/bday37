@@ -52,19 +52,23 @@ $(document).ready(function(){
   });
   $("#gift_button").click(function(e){
     e.preventDefault();
-    // var enddate = new Date(Date.parse("2014-04-25"));
-    // var now = new Date();
-		// var now = new Date(Date.parse("<%= Time.now %>"));
-    // if (now < enddate){
-      $("#popup_info").bPopup({
-        follow: [false, false], //x, y
-        position: ['auto', 60], //x, y
-        closeClass: 'b-close',
-        modalColor: 'black'
-      });
-    // }else{
-    //   alert("이벤트가 종료되었습니다. 이벤트 종료일: 2014-04-24");
-    // }
+		var finish_time = "2014-04-30 23:59:59 +0900";
+		$.ajax({
+			type: 'get',
+			url: '/current_time',
+			success: function (data) {
+				if(Date.parse(finish_time) < Date.parse(data.time)){
+					alert("아쉽네요! \n다음엔 조금더 서둘러주세요~");
+				}else{
+		      $("#popup_info").bPopup({
+		        follow: [false, false], //x, y
+		        position: ['auto', 60], //x, y
+		        closeClass: 'b-close',
+		        modalColor: 'black'
+		      });
+				}
+			}
+		});
     ga('send', 'event', 'button', 'click', '피부 선물 받기');
   });
 
@@ -80,38 +84,38 @@ $(document).ready(function(){
     ga('send', 'event', 'button', 'click', '개인정보 동의 팝업');
   });
 
-  $("#new_user").bind("ajax:success", function(evt,data,status,xhr){
-    response = JSON.parse(xhr.responseText);
-    if(response.status==="success"){
-			fb_analytics();
-      $("#popup_fin1").bPopup({
-        closeClass: 'b-close',
-        modalColor: 'black',
-        follow: [false, false], //x, y
-        position: ['auto', 70], //x, y
-        onClose: function(){$("#popup_info").bPopup().close();}
-      });
-    }else {
-    }
-
-  }).bind('ajax:error',function(evt,xhr,status,error){
-    var $form = $(this),errors,errorText;
-    errors = $.parseJSON(xhr.responseText);
-
-    if(errors.status === "duplicated"){
-      $("#popup_fin2").bPopup({
-        closeClass: 'b-close',
-        modalColor: '#000',
-        follow: [false, false], //x, y
-        position: ['auto', 70], //x, y
-        onClose: function(){$("#popup_info").bPopup().close();}
-      });
-    }
-    else{
-      validation(errors);
-    }
-    
-  });
+  // $("#new_user").bind("ajax:success", function(evt,data,status,xhr){
+  //   response = JSON.parse(xhr.responseText);
+  //   if(response.status==="success"){
+  // 			fb_analytics();
+  //     $("#popup_fin1").bPopup({
+  //       closeClass: 'b-close',
+  //       modalColor: 'black',
+  //       follow: [false, false], //x, y
+  //       position: ['auto', 70], //x, y
+  //       onClose: function(){$("#popup_info").bPopup().close();}
+  //     });
+  //   }else {
+  //   }
+  // 
+  // }).bind('ajax:error',function(evt,xhr,status,error){
+  //   var $form = $(this),errors,errorText;
+  //   errors = $.parseJSON(xhr.responseText);
+  // 
+  //   if(errors.status === "duplicated"){
+  //     $("#popup_fin2").bPopup({
+  //       closeClass: 'b-close',
+  //       modalColor: '#000',
+  //       follow: [false, false], //x, y
+  //       position: ['auto', 70], //x, y
+  //       onClose: function(){$("#popup_info").bPopup().close();}
+  //     });
+  //   }
+  //   else{
+  //     validation(errors);
+  //   }
+  //   
+  // });
 
   $("#product_button").click(function(e){
     e.preventDefault();
