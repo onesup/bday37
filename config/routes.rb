@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   get 'web_switch' => 'web_switch#index'
   get 'fb_switch' => 'fb_switch#index'
   get 'current_time' => 'web_switch#current_time'
+  get 'coupon_finish' => 'web_switch#coupon_finish'
   root 'web_switch#index'
 
   get "/:code", to:"coupons#show", contraints:{code: /[a-z]{5}-\d{4}/}, as: "coupon"

@@ -37,4 +37,13 @@ class WebSwitchController < ApplicationController
       format.json { render json: {time: Time.now}, status: :ok}
     end
   end
+  
+  def coupon_finish
+    finish_time = DateTime.parse("2014-05-06 21:00:00 +0900")
+    result = "running"
+    result = "finish" if Time.now > finish_time
+    respond_to do |format|
+      format.json { render json: {result: result}, status: :ok}
+    end
+  end
 end

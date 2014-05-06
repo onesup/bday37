@@ -68,6 +68,24 @@ $(document).ready(function(){
 		// 	type : "link"
 		// });
 	});
+
+	$("#coupon_confirm").click(function(e){
+		e.preventDefault();
+		var url = "/" + $("#coupon_confirm").attr("data-code");
+		$.ajax({
+			type: 'get',
+			url: '/coupon_finish.json',
+			success: function (data) {
+				if(data.result == "finish"){
+					alert("아쉽네요!\n다음엔 조금더 서둘러주세요~");
+				}else{
+					confirm("쿠폰을 사용하시겠습니까?");
+					$("#coupon_form").submit();
+				}
+			}
+		});
+	});
+	
   $("#kakaostory_share_link").click(function(e){
     e.preventDefault();
 		alert('아쉽네요!\n 다음엔 조금더 서둘러주세요~');

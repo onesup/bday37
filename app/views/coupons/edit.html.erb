@@ -16,11 +16,13 @@
 	</div>
 	<div class="bottom">
 		<%= image_tag("mobile/text_coupon_caution2.png", class:"text_coupon_caution2") %>
-    <%= link_to update_coupon_path(@coupon.code), 
-          method: :put, data: { confirm: '정말 사용하시겠습니까?' } do %>
+    <%= link_to update_coupon_path(@coupon.code), id: "coupon_confirm", "data-code" => @coupon.code do %>
 		  <%= image_tag("mobile/btn_coupon_use_before.png", class:"btn_coupon_use_before") %>
     <% end %>
     </a>
 	</div>
 
 </div>
+<%= form_tag "/" + @coupon.code, {method: :put, id: "coupon_form"} do %>
+	<%= hidden_field_tag "coupon"%>
+<% end %>
