@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
   layout 'admin'
   before_action :authenticate_user!
   def index
-    @users = User.order("id desc").page(params[:page]).per(200)
+    @users = User.includes(:access_logs, :coupon).order("id desc").page(params[:page]).per(200)
     @user_counts = User.count_by_device_type
   end
   

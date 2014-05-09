@@ -48,6 +48,4 @@ class Coupon < ActiveRecord::Base
     self.save
   end
 
-
-
 end

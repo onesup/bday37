@@ -30,7 +30,9 @@ class Message < ActiveRecord::Base
     message.user = coupon.user
     message.coupon = coupon
     message.save
-    message.send_lms
+    result = message.send_lms
+    message.cmid = result["cmid"]
+    message.result = result["result_code"]
     return message
   end
   
